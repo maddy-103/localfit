@@ -1,0 +1,233 @@
+{
+  "color": {
+    "bg": {
+      "$type": "color",
+      "$value": "#FFFFFF"
+    },
+    "soft": {
+      "$type": "color",
+      "$value": "#F2F0F1"
+    },
+    "tile": {
+      "$type": "color",
+      "$value": "#F0EEED"
+    },
+    "field": {
+      "$type": "color",
+      "$value": "#F0F0F0"
+    },
+    "ink": {
+      "$type": "color",
+      "$value": "#000000"
+    },
+    "inkHover": {
+      "$type": "color",
+      "$value": "#222222"
+    },
+    "muted": {
+      "$type": "color",
+      "$value": "rgba(0, 0, 0, 0.6)"
+    },
+    "line": {
+      "$type": "color",
+      "$value": "rgba(0, 0, 0, 0.1)"
+    },
+    "star": {
+      "$type": "color",
+      "$value": "#FFC633"
+    },
+    "sale": {
+      "$type": "color",
+      "$value": "#FF3333"
+    },
+    "saleText": {
+      "$type": "color",
+      "$value": "#C62828"
+    },
+    "saleTextHover": {
+      "$type": "color",
+      "$value": "#A31F1F"
+    },
+    "saleBg": {
+      "$type": "color",
+      "$value": "rgba(255, 51, 51, 0.1)"
+    },
+    "ok": {
+      "$type": "color",
+      "$value": "#01AB31"
+    },
+    "overlay": {
+      "$type": "color",
+      "$value": "rgba(0, 0, 0, 0.45)"
+    }
+  },
+  "radius": {
+    "pill": {
+      "$type": "dimension",
+      "$value": "62px"
+    },
+    "card": {
+      "$type": "dimension",
+      "$value": "20px"
+    }
+  },
+  "spacing": {
+    "1": {
+      "$type": "dimension",
+      "$value": "4px"
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": "8px"
+    },
+    "3": {
+      "$type": "dimension",
+      "$value": "12px"
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": "16px"
+    },
+    "5": {
+      "$type": "dimension",
+      "$value": "24px"
+    },
+    "6": {
+      "$type": "dimension",
+      "$value": "32px"
+    },
+    "7": {
+      "$type": "dimension",
+      "$value": "48px"
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": "64px"
+    }
+  },
+  "typography": {
+    "family": {
+      "heading": {
+        "$type": "fontFamily",
+        "$value": "'Archivo', 'Noto Sans Devanagari', sans-serif"
+      },
+      "body": {
+        "$type": "fontFamily",
+        "$value": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif"
+      }
+    },
+    "weight": {
+      "body": {
+        "$type": "fontWeight",
+        "$value": 400
+      },
+      "medium": {
+        "$type": "fontWeight",
+        "$value": 500
+      },
+      "bold": {
+        "$type": "fontWeight",
+        "$value": 700
+      },
+      "heading": {
+        "$type": "fontWeight",
+        "$value": 900
+      }
+    },
+    "lineHeight": {
+      "heading": {
+        "$type": "number",
+        "$value": 0.98
+      },
+      "body": {
+        "$type": "number",
+        "$value": 1.5
+      }
+    },
+    "size": {
+      "h1": {
+        "$type": "dimension",
+        "$value": "clamp(36px, 5vw, 64px)"
+      },
+      "h2": {
+        "$type": "dimension",
+        "$value": "clamp(32px, 4vw, 48px)"
+      },
+      "h3": {
+        "$type": "dimension",
+        "$value": "clamp(20px, 2.5vw, 24px)"
+      },
+      "productTitle": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "body": {
+        "$type": "dimension",
+        "$value": "16px"
+      },
+      "small": {
+        "$type": "dimension",
+        "$value": "14px"
+      },
+      "price": {
+        "$type": "dimension",
+        "$value": "24px"
+      },
+      "stat": {
+        "$type": "dimension",
+        "$value": "clamp(24px, 3vw, 40px)"
+      }
+    }
+  },
+  "motion": {
+    "duration": {
+      "fast": {
+        "$type": "dimension",
+        "$value": "150ms"
+      },
+      "base": {
+        "$type": "dimension",
+        "$value": "250ms"
+      },
+      "slow": {
+        "$type": "dimension",
+        "$value": "300ms"
+      }
+    },
+    "easing": {
+      "standard": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.2,
+          0.7,
+          0.2,
+          1
+        ]
+      }
+    }
+  },
+  "shadow": {
+    "sheet": {
+      "$type": "shadow",
+      "$value": "0 24px 64px rgba(0, 0, 0, 0.18)"
+    }
+  },
+  "layout": {
+    "maxWidth": {
+      "$type": "dimension",
+      "$value": "1240px"
+    },
+    "gutterMobile": {
+      "$type": "dimension",
+      "$value": "16px"
+    },
+    "gutterTablet": {
+      "$type": "dimension",
+      "$value": "32px"
+    },
+    "gutterDesktop": {
+      "$type": "dimension",
+      "$value": "100px"
+    }
+  }
+}

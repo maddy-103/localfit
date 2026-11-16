@@ -1,0 +1,573 @@
+/* Controls: buttons, fields, toggles, pills, steppers, swatches, sliders. */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--tap-min);
+  padding: 0 var(--space-5);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease);
+}
+
+.button:hover:not(:disabled) {
+  background: var(--ink-hover);
+}
+
+.button:disabled {
+  opacity: 0.45;
+}
+
+.outline {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.outline:hover:not(:disabled) {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--ink);
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--field);
+}
+
+.destructive {
+  background: var(--sale-text);
+}
+
+.destructive:hover:not(:disabled) {
+  background: var(--sale-text-hover);
+}
+
+.lg {
+  min-height: var(--tap-primary);
+  padding: 0 var(--space-6);
+  font-size: var(--fs-body);
+}
+
+.sm {
+  min-height: var(--tap-min);
+  padding: 0 var(--space-4);
+  font-size: var(--fs-small);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink);
+  transition:
+    background-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease);
+}
+
+.iconButton:hover:not(:disabled) {
+  background: var(--field);
+}
+
+.iconButton:disabled {
+  opacity: 0.45;
+}
+
+.iconButtonOutline {
+  border-color: var(--line);
+}
+
+.fieldGroup {
+  display: grid;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.label {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+}
+
+.hint {
+  font-size: var(--fs-small);
+  color: var(--muted);
+}
+
+.fieldError {
+  font-size: var(--fs-small);
+  color: var(--sale-text);
+}
+
+.inputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: var(--space-4);
+  display: flex;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  min-height: var(--tap-min);
+  padding: 0 var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background: var(--field);
+  color: var(--ink);
+  font-size: var(--fs-body);
+  transition: border-color var(--dur-fast) var(--ease);
+}
+
+.inputWithIcon {
+  padding-left: var(--space-8);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--muted);
+}
+
+.input:focus-visible,
+.textarea:focus-visible,
+.select:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.inputInvalid {
+  border-color: var(--sale);
+}
+
+.textarea {
+  width: 100%;
+  min-height: 112px;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-card);
+  background: var(--field);
+  color: var(--ink);
+  font-size: var(--fs-body);
+  resize: vertical;
+}
+
+.selectWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  width: 100%;
+  min-height: var(--tap-min);
+  padding: 0 var(--space-8) 0 var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background: var(--field);
+  color: var(--ink);
+  font-size: var(--fs-body);
+  appearance: none;
+}
+
+.selectChevron {
+  position: absolute;
+  right: var(--space-4);
+  color: var(--ink);
+  pointer-events: none;
+}
+
+.toggleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: var(--tap-min);
+}
+
+.toggleText {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.toggle {
+  position: relative;
+  flex: 0 0 auto;
+  width: 56px;
+  height: var(--tap-min);
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.toggleTrack {
+  position: absolute;
+  top: 6px;
+  left: 2px;
+  width: 52px;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--field);
+  transition: background-color var(--dur-fast) var(--ease);
+}
+
+.toggleOn .toggleTrack {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg);
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.toggleOn .toggleThumb {
+  transform: translateX(20px);
+}
+
+.checkboxRow {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  min-height: var(--tap-min);
+  padding-block: var(--space-2);
+  cursor: pointer;
+}
+
+.checkboxInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.checkboxBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  border: 1.5px solid var(--ink);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--bg);
+  transition: background-color var(--dur-fast) var(--ease);
+}
+
+.checkboxInput:checked + .checkboxBox {
+  background: var(--ink);
+}
+
+.checkboxInput:focus-visible + .checkboxBox {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.checkboxLabel {
+  font-size: var(--fs-body);
+}
+
+.radioPills {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.radioLegend {
+  padding: 0;
+  margin-bottom: var(--space-1);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+}
+
+.radioOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.radioOption {
+  position: relative;
+  display: inline-flex;
+}
+
+.radioInput {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radioPill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
+  padding: 0 var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background: var(--field);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  transition:
+    background-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease);
+}
+
+.radioInput:checked + .radioPill {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.radioInput:focus-visible + .radioPill {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.radioInput:disabled + .radioPill {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--tap-min);
+  padding: 0 var(--space-4);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--field);
+  color: var(--ink);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  transition:
+    background-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease);
+}
+
+.chipSelected {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.chipCheck {
+  display: inline-flex;
+  opacity: 0;
+  transition: opacity var(--dur-fast) var(--ease);
+}
+
+.chipSelected .chipCheck {
+  opacity: 1;
+}
+
+.quantity {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  border-radius: var(--radius-pill);
+  background: var(--field);
+}
+
+.quantityButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+}
+
+.quantityButton:hover:not(:disabled) {
+  background: var(--bg);
+}
+
+.quantityButton:disabled {
+  opacity: 0.35;
+}
+
+.quantityValue {
+  min-width: 28px;
+  text-align: center;
+  font-weight: var(--fw-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+.bump {
+  animation: bump var(--dur-fast) var(--ease);
+}
+
+@keyframes bump {
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.swatch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+}
+
+.swatchDot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+}
+
+.swatchSelected {
+  border-color: var(--ink);
+}
+
+.swatchCheck {
+  position: absolute;
+  display: inline-flex;
+  color: var(--bg);
+}
+
+.range {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.rangeValues {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  font-variant-numeric: tabular-nums;
+}
+
+.rangeTrack {
+  position: relative;
+  height: var(--tap-min);
+}
+
+.rangeRail {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--line);
+  transform: translateY(-50%);
+}
+
+.rangeFill {
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--ink);
+  transform: translateY(-50%);
+}
+
+.rangeInput {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  appearance: none;
+  pointer-events: none;
+}
+
+.rangeInput::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--bg);
+  border-radius: 50%;
+  background: var(--ink);
+  cursor: grab;
+  appearance: none;
+  pointer-events: auto;
+}
+
+.rangeInput::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--bg);
+  border-radius: 50%;
+  background: var(--ink);
+  cursor: grab;
+  pointer-events: auto;
+}

@@ -1,0 +1,251 @@
+.page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 64px;
+}
+
+.menuButton {
+  flex: 0 0 auto;
+}
+
+.logo {
+  flex: 0 0 auto;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: var(--fw-heading);
+  font-stretch: 125%;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: var(--space-5);
+  margin-left: var(--space-3);
+}
+
+.navLink {
+  padding-block: var(--space-2);
+  color: var(--muted);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: var(--ink);
+}
+
+.navLinkActive {
+  color: var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+
+.search {
+  display: none;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--field);
+  color: var(--muted);
+}
+
+.searchInput {
+  width: 100%;
+  min-height: 40px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: var(--fs-small);
+}
+
+.searchInput:focus-visible {
+  outline: none;
+}
+
+.search:focus-within {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-left: auto;
+}
+
+.language {
+  display: none;
+}
+
+.iconLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+}
+
+.iconLink:hover {
+  background: var(--field);
+}
+
+.iconLink :global(span):last-child {
+  position: absolute;
+  top: 0;
+  right: -2px;
+}
+
+.signIn {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-min);
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--bg);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+}
+
+.main {
+  flex: 1;
+}
+
+.footer {
+  margin-top: var(--space-8);
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.footerInner {
+  padding-block: var(--space-7) var(--space-5);
+}
+
+.footerTop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.footerLogo {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-heading);
+  font-stretch: 125%;
+}
+
+.footerTag {
+  max-width: 40ch;
+  margin-top: var(--space-2);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--fs-small);
+}
+
+.footerNav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-4);
+  font-size: var(--fs-small);
+}
+
+.footerNav a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+}
+
+.footerNav a:hover {
+  color: var(--bg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+}
+
+.mobileNav {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.mobileNav a {
+  display: flex;
+  align-items: center;
+  min-height: var(--tap-min);
+  border-bottom: 1px solid var(--line);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+}
+
+.mobileLanguage {
+  margin-top: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .menuButton {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+  }
+
+  .search {
+    display: flex;
+    max-width: 340px;
+  }
+
+  .language {
+    display: block;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .headerInner {
+    gap: var(--space-5);
+  }
+
+  .search {
+    max-width: 420px;
+  }
+}

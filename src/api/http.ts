@@ -1,0 +1,94 @@
+import type {
+  Api,
+  Bag,
+  Order,
+  PlaceCheckoutInput,
+  PlaceCheckoutResult,
+} from './types';
+
+const baseUrl = (import.meta.env.VITE_API_BASE as string | undefined) ?? '/api';
+
+async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  const response = await fetch(`${baseUrl}${path}`, {
+    headers: { 'Content-Type': 'application/json', ...(init?.headers ?? {}) },
+    ...init,
+  });
+  if (!response.ok) {
+    const message = await response.text().catch(() => '');
+    throw new Error(message || `Request failed with ${response.status}`);
+  }
+  return (await response.json()) as T;
+}
+
+/**
+ * HTTP implementation. Screens never import this file; they use `api`.
+ * A future backend only has to match these endpoints.
+ */
+export const httpApi: Api = {
+  listProducts(params) {
+    const search = new URLSearchParams();
+    if (params?.occasion) search.set('occasion', params.occasion);
+    if (params?.q) search.set('q', params.q);
+    if (params?.shopId) search.set('shopId', params.shopId);
+    const query = search.toString();
+    return request(`/products${query ? `?${query}` : ''}`);
+  },
+  getProduct(id) {
+    return request(`/products/${encodeURIComponent(id)}`);
+  },
+  listShops() {
+    return request('/shops');
+  },
+  getShop(id) {
+    return request(`/shops/${encodeURIComponent(id)}`);
+  },
+  listBuyers() {
+    return request('/buyers');
+  },
+  listRiders() {
+    return request('/riders');
+  },
+  listAdmins() {
+    return request('/admins');
+  },
+  getBag() {
+    return request<Bag>('/bag');
+  },
+  addToBag(line) {
+    return request<Bag>('/bag/lines', { method: 'POST', body: JSON.stringify(line) });
+  },
+  updateBagLine(id, patch) {
+    return request<Bag>(`/bag/lines/${encodeURIComponent(id)}`, {
+      method: 'PATCH',
+      body: JSON.stringify(patch),
+    });
+  },
+  removeBagLine(id) {
+    return request<Bag>(`/bag/lines/${encodeURIComponent(id)}`, { method: 'DELETE' });
+  },
+  placeCheckout(input: PlaceCheckoutInput) {
+    return request<PlaceCheckoutResult>('/checkout', {
+      method: 'POST',
+      body: JSON.stringify(input),
+    });
+  },
+  listOrders() {
+    return request<Order[]>('/orders');
+  },
+  getOrder(id) {
+    return request(`/orders/${encodeURIComponent(id)}`);
+  },
+  subscribe(topic, callback) {
+    if (typeof EventSource === 'undefined') return () => {};
+    const source = new EventSource(`${baseUrl}/events?topic=${encodeURIComponent(topic)}`);
+    const handler = (event: MessageEvent) => {
+      try {
+        callback(JSON.parse(event.data));
+      } catch {
+        callback(event.data);
+      }
+    };
+    source.addEventListener(topic, handler as EventListener);
+    return () => source.close();
+  },
+};
