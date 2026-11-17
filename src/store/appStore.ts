@@ -21,9 +21,12 @@ interface AppState {
   session: SessionUser | null;
   settings: Settings;
   bagCount: number;
+  /** Session-only: not persisted to localStorage. */
+  wishlist: string[];
   setSession: (user: SessionUser | null) => void;
   setLang: (lang: Lang) => void;
   setBagCount: (count: number) => void;
+  toggleWishlist: (productId: string) => void;
   resetApp: () => void;
 }
 
@@ -35,10 +38,18 @@ export const useAppStore = create<AppState>()(
       session: null,
       settings: initialSettings,
       bagCount: 0,
+      wishlist: [],
       setSession: (session) => set({ session }),
       setLang: (lang) => set((state) => ({ settings: { ...state.settings, lang } })),
       setBagCount: (bagCount) => set({ bagCount }),
-      resetApp: () => set({ session: null, settings: initialSettings, bagCount: 0 }),
+      toggleWishlist: (productId) =>
+        set((state) => ({
+          wishlist: state.wishlist.includes(productId)
+            ? state.wishlist.filter((id) => id !== productId)
+            : [...state.wishlist, productId],
+        })),
+      resetApp: () =>
+        set({ session: null, settings: initialSettings, bagCount: 0, wishlist: [] }),
     }),
     {
       name: 'lf:app',

@@ -58,6 +58,17 @@ export interface GpsPoint {
   lng: number;
 }
 
+export type OrderEventAction =
+  | 'transition'
+  | 'decision_keep'
+  | 'decision_return'
+  | 'swap_requested'
+  | 'swap_confirmed'
+  | 'otp_failed'
+  | 'support_opened'
+  | 'hold_released'
+  | 'refund_initiated';
+
 export interface OrderEvent {
   id: string;
   orderId: string;
@@ -65,6 +76,12 @@ export interface OrderEvent {
   to: OrderState;
   actor: OrderActor;
   timestamp: string;
+  /** Missing means a normal state transition. */
+  action?: OrderEventAction;
+  /** Decision details, reason, or the swapped size. */
+  note?: string;
+  lineId?: string;
+  amountPaise?: number;
   gps?: GpsPoint;
   photoIds?: string[];
 }

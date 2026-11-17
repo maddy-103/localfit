@@ -4,14 +4,56 @@ import styles from './surfaces.module.css';
 export interface MapPlaceholderProps {
   /** Optional caption shown under the schematic. */
   caption?: string;
+  /**
+   * Where the rider is on the route, 0 at the shop and 1 at the door.
+   * Omit on screens that are not tracking a live delivery.
+   */
+  progress?: number;
+}
+
+const ROUTE = [
+  { x: 58, y: 118 },
+  { x: 102, y: 118 },
+  { x: 102, y: 60 },
+  { x: 164, y: 60 },
+  { x: 164, y: 102 },
+  { x: 208, y: 102 },
+];
+
+/** Walks the polyline so the marker follows the drawn route, not a straight line. */
+function pointAt(progress: number): { x: number; y: number } {
+  const clamped = Math.min(1, Math.max(0, progress));
+  const lengths = ROUTE.slice(1).map((point, index) => {
+    const previous = ROUTE[index]!;
+    return Math.hypot(point.x - previous.x, point.y - previous.y);
+  });
+  const total = lengths.reduce((sum, length) => sum + length, 0);
+  let remaining = clamped * total;
+
+  for (let index = 0; index < lengths.length; index += 1) {
+    const length = lengths[index]!;
+    if (remaining <= length || index === lengths.length - 1) {
+      const from = ROUTE[index]!;
+      const to = ROUTE[index + 1]!;
+      const ratio = length === 0 ? 0 : Math.min(1, remaining / length);
+      return {
+        x: from.x + (to.x - from.x) * ratio,
+        y: from.y + (to.y - from.y) * ratio,
+      };
+    }
+    remaining -= length;
+  }
+
+  return ROUTE[ROUTE.length - 1]!;
 }
 
 /**
  * Schematic route map. No map provider or API key is used; a real map can
  * replace this component without touching any screen.
  */
-export function MapPlaceholder({ caption }: MapPlaceholderProps) {
+export function MapPlaceholder({ caption, progress }: MapPlaceholderProps) {
   const { t } = useI18n();
+  const rider = pointAt(progress ?? 0.55);
 
   return (
     <figure style={{ margin: 0 }}>
@@ -48,11 +90,16 @@ export function MapPlaceholder({ caption }: MapPlaceholderProps) {
         />
         <circle cx="58" cy="118" r="7" fill="var(--ink)" />
         <circle cx="208" cy="102" r="7" fill="var(--bg)" stroke="var(--ink)" strokeWidth="2" />
-        <path d="M222 94v16l-7-4h14l-7 4Z" fill="var(--ink)" transform="translate(-7 0)" />
+        <g transform={`translate(${rider.x} ${rider.y})`}>
+          <circle r="9" fill="var(--ink)" />
+          <path d="M-4 1v5l3-2h5l3 2v-5Z" fill="var(--bg)" />
+        </g>
 
         <g fontSize="11" fontFamily="var(--font-body)" fill="var(--muted)">
           <text x="42" y="142">{t('map.shop')}</text>
-          <text x="192" y="80">{t('map.rider')}</text>
+          <text x={Math.min(250, Math.max(8, rider.x - 14))} y={rider.y - 14}>
+            {t('map.rider')}
+          </text>
           <text x="238" y="132">{t('map.destination')}</text>
         </g>
       </svg>

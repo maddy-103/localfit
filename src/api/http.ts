@@ -2,6 +2,7 @@ import type {
   Api,
   Bag,
   Order,
+  OtpResult,
   PlaceCheckoutInput,
   PlaceCheckoutResult,
 } from './types';
@@ -51,6 +52,10 @@ export const httpApi: Api = {
   listAdmins() {
     return request('/admins');
   },
+  listAddresses(buyerId) {
+    const query = buyerId ? `?buyerId=${encodeURIComponent(buyerId)}` : '';
+    return request(`/addresses${query}`);
+  },
   getBag() {
     return request<Bag>('/bag');
   },
@@ -77,6 +82,36 @@ export const httpApi: Api = {
   },
   getOrder(id) {
     return request(`/orders/${encodeURIComponent(id)}`);
+  },
+  submitOtp(orderId, otp, actor) {
+    return request<OtpResult>(`/orders/${encodeURIComponent(orderId)}/otp`, {
+      method: 'POST',
+      body: JSON.stringify({ otp, actor }),
+    });
+  },
+  setTrialDecision(orderId, lineId, decision, actor) {
+    return request<Order>(`/orders/${encodeURIComponent(orderId)}/decisions`, {
+      method: 'PATCH',
+      body: JSON.stringify({ lineId, decision, actor }),
+    });
+  },
+  requestSizeSwap(orderId, input, actor) {
+    return request<Order>(`/orders/${encodeURIComponent(orderId)}/swaps`, {
+      method: 'POST',
+      body: JSON.stringify({ ...input, actor }),
+    });
+  },
+  lockTrial(orderId, actor, reason = 'buyer') {
+    return request<Order>(`/orders/${encodeURIComponent(orderId)}/lock`, {
+      method: 'POST',
+      body: JSON.stringify({ actor, reason }),
+    });
+  },
+  requestReturn(orderId, input, actor) {
+    return request<Order>(`/orders/${encodeURIComponent(orderId)}/return`, {
+      method: 'POST',
+      body: JSON.stringify({ ...input, actor }),
+    });
   },
   subscribe(topic, callback) {
     if (typeof EventSource === 'undefined') return () => {};
