@@ -72,6 +72,7 @@ Loading (skeleton matched to the layout), empty, error (with a next action), and
 - Before ending a phase, run `npm run build`, `npm run lint`, and `npm test`. Fix failures before moving on.
 - Commit with git at the end of each phase: "phase N: name".
 - Final report: what was built, requirement IDs done, assumptions, and known gaps. Keep it under 15 bullets.
+- At the end of each session, write docs/PROGRESS.md (done, decisions, known bugs, next steps) and commit it. At the start of each session, read AGENTS.md and docs/PROGRESS.md first. Reuse existing components and api functions. Never recreate them.
 
 ## Do not
 - Store real secrets or API keys. Use placeholders in .env.example.
