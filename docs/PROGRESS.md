@@ -130,6 +130,7 @@
 
 - `public/fonts/` still has no real woff2 files (Archivo, Satoshi, Noto Sans Devanagari).
 - Payment "add new method" and wishlist alerts are deliberately disabled placeholders (phase 2
-  behaviour is out of scope); `BUY-17` and `NFR-11` have route coverage but no focused test yet.
+  behaviour is out of scope). `BUY-17` and `NFR-11` now have focused tests
+  (`src/routes/buyer/__tests__/BUY-17.test.tsx`, `src/routes/buyer/__tests__/NFR-11.test.tsx`).
 - Voice search depends on the browser Web Speech API; the button is hidden when it is absent.
 

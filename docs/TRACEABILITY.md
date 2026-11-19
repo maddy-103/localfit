@@ -23,7 +23,7 @@ BUY-13 | src/routes/buyer/ProductPage.tsx (phase 2 placeholder) | —
 BUY-14 | src/routes/buyer/SupportPage.tsx, src/routes/buyer/OrderDetailPage.tsx | src/routes/router.test.tsx
 BUY-15 | src/lib/homeCache.ts, src/routes/buyer/HomePage.tsx | src/routes/buyer/__tests__/BUY-15.test.tsx
 BUY-16 | src/components/RoleGuard.tsx, src/routes/buyer/ProductPage.tsx, src/routes/buyer/CheckoutPage.tsx | src/routes/buyer/__tests__/BUY-16.test.tsx
-BUY-17 | src/routes/buyer/PrivacyPage.tsx | (pending)
+BUY-17 | src/routes/buyer/PrivacyPage.tsx | src/routes/buyer/__tests__/BUY-17.test.tsx
 SHOP-01 | src/routes/shop/ShopListingNewPage.tsx | (pending)
 SHOP-02 | src/api/mock.ts (IndexedDB offline draft) | (pending)
 SHOP-03 | src/routes/shop/ShopInventoryPage.tsx | (pending)
@@ -65,5 +65,5 @@ AMBIGUITY-10 | src/domain/payments.ts, src/routes/buyer/CheckoutPage.tsx | (pend
 NFR-06 | src/components/ui/StatusChip.tsx | (pending)
 NFR-07 | src/i18n/en.ts, src/i18n/hi.ts | src/i18n/NFR-07.test.ts
 NFR-08 | src/routes/auth/ConsentPage.tsx, src/routes/buyer/PrivacyPage.tsx | src/routes/buyer/__tests__/NFR-08.test.tsx
-NFR-11 | src/routes/buyer/PaymentMethodsPage.tsx, src/api/mock.ts | src/routes/router.test.tsx
+NFR-11 | src/routes/buyer/PaymentMethodsPage.tsx, src/api/mock.ts | src/routes/buyer/__tests__/NFR-11.test.tsx
 NFR-14 | src/routes/buyer/SupportPage.tsx, src/routes/buyer/OrderDetailPage.tsx | src/routes/router.test.tsx
