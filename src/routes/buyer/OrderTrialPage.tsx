@@ -222,6 +222,9 @@ export default function OrderTrialPage() {
               </>
             ) : null}
             <OrderTimeline order={order} />
+            <Link className={flow.link} to={`/support?order=${encodeURIComponent(order.id)}`}>
+              {t('orders.help')}
+            </Link>
           </aside>
         </div>
       </div>

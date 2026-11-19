@@ -1,14 +1,14 @@
 ID | Where | Test file
 ---|---|---
-AUTH-01 | src/routes/auth/LoginPage.tsx, src/routes/auth/OtpPage.tsx | (pending)
-AUTH-02 | src/routes/auth/WelcomePage.tsx | (pending)
-AUTH-03 | src/routes/auth/ConsentPage.tsx | (pending)
+AUTH-01 | src/routes/auth/LoginPage.tsx, src/routes/auth/OtpPage.tsx | src/routes/auth/__tests__/AUTH-01.test.tsx
+AUTH-02 | src/routes/auth/WelcomePage.tsx, src/routes/buyer/HomePage.tsx | src/routes/router.test.tsx
+AUTH-03 | src/routes/auth/ConsentPage.tsx | src/routes/auth/__tests__/AUTH-03.test.tsx
 AUTH-04 | src/routes/auth/RegisterShopPage.tsx | (pending)
 AUTH-05 | src/routes/auth/RegisterRiderPage.tsx | (pending)
 AUTH-06 | src/routes/admin/AdminLoginPage.tsx | (pending)
-AUTH-07 | src/routes/buyer/ProfileRolesPage.tsx | (pending)
-BUY-01 | src/routes/buyer/HomePage.tsx | (pending)
-BUY-02 | src/routes/buyer/SearchPage.tsx | (pending)
+AUTH-07 | src/routes/buyer/ProfileRolesPage.tsx | src/routes/buyer/__tests__/AUTH-07.test.tsx
+BUY-01 | src/routes/buyer/HomePage.tsx, src/components/buyer/OccasionHub.tsx | src/routes/buyer/__tests__/BUY-15.test.tsx
+BUY-02 | src/routes/buyer/SearchPage.tsx, src/components/buyer/SearchFilters.tsx | src/routes/router.test.tsx
 BUY-03 | src/routes/buyer/ProductPage.tsx, src/components/buyer/ProductGallery.tsx | src/routes/buyer/__tests__/BUY-04.test.tsx
 BUY-04 | src/routes/buyer/ProductPage.tsx | src/routes/buyer/__tests__/BUY-04.test.tsx
 BUY-05 | src/routes/buyer/ProductPage.tsx, src/components/buyer/SizeGuideSheet.tsx | (pending)
@@ -18,12 +18,12 @@ BUY-08 | src/routes/buyer/CheckoutPage.tsx, src/components/buyer/TrialTermsBlock
 BUY-09 | src/routes/buyer/OrderTrackPage.tsx, src/components/buyer/OrderTimeline.tsx | src/api/__tests__/SPEC-13.test.ts, src/api/__tests__/fullDemoPath.test.ts
 BUY-10 | src/routes/buyer/OrderTrialPage.tsx, src/api/mockTrial.ts | src/api/__tests__/TRIAL-02.test.ts, src/api/__tests__/TRIAL-03.test.ts, src/api/__tests__/sizeSwap.test.ts
 BUY-11 | src/routes/buyer/OrderReturnPage.tsx | src/api/__tests__/fullDemoPath.test.ts
-BUY-12 | src/routes/buyer/WishlistPage.tsx (phase 2 placeholder) | —
+BUY-12 | src/routes/buyer/WishlistPage.tsx (saved items and sizes; alerts are phase 2 placeholders) | src/routes/router.test.tsx
 BUY-13 | src/routes/buyer/ProductPage.tsx (phase 2 placeholder) | —
-BUY-14 | src/routes/buyer/SupportPage.tsx | (pending)
-BUY-15 | src/components/ui/Img.tsx, src/api/mock.ts | (pending)
-BUY-16 | src/components/RoleGuard.tsx | (pending)
-BUY-17 | src/routes/buyer/ProfilePrivacyPage.tsx | (pending)
+BUY-14 | src/routes/buyer/SupportPage.tsx, src/routes/buyer/OrderDetailPage.tsx | src/routes/router.test.tsx
+BUY-15 | src/lib/homeCache.ts, src/routes/buyer/HomePage.tsx | src/routes/buyer/__tests__/BUY-15.test.tsx
+BUY-16 | src/components/RoleGuard.tsx, src/routes/buyer/ProductPage.tsx, src/routes/buyer/CheckoutPage.tsx | src/routes/buyer/__tests__/BUY-16.test.tsx
+BUY-17 | src/routes/buyer/PrivacyPage.tsx | (pending)
 SHOP-01 | src/routes/shop/ShopListingNewPage.tsx | (pending)
 SHOP-02 | src/api/mock.ts (IndexedDB offline draft) | (pending)
 SHOP-03 | src/routes/shop/ShopInventoryPage.tsx | (pending)
@@ -63,4 +63,7 @@ SPEC-13 | src/api/mockFlow.ts, src/api/mockTrial.ts, src/domain/orderMachine.ts 
 AMBIGUITY-9 | src/api/mockFlow.ts, src/api/types.ts | src/api/__tests__/checkoutSplit.test.ts
 AMBIGUITY-10 | src/domain/payments.ts, src/routes/buyer/CheckoutPage.tsx | (pending)
 NFR-06 | src/components/ui/StatusChip.tsx | (pending)
-NFR-07 | src/i18n/en.ts, src/i18n/hi.ts | (pending)
+NFR-07 | src/i18n/en.ts, src/i18n/hi.ts | src/i18n/NFR-07.test.ts
+NFR-08 | src/routes/auth/ConsentPage.tsx, src/routes/buyer/PrivacyPage.tsx | src/routes/buyer/__tests__/NFR-08.test.tsx
+NFR-11 | src/routes/buyer/PaymentMethodsPage.tsx, src/api/mock.ts | src/routes/router.test.tsx
+NFR-14 | src/routes/buyer/SupportPage.tsx, src/routes/buyer/OrderDetailPage.tsx | src/routes/router.test.tsx

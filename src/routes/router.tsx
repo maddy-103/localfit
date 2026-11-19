@@ -26,6 +26,7 @@ const ShopProfilePage = lazy(() => import('./buyer/ShopProfilePage'));
 const BagPage = lazy(() => import('./buyer/BagPage'));
 const CheckoutPage = lazy(() => import('./buyer/CheckoutPage'));
 const OrdersPage = lazy(() => import('./buyer/OrdersPage'));
+const OrderDetailPage = lazy(() => import('./buyer/OrderDetailPage'));
 const OrderConfirmedPage = lazy(() => import('./buyer/OrderConfirmedPage'));
 const OrderTrackPage = lazy(() => import('./buyer/OrderTrackPage'));
 const OrderTrialPage = lazy(() => import('./buyer/OrderTrialPage'));
@@ -110,6 +111,7 @@ export const routes: RouteObject[] = [
       { path: 'bag', element: page(<BagPage />) },
       { path: 'checkout', element: signedIn(<CheckoutPage />) },
       { path: 'orders', element: signedIn(<OrdersPage />) },
+      { path: 'orders/:id', element: signedIn(<OrderDetailPage />) },
       { path: 'order/:id/confirmed', element: signedIn(<OrderConfirmedPage />) },
       { path: 'order/:id/track', element: signedIn(<OrderTrackPage />) },
       { path: 'order/:id/trial', element: signedIn(<OrderTrialPage />) },

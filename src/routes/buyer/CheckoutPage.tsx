@@ -1,10 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { api } from '@/api/client';
 import type { CheckoutView } from '@/api/types';
 import type { PaymentMethod } from '@/domain/payments';
 import { CheckoutGroupCard } from '@/components/buyer/CheckoutGroupCard';
-import { CheckoutSignInStub } from '@/components/buyer/CheckoutSignInStub';
 import { TrialTermsBlock } from '@/components/buyer/TrialTermsBlock';
 import { Button } from '@/components/ui/Button';
 import { EmptyState } from '@/components/ui/EmptyState';
@@ -24,6 +23,7 @@ import flow from '@/components/buyer/flow.module.css';
 export default function CheckoutPage() {
   const { t } = useI18n();
   const navigate = useNavigate();
+  const location = useLocation();
   const online = useOnline();
   const session = useAppStore((state) => state.session);
   const [addressId, setAddressId] = useState('');
@@ -67,12 +67,11 @@ export default function CheckoutPage() {
 
   if (!session) {
     return (
-      <main className={flow.page}>
-        <div className={flow.container}>
-          <h1>{t('checkout.deliveryTo')}</h1>
-          <CheckoutSignInStub />
-        </div>
-      </main>
+      <Navigate
+        to="/login"
+        state={{ returnTo: `${location.pathname}${location.search}` }}
+        replace
+      />
     );
   }
 

@@ -202,6 +202,9 @@ export default function OrderReturnPage() {
             <Link className={flow.link} to={`/orders/${order.id}/track`}>
               {t('return.back')}
             </Link>
+            <Link className={flow.link} to={`/support?order=${encodeURIComponent(order.id)}`}>
+              {t('orders.help')}
+            </Link>
             <OrderTimeline order={order} />
           </aside>
         </div>

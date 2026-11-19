@@ -117,6 +117,9 @@ export default function OrderConfirmedPage() {
                 {t('confirmed.track')}
               </Button>
             </Link>
+            <Link className={flow.link} to={`/support?order=${encodeURIComponent(primary.id)}`}>
+              {t('orders.help')}
+            </Link>
           </aside>
         </div>
       </div>

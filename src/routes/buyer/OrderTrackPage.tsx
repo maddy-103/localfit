@@ -200,7 +200,7 @@ export default function OrderTrackPage() {
 
           <aside className={flow.summary}>
             <OrderTimeline order={order} />
-            <Link className={flow.link} to="/support">
+            <Link className={flow.link} to={`/support?order=${encodeURIComponent(order.id)}`}>
               <Button variant="outline" fullWidth>
                 {t('track.support')}
               </Button>

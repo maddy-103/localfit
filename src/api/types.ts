@@ -121,7 +121,20 @@ export interface Address {
   pincode: string;
   lat: number;
   lng: number;
+  isDefault?: boolean;
 }
+
+/** Gateway tokens only. No card number is ever returned by the platform. */
+export interface PaymentMethodToken {
+  id: string;
+  brand: 'upi' | 'card' | 'wallet';
+  label: string;
+  token: string;
+  isDefault: boolean;
+}
+
+export type SaveAddressInput = Omit<Address, 'id' | 'buyerId'> &
+  Partial<Pick<Address, 'id' | 'buyerId'>>;
 
 export interface BagLine {
   id: string;
@@ -280,6 +293,8 @@ export interface Api {
   listRiders(): Promise<Rider[]>;
   listAdmins(): Promise<AdminUser[]>;
   listAddresses(buyerId?: string): Promise<Address[]>;
+  saveAddress(input: SaveAddressInput): Promise<Address[]>;
+  listPaymentMethods(): Promise<PaymentMethodToken[]>;
   getBag(): Promise<Bag>;
   /** Bag groups, saved addresses and buyer eligibility for checkout. */
   getCheckout(): Promise<CheckoutView>;

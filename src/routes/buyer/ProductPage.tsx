@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { api } from '@/api/client';
 import { ProductGallery } from '@/components/buyer/ProductGallery';
 import { ProductShopCard } from '@/components/buyer/ProductShopCard';
@@ -27,10 +27,13 @@ import flow from '@/components/buyer/flow.module.css';
 
 export default function ProductPage() {
   const { id = '' } = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
   const { t } = useI18n();
   const { toast } = useToast();
   const online = useOnline();
   const wishlist = useAppStore((state) => state.wishlist);
+  const session = useAppStore((state) => state.session);
   const toggleWishlist = useAppStore((state) => state.toggleWishlist);
   const setBagCount = useAppStore((state) => state.setBagCount);
   const productState = useAsync(() => api.getProduct(id), id);
@@ -55,6 +58,16 @@ export default function ProductPage() {
     product?.variants.map((entry) => [entry.colour, { name: entry.colour, hex: entry.colourHex }]),
   ).values()];
   const saved = wishlist.includes(id);
+
+  const saveWishlist = () => {
+    if (!session) {
+      navigate('/login', {
+        state: { returnTo: `${location.pathname}${location.search}` },
+      });
+      return;
+    }
+    toggleWishlist(id, activeSize || undefined);
+  };
 
   const add = async () => {
     if (!activeSize || !variant) {
@@ -199,7 +212,7 @@ export default function ProductPage() {
                 className={flow.wishButton}
                 aria-label={t(saved ? 'product.wishlistRemove' : 'product.wishlistAdd')}
                 aria-pressed={saved}
-                onClick={() => toggleWishlist(id)}
+                onClick={saveWishlist}
               >
                 <Icon name="heart" size={22} />
               </button>

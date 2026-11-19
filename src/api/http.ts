@@ -1,11 +1,14 @@
 import type {
+  Address,
   Api,
   Bag,
   CheckoutView,
   Order,
   OtpResult,
+  PaymentMethodToken,
   PlaceCheckoutInput,
   PlaceCheckoutResult,
+  SaveAddressInput,
 } from './types';
 
 const baseUrl = (import.meta.env.VITE_API_BASE as string | undefined) ?? '/api';
@@ -56,6 +59,14 @@ export const httpApi: Api = {
   listAddresses(buyerId) {
     const query = buyerId ? `?buyerId=${encodeURIComponent(buyerId)}` : '';
     return request(`/addresses${query}`);
+  },
+  saveAddress(input: SaveAddressInput) {
+    const method = input.id ? 'PATCH' : 'POST';
+    const path = input.id ? `/addresses/${encodeURIComponent(input.id)}` : '/addresses';
+    return request<Address[]>(path, { method, body: JSON.stringify(input) });
+  },
+  listPaymentMethods() {
+    return request<PaymentMethodToken[]>('/payment-methods');
   },
   getBag() {
     return request<Bag>('/bag');

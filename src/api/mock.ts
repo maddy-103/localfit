@@ -1,4 +1,12 @@
-import type { Api, CheckoutGroup, CheckoutView, Product } from './types';
+import type {
+  Address,
+  Api,
+  CheckoutGroup,
+  CheckoutView,
+  PaymentMethodToken,
+  Product,
+  SaveAddressInput,
+} from './types';
 import { now } from '@/lib/clock';
 import { deliveryFeePaise } from '@/domain/payments';
 import {
@@ -17,6 +25,13 @@ import { lockTrialFlow, requestReturnFlow, requestSwapFlow, setDecisionFlow } fr
 import { admins, addresses, buyers, products, riders, shops } from './seed';
 
 const HOLD_MS = 10 * 60 * 1000;
+
+/** Gateway tokens only — the platform never holds a card number (NFR-11). */
+const paymentMethodTokens: PaymentMethodToken[] = [
+  { id: 'pm-upi', brand: 'upi', label: 'UPI', token: 'upi••4821', isDefault: true },
+  { id: 'pm-card', brand: 'card', label: 'Card', token: 'card••4242', isDefault: false },
+  { id: 'pm-wallet', brand: 'wallet', label: 'Wallet', token: 'wallet••9015', isDefault: false },
+];
 
 function uid(prefix: string): string {
   const value =
@@ -100,6 +115,32 @@ export const mockApi: Api = {
         .filter((address) => (buyerId ? address.buyerId === buyerId : true))
         .map((address) => ({ ...address })),
     );
+  },
+
+  async saveAddress(input: SaveAddressInput) {
+    return respond(() => {
+      const buyerId = input.buyerId ?? buyers[0]!.id;
+      const existingIndex = addresses.findIndex((address) => address.id === input.id);
+      const next: Address = {
+        ...input,
+        id: input.id ?? uid('addr'),
+        buyerId,
+      };
+      if (next.isDefault) {
+        for (const address of addresses) {
+          if (address.buyerId === buyerId) address.isDefault = false;
+        }
+      }
+      if (existingIndex >= 0) addresses[existingIndex] = next;
+      else addresses.push(next);
+      return addresses
+        .filter((address) => address.buyerId === buyerId)
+        .map((address) => ({ ...address }));
+    });
+  },
+
+  async listPaymentMethods() {
+    return respond(() => paymentMethodTokens.map((token) => ({ ...token })));
   },
 
   async getBag() {

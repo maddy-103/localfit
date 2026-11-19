@@ -81,3 +81,55 @@
 
 - Phase 2: shop console, rider console and admin flows; buyer home page; live backend adapter.
 - Add the pending focused tests above before touching checkout/payment rules again.
+
+## Done (Phase 2 — auth, discovery and account surfaces, complete 2026-11-19)
+
+- **Auth**: `WelcomePage` (language first, then Sign in or Browse with an approximate-location
+  note, AUTH-02), `LoginPage` + `OtpPage` (`+91`, 6-digit code with autofill, resend after 30s,
+  WhatsApp fallback after 60s, demo code `123456` only when `VITE_DEMO=true`, AUTH-01),
+  `ConsentPage` (three independent data toggles plus a separate terms checkbox, AUTH-03/NFR-08),
+  `OnboardingProfilePage` (name, serviceable city, language).
+- **Discovery**: `HomePage` (live "Need it today" strip, occasion hubs, categories, search entry,
+  nearby shops, announcement bar, two-sparkle hero with three stats, partner marquee, offline
+  snapshot, BUY-01/BUY-15), `SearchPage` (text + Web Speech voice search behind feature
+  detection, size/colour/price/distance/ETA/fit filters, mobile bottom sheet, `aria-live` result
+  count, BUY-02), `OccasionPage` (ranking via `src/domain/ranking.ts`), `ShopProfilePage`.
+- **Orders and account**: `OrdersPage` (status chips with icon + text + colour and filters),
+  `OrderDetailPage` (details, timeline, Support, Return, disabled review block labelled
+  "Coming in phase 2", invoice summary labelled placeholder), `WishlistPage` (saved items and
+  sizes; back-in-stock and price-drop toggles disabled, BUY-12), `SupportPage` (chat, call,
+  human fallback, order link, buyer language, NFR-14), `ProfilePage`, `AddressesPage` (add, edit,
+  set default), `PaymentMethodsPage` (gateway tokens only, NFR-11), `LanguageSettingsPage`,
+  `PrivacyPage` (consent, JSON download, two-step deletion, BUY-17), `ProfileRolesPage`
+  (switch role without another OTP, AUTH-07).
+- **Guests**: wishlist save and checkout send a guest to `/login` with a return path (BUY-16).
+- **Routes**: canonical `/orders/:id` added beside the Phase 1 `/order/:id/*` aliases; lazy
+  imports for every new screen.
+- **Tests**: 24 files, **727 tests passing**. Requirement-named: `AUTH-01`, `AUTH-03`, `AUTH-07`,
+  `BUY-15`, `BUY-16`, `NFR-07`, `NFR-08`; `router.test.tsx` now covers every new route.
+- **Verification**: `npm run build`, `npm run lint`, `npm test` all pass; the production bundle has
+  no dev-only strings (`DemoPanel`, `/_style`, dev order helpers).
+- **TRACEABILITY.md**: Phase 2 IDs updated with routes/components and test paths.
+
+## Decisions (Phase 2)
+
+1. `src/domain/config.ts` holds static defaults a backend admin config replaces: cities, occasion
+   slugs, resend/WhatsApp timers and the demo OTP.
+2. OTP success derives the role by matching the phone against seeded shops and riders, defaulting
+   to buyer; `availableRoles` lets the account switch without a second OTP.
+3. Consent, onboarding and notification preferences persist with `settings`; wishlist and saved
+   sizes stay session-only (never localStorage).
+4. `src/lib/homeCache.ts` stores the last home snapshot in IndexedDB with an in-memory fallback so
+   the offline banner and cached stock work even where IndexedDB is unavailable.
+5. Guest redirects carry a `returnTo` path validated by `src/lib/returnTo.ts` (local paths only).
+6. Occasion ranking is pure logic in `src/domain/ranking.ts`, ties broken by product `id`.
+7. Search keeps the input in step with the URL via a render-time derived-state check rather than a
+   `setState` effect, to satisfy the `react-hooks/set-state-in-effect` rule.
+
+## Known Bugs / Gaps (Phase 2)
+
+- `public/fonts/` still has no real woff2 files (Archivo, Satoshi, Noto Sans Devanagari).
+- Payment "add new method" and wishlist alerts are deliberately disabled placeholders (phase 2
+  behaviour is out of scope); `BUY-17` and `NFR-11` have route coverage but no focused test yet.
+- Voice search depends on the browser Web Speech API; the button is hidden when it is absent.
+
