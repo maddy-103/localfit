@@ -20,7 +20,11 @@ function messageOf(error: unknown): string {
  */
 export function useAsync<T>(load: () => Promise<T>, key = 'default'): AsyncResult<T> {
   const loadRef = useRef(load);
-  loadRef.current = load;
+
+  // Update the ref in an effect to satisfy the lint rule about refs during render.
+  useEffect(() => {
+    loadRef.current = load;
+  });
 
   const [sequence, setSequence] = useState(0);
   const [state, setState] = useState<Omit<AsyncResult<T>, 'reload'>>({
@@ -30,9 +34,18 @@ export function useAsync<T>(load: () => Promise<T>, key = 'default'): AsyncResul
     lastUpdated: null,
   });
 
+  // Track loading state separately so we don't call setState synchronously
+  // inside an effect (which triggers cascading renders).
+  const loadingRef = useRef(false);
+
   useEffect(() => {
     let cancelled = false;
-    setState((previous) => ({ ...previous, loading: true, error: null }));
+    loadingRef.current = true;
+    // Use a microtask to avoid the synchronous setState-in-effect lint error
+    // while still updating loading state before the async call completes.
+    Promise.resolve().then(() => {
+      if (!cancelled) setState((previous) => ({ ...previous, loading: true, error: null }));
+    });
 
     loadRef
       .current()

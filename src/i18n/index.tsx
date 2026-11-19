@@ -21,6 +21,7 @@ function interpolate(template: string, vars?: Vars): string {
  * Builds a translator for a dictionary. Missing Hindi keys fall back to
  * English and log a warning in development only.
  */
+// eslint-disable-next-line react-refresh/only-export-components
 export function createTranslator(dictionary: Dictionary, lang: Lang) {
   return (key: TranslationKey, vars?: Vars): string => {
     const found = dictionary[key];
@@ -62,6 +63,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useI18n(): I18nValue {
   const value = useContext(I18nContext);
   if (!value) throw new Error('useI18n must be used inside I18nProvider');

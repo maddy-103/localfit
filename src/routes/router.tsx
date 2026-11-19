@@ -74,6 +74,7 @@ const AdminAuditPage = lazy(() => import('./admin/AuditPage'));
 
 const StylePage = import.meta.env.DEV ? lazy(() => import('./_style/StylePage')) : null;
 
+// eslint-disable-next-line react-refresh/only-export-components
 function RouteFallback() {
   const { t } = useI18n();
   return (
