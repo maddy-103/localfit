@@ -221,11 +221,35 @@ export interface Order {
 export interface PlaceCheckoutInput {
   paymentMethod: Order['paymentMethod'];
   addressId?: string;
+  /** The UI cannot submit until the terms have been shown and ticked (BUY-08). */
+  termsAccepted?: boolean;
 }
 
 export interface PlaceCheckoutResult {
   checkoutId: string;
   orders: Order[];
+  orderIds: string[];
+}
+
+/** One bag group per shop, with the ETA and totals shown before paying. */
+export interface CheckoutGroup {
+  shop: Shop;
+  lines: BagLine[];
+  products: Product[];
+  kind: OrderKind;
+  etaMin: [number, number];
+  itemsPaise: number;
+  deliveryFeePaise: number;
+  totalPaise: number;
+}
+
+export interface CheckoutView {
+  groups: CheckoutGroup[];
+  addresses: Address[];
+  buyer: Buyer | null;
+  itemsPaise: number;
+  deliveryFeePaise: number;
+  totalPaise: number;
 }
 
 export interface OtpResult {
@@ -257,6 +281,8 @@ export interface Api {
   listAdmins(): Promise<AdminUser[]>;
   listAddresses(buyerId?: string): Promise<Address[]>;
   getBag(): Promise<Bag>;
+  /** Bag groups, saved addresses and buyer eligibility for checkout. */
+  getCheckout(): Promise<CheckoutView>;
   addToBag(line: Omit<BagLine, 'id' | 'heldUntil'>): Promise<Bag>;
   updateBagLine(id: string, patch: Partial<Pick<BagLine, 'qty' | 'tryAtDoor'>>): Promise<Bag>;
   removeBagLine(id: string): Promise<Bag>;

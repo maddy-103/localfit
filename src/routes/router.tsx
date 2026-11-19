@@ -114,6 +114,11 @@ export const routes: RouteObject[] = [
       { path: 'order/:id/track', element: signedIn(<OrderTrackPage />) },
       { path: 'order/:id/trial', element: signedIn(<OrderTrialPage />) },
       { path: 'order/:id/return', element: signedIn(<OrderReturnPage />) },
+      // Canonical links use /orders/:id; the older singular paths stay as aliases.
+      { path: 'orders/:id/confirmed', element: signedIn(<OrderConfirmedPage />) },
+      { path: 'orders/:id/track', element: signedIn(<OrderTrackPage />) },
+      { path: 'orders/:id/trial', element: signedIn(<OrderTrialPage />) },
+      { path: 'orders/:id/return', element: signedIn(<OrderReturnPage />) },
       { path: 'wishlist', element: signedIn(<WishlistPage />) },
       { path: 'support', element: page(<SupportPage />) },
       { path: 'profile', element: signedIn(<ProfilePage />) },

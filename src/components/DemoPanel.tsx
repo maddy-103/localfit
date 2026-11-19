@@ -3,6 +3,15 @@ import { useI18n } from '@/i18n';
 import { useAppStore, type SessionUser } from '@/store/appStore';
 import { devClockOffset, devFastForward, devResetClock } from '@/lib/clock';
 import { mockFailuresEnabled, setMockFailures } from '@/api/mock';
+import {
+  devAdvanceOrder,
+  devCreateTryAtDoorOrder,
+  devResetOrders,
+  devRunToDelivered,
+  devVerifyOtp,
+  devWrongOtp,
+} from '@/api/dev';
+import type { Order } from '@/api/types';
 import { Button } from './ui/Button';
 import { Card } from './ui/Card';
 import { IconButton } from './ui/IconButton';
@@ -67,6 +76,18 @@ export default function DemoPanel() {
   const [open, setOpen] = useState(false);
   const [failures, setFailures] = useState(() => mockFailuresEnabled());
   const [offset, setOffset] = useState(() => devClockOffset());
+  const [order, setOrder] = useState<Order | null>(null);
+  const [orderError, setOrderError] = useState<string | null>(null);
+
+  const runOrderAction = (work: () => Order | Promise<Order>) => {
+    setOrderError(null);
+    void Promise.resolve()
+      .then(work)
+      .then(setOrder)
+      .catch((cause: unknown) =>
+        setOrderError(cause instanceof Error ? cause.message : t('demo.orderError')),
+      );
+  };
 
   if (!open) {
     return (
@@ -151,6 +172,66 @@ export default function DemoPanel() {
           setMockFailures(checked);
         }}
       />
+
+      <div className={styles.group}>
+        <p className={styles.groupLabel}>{t('demo.orders')}</p>
+        <p className={styles.offset}>
+          {order ? t('demo.currentOrder', { id: order.id, state: order.state }) : t('demo.noOrder')}
+        </p>
+        <div className={styles.row}>
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={() => runOrderAction(() => devCreateTryAtDoorOrder())}
+          >
+            {t('demo.createOrder')}
+          </Button>
+          <Button
+            size="sm"
+            variant="outline"
+            disabled={!order}
+            onClick={() => order && runOrderAction(() => devAdvanceOrder(order.id))}
+          >
+            {t('demo.advance')}
+          </Button>
+          <Button
+            size="sm"
+            variant="outline"
+            disabled={!order}
+            onClick={() => order && runOrderAction(() => devRunToDelivered(order.id))}
+          >
+            {t('demo.runToDelivered')}
+          </Button>
+          <Button
+            size="sm"
+            variant="ghost"
+            disabled={!order}
+            onClick={() => order && runOrderAction(() => devVerifyOtp(order.id))}
+          >
+            {t('demo.verifyOtp')}
+          </Button>
+          <Button
+            size="sm"
+            variant="ghost"
+            disabled={!order}
+            onClick={() => order && runOrderAction(() => devWrongOtp(order.id))}
+          >
+            {t('demo.wrongOtp')}
+          </Button>
+          <Button
+            size="sm"
+            variant="ghost"
+            onClick={() => {
+              devResetOrders();
+              setOrder(null);
+              setOrderError(null);
+            }}
+          >
+            {t('demo.resetOrders')}
+          </Button>
+        </div>
+        {orderError ? <p className={styles.offset}>{orderError}</p> : null}
+      </div>
     </Card>
   );
 }

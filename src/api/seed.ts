@@ -454,4 +454,15 @@ export const addresses: Address[] = [
     lat: 12.9352,
     lng: 77.6245,
   },
+  {
+    id: 'addr-ananya-far',
+    buyerId: 'buyer-ananya',
+    label: 'Out of town',
+    line1: '12, Left Bank Layout, Hosur Road',
+    area: 'Electronic City',
+    city: 'Bengaluru',
+    pincode: '560100',
+    lat: 12.8452,
+    lng: 77.6602,
+  },
 ];

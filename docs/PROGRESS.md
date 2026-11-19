@@ -36,3 +36,48 @@
 - Order tracking page (BUY-09): status timeline, map placeholder, ETA, rider contact.
 - Trial window page (BUY-10): keep/return toggles, timer, confirm decisions.
 - Do NOT rewrite existing domain or mock code — extend it.
+
+## Done (Phase 1 — try-at-door buyer flow, complete 2026-11-19)
+
+- **Buyer screens**: `ProductPage`, `BagPage`, `CheckoutPage`, `OrderConfirmedPage`,
+  `OrderTrackPage`, `OrderTrialPage`, `OrderReturnPage` plus shared `src/components/buyer/` parts.
+- **Routes**: `/product/:id`, `/bag`, `/checkout`, `/orders/:id/confirmed|track|trial|return` added as
+  aliases beside the existing `/order/:id/*` routes so old deep links keep working.
+- **Checkout**: exact SPEC 8.2 terms, on-screen + ticked Pay gate, address radius check, COD rules,
+  one payment authorization split across shop orders, hold-vs-charge and refund timing.
+- **Tracking/trial/return**: mock GPS + once-per-minute SR ETA announcement, 3-strike OTP support
+  path, 15-minute timer from stored start, keep/return + size-swap records, default-return lock,
+  reason/photo/pickup return request.
+- **Dev panel**: existing DEV-only `DemoPanel` extended with order create/advance/run/OTP/reset;
+  production `dist` has no dev helper strings.
+- **Tests**: 16 files, **702 tests passing**. Requirement-named: `BUY-04`, `BUY-08`, `SPEC-13`,
+  `TRIAL-02`, `TRIAL-03`, `sizeSwap`, `fullDemoPath`; checkout splitting lives in `checkoutSplit.test.ts`
+  (SPEC BUY-04 is the product ETA requirement, so it has its own screen test).
+- **Verification**: `npm run build`, `npm run lint`, `npm test` all pass; prod bundle dev-string grep clean.
+- **TRACEABILITY.md**: updated with the implemented buyer-flow IDs, files and test paths.
+
+## Decisions (Phase 1)
+
+1. `/orders/:id/*` are aliases, not replacements, so no existing route/test changes were needed.
+2. Checkout keeps `RoleGuard requiresAuth`; the in-page sign-in stub is defensive and guests still
+   go to `/login`, per resolved ambiguity 15.
+3. Pay is enabled only after the terms block is visibly on screen (`IntersectionObserver`, with a
+   jsdom fallback) and its checkbox is ticked.
+4. `orderMachine` now allows the buyer actor for `ARRIVED->OTP_VERIFIED` and the two
+   `OTP_VERIFIED` follow-ups: the buyer enters the OTP and both events are written with that actor.
+5. Payment is authorized once per checkout; each shop order stores the shared reference with a
+   `:<shopId>` suffix and its own share/ETA/settlement.
+6. `BUY-04.test.tsx` asserts the ETA appears before Add to bag. The former misnamed checkout test
+   was renamed to `checkoutSplit.test.ts` (resolved ambiguity 9).
+
+## Known Bugs / Gaps
+
+- `public/fonts/` still has no real woff2 files (Archivo, Satoshi, Noto Sans Devanagari).
+- No dedicated tests yet for the product size-guard announcement, COD gating, or bag grouping;
+  these are marked `(pending)` in `TRACEABILITY.md`.
+- Tracking uses seeded mock GPS; a real backend replaces it via `api` (no screen changes).
+
+## Next Steps
+
+- Phase 2: shop console, rider console and admin flows; buyer home page; live backend adapter.
+- Add the pending focused tests above before touching checkout/payment rules again.

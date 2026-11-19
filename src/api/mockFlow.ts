@@ -83,20 +83,30 @@ export async function checkoutFromBag(input: PlaceCheckoutInput): Promise<PlaceC
   const createdAt = nowIso();
   const created: Order[] = [];
 
-  for (const [shopId, lines] of byShop) {
+  const previews = [...byShop.entries()].map(([shopId, lines]) => {
     const shop = shops.find((entry) => entry.id === shopId);
     if (!shop) throw new Error('A shop in your bag is no longer available.');
     if (!insideServiceArea(address, shop)) {
       throw new Error(`${shop.name} does not deliver to ${address.area} yet.`);
     }
-
     const kind: Order['kind'] = lines.some((line) => line.tryAtDoor) ? 'try_at_door' : 'standard';
     const orderLines: OrderLine[] = lines.map((line) =>
       bagLineOf(line, kind === 'try_at_door' ? 'pending' : null),
     );
     const itemsPaise = orderLinesTotal(orderLines);
     const feePaise = deliveryFeePaise(itemsPaise);
-    const totalPaise = itemsPaise + feePaise;
+    return { shopId, shop, kind, orderLines, itemsPaise, feePaise, totalPaise: itemsPaise + feePaise };
+  });
+
+  // One payment covers the checkout; each shop order records its share of it.
+  const checkoutAuthorization = await mockPaymentAdapter.authorize({
+    method: input.paymentMethod,
+    amountPaise: previews.reduce((sum, preview) => sum + preview.totalPaise, 0),
+    isTryAtDoor: previews.some((preview) => preview.kind === 'try_at_door'),
+  });
+
+  for (const preview of previews) {
+    const { shopId, shop, kind, orderLines, itemsPaise, feePaise, totalPaise } = preview;
 
     const codAllowed = canUseCod({
       isTryAtDoor: kind === 'try_at_door',
@@ -112,12 +122,13 @@ export async function checkoutFromBag(input: PlaceCheckoutInput): Promise<PlaceC
       );
     }
 
-    const authorization = await mockPaymentAdapter.authorize({
-      method: input.paymentMethod,
-      amountPaise: totalPaise,
-      isTryAtDoor: kind === 'try_at_door',
-    });
-    const payment: OrderPayment = { ...authorization, refundPaise: 0 };
+    const payment: OrderPayment = {
+      ...checkoutAuthorization,
+      authorizedPaise: checkoutAuthorization.mode === 'none' ? 0 : totalPaise,
+      capturedPaise: checkoutAuthorization.mode === 'charge' ? totalPaise : 0,
+      reference: `${checkoutAuthorization.reference}:${shopId}`,
+      refundPaise: 0,
+    };
 
     const id = uid('order');
     const order: Order = {
@@ -159,9 +170,11 @@ export async function checkoutFromBag(input: PlaceCheckoutInput): Promise<PlaceC
   notify('bag', getState().bag);
   notify('orders', getState().orders.map((order) => decorateOrder(order)));
 
+  const orders = created.map((order) => decorateOrder(order));
   return {
     checkoutId,
-    orders: created.map((order) => decorateOrder(order)),
+    orders,
+    orderIds: orders.map((order) => order.id),
   };
 }
 

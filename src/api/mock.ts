@@ -1,5 +1,6 @@
-import type { Api, Product } from './types';
+import type { Api, CheckoutGroup, CheckoutView, Product } from './types';
 import { now } from '@/lib/clock';
+import { deliveryFeePaise } from '@/domain/payments';
 import {
   availableStock,
   decorateOrder,
@@ -9,6 +10,7 @@ import {
   respond,
   setBagState,
   subscribeInternal,
+  variantFor,
 } from './mockStore';
 import { checkoutFromBag, submitOtpFlow } from './mockFlow';
 import { lockTrialFlow, requestReturnFlow, requestSwapFlow, setDecisionFlow } from './mockTrial';
@@ -106,6 +108,59 @@ export const mockApi: Api = {
       const pruned = pruneExpiredBag(bag);
       if (pruned !== bag) return setBagState(pruned);
       return bag;
+    });
+  },
+
+  async getCheckout(): Promise<CheckoutView> {
+    return respond(() => {
+      const bag = pruneExpiredBag(getState().bag);
+      const buyer = buyers.find((entry) => entry.id === 'buyer-ananya') ?? buyers[0] ?? null;
+      const byShop = new Map<string, CheckoutGroup>();
+
+      for (const line of bag.lines) {
+        const product = products.find((entry) => entry.id === line.productId);
+        const shop = shops.find((entry) => entry.id === product?.shopId);
+        if (!product || !shop) continue;
+        let group = byShop.get(shop.id);
+        if (!group) {
+          group = {
+            shop: { ...shop },
+            lines: [],
+            products: [],
+            kind: 'standard',
+            etaMin: [...shop.etaMin],
+            itemsPaise: 0,
+            deliveryFeePaise: 0,
+            totalPaise: 0,
+          };
+          byShop.set(shop.id, group);
+        }
+        const { variant } = variantFor(line.productId, line.variantId);
+        group.lines.push({ ...line });
+        if (!group.products.some((entry) => entry.id === product.id)) {
+          group.products.push({ ...product });
+        }
+        if (line.tryAtDoor) group.kind = 'try_at_door';
+        group.itemsPaise += (variant?.pricePaise ?? 0) * line.qty;
+      }
+
+      const groups = [...byShop.values()].map((group) => {
+        const fee = deliveryFeePaise(group.itemsPaise);
+        return { ...group, deliveryFeePaise: fee, totalPaise: group.itemsPaise + fee };
+      });
+      const itemsPaise = groups.reduce((sum, group) => sum + group.itemsPaise, 0);
+      const feePaise = groups.reduce((sum, group) => sum + group.deliveryFeePaise, 0);
+
+      return {
+        groups,
+        addresses: addresses
+          .filter((address) => (buyer ? address.buyerId === buyer.id : true))
+          .map((address) => ({ ...address })),
+        buyer: buyer ? { ...buyer } : null,
+        itemsPaise,
+        deliveryFeePaise: feePaise,
+        totalPaise: itemsPaise + feePaise,
+      };
     });
   },
 

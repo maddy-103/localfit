@@ -1,6 +1,7 @@
 import type {
   Api,
   Bag,
+  CheckoutView,
   Order,
   OtpResult,
   PlaceCheckoutInput,
@@ -58,6 +59,9 @@ export const httpApi: Api = {
   },
   getBag() {
     return request<Bag>('/bag');
+  },
+  getCheckout() {
+    return request<CheckoutView>('/checkout');
   },
   addToBag(line) {
     return request<Bag>('/bag/lines', { method: 'POST', body: JSON.stringify(line) });
