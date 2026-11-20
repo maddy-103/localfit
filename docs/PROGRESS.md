@@ -200,3 +200,76 @@
 - Drop real woff2 font files into `public/fonts/` and switch `VITE_API_MODE=http` against a backend;
   the HTTP shop adapter is already in place, so screens do not change.
 
+## Plan (Phase 4 — rider console)
+
+- **Requirement IDs**: AUTH-05, RIDE-01–RIDE-09, TRIAL-02, NFR-04, NFR-06, NFR-07,
+  SPEC sections 6.3, 8.4, 7.3 and 13.
+- **Files**: `src/domain/{rider,locationPolicy}.ts`, `src/api/{types,mockRiderSetup,mockRiderOps,mockRiderApi,httpRiderApi}.ts`
+  wired into `mock.ts`/`http.ts`, `src/components/rider/*`, `src/routes/rider/*`,
+  `src/routes/auth/{RegisterRiderPage,RegisterRiderStatusPage,OtpPage}.tsx`, router, `rider.module.css`.
+- **Tests**: location batching, three wrong OTPs, threshold-gated claim with evidence, shared trial
+  timer, rider decision confirmation, and the pickup → try-at-door drop → closed-trip demo path;
+  plus AUTH-05 registration, NFR-06 chip and route coverage.
+
+## Done (Phase 4 — basic-Android rider console, complete 2026-11-20)
+
+- **Registration and approval** (AUTH-05): `/register/rider` records document placeholders, runs a
+  fixed mock selfie match and declares the vehicle; `/register/rider/status` shows approval progress.
+  `RiderApprovalGate` locks every `/rider/*` route until approval, and `/login` sends unapproved riders
+  to the status page. The demo rider is seeded approved so the console stays reachable.
+- **Basic-Android layout**: one main task per screen, task text at 18 px and up, a fixed bottom action
+  bar (`RiderActionBar`), 44 px touch targets and a single primary action.
+- **Task flow** (RIDE-01–05, RIDE-09): `/rider/tasks` orders pickups before drops with maps links from
+  coordinates. Pickup checks code + item scan + photo. Drop walks arrival, buyer OTP (three wrong codes
+  log `otp_failed` and open support), handover photo, trial timer, decision status, phone fallback and
+  trip close. Return pickups are a separate task type with their own scan and shop handover.
+- **Waiting and earnings** (RIDE-05/06): arrival starts a single clock-backed timer; a claim is refused
+  before the configurable 10-minute threshold and stores its evidence. Earnings show per-trip pay,
+  each bonus line and the weekly payout date.
+- **Safety and profile** (RIDE-07): press-and-hold SOS sends GPS coordinates and opens the support line;
+  late-night guidance starts after the configurable hour. Profile shows document, vehicle and language
+  status.
+- **Location batching** (RIDE-08): `pingDecision()` sends no pings when idle, one per 60 s when assigned
+  and one per 15 s in transit; order states map to those phases in `tripPhaseForOrderState()`.
+- **Offline queueing** (NFR-04): failed pickup/drop actions are stored locally, marked "Pending sync" on
+  the task and replayed on reconnect, keeping the same API contract.
+- **API**: a `RiderApi` contract in `src/api/types.ts` implemented by `mockRiderApi.ts` and
+  `httpRiderApi.ts`; `commitOrder()` publishes `rider-tasks` so cross-tab changes appear within 3 s.
+  New order events (`handover_photo`, `return_scanned`, `rider_confirmed`) are written through the machine.
+- **Tests**: 38 files, **752 tests passing** in the final run. New requirement-named files:
+  `RIDE-01-demo-drop.test.ts`, `RIDE-03-otp.test.ts`, `RIDE-05-compensation.test.ts`,
+  `TRIAL-02-rider-confirm.test.ts`, `TRIAL-02-timer.test.tsx`, `AUTH-05.test.tsx`,
+  `NFR-06.test.tsx`, `locationPolicy.test.ts`.
+- **Verification**: `npm run build`, `npm run lint` and `npm test` all pass.
+
+## Decisions (Phase 4)
+
+1. The Phase 3 adapter pattern was extended with `RiderApi`; screens import only `api` from
+   `src/api/client`, so the HTTP backend needs no screen changes.
+2. `RETURN_IN_PROGRESS` from SPEC section 10 stays normalised to `RETURN_PICKED`; an extra
+   `RETURN_PICKED` task lets the rider scan and hand returns over at the shop (RIDE-09).
+3. `RETURN_PICKED -> RETURN_RECEIVED` by a rider needs a scan note on the event; a shop actor does not.
+4. `collectPickup()` commits `PICKED_UP` and `IN_TRANSIT` together, so the rider's next screen is the
+   drop. Both events remain in the timeline.
+5. Rider and buyer timers both read `order.trialEndsAt` through `src/lib/clock.ts`; the rider can lock
+   with a photo and an explicit note when the buyer never answers, and the action is idempotent.
+6. Compensation claims are idempotent per order; the stored evidence carries the elapsed/threshold
+   times, GPS and OTP attempt count at claim time.
+7. `pingDecision()` is a pure scheduler helper; no location upload worker exists until a real backend
+   supplies one.
+
+## Known Bugs / Gaps (Phase 4)
+
+- `public/fonts/` still has no real woff2 files (Archivo, Satoshi, Noto Sans Devanagari).
+- RIDE-08 is a tested policy only; there is no device location upload worker in the mock build.
+- RIDE-06/07 have route coverage rather than a dedicated interaction test per screen.
+- Admin console (ADM-01–ADM-10) and its config screens remain priority-S/L placeholders or stubs.
+- Photo, scan and SOS "camera/GPS" affordances are placeholders by design until real device APIs exist.
+
+## Next Steps (Phase 5)
+
+- Admin console: shop verification, order oversight, disputes/refunds, config and staff roles,
+  including the second-super-admin approval rule.
+- Add focused interaction tests for earnings, safety and the remaining `(pending)` traceability rows.
+- Drop real woff2 fonts into `public/fonts/` and exercise `VITE_API_MODE=http` against a backend.
+

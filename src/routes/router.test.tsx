@@ -83,6 +83,7 @@ const PUBLIC_ROUTES = [
   '/consent',
   '/register/shop',
   '/register/rider',
+  '/register/rider/status',
   '/admin/login',
   '/_style',
 ];

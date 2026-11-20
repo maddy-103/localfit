@@ -74,12 +74,23 @@ export default function OtpPage() {
       availableRoles: ['buyer', 'shop', 'rider'],
     });
 
+    // AUTH-05: an unapproved rider goes straight to the approval status page.
+    let target = returnTo;
+    if (role === 'rider') {
+      const registration = await api.getRiderRegistration();
+      if (registration?.status !== 'approved') {
+        navigate('/register/rider/status', { replace: true });
+        return;
+      }
+      if (!target.startsWith('/rider')) target = '/rider';
+    }
+
     if (!consent.termsAccepted) {
-      navigate('/consent', { state: { returnTo }, replace: true });
+      navigate('/consent', { state: { returnTo: target }, replace: true });
     } else if (!onboarded) {
-      navigate('/onboarding/profile', { state: { returnTo }, replace: true });
+      navigate('/onboarding/profile', { state: { returnTo: target }, replace: true });
     } else {
-      navigate(returnTo, { replace: true });
+      navigate(target, { replace: true });
     }
   };
 

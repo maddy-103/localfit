@@ -70,6 +70,9 @@ export type OrderEventAction =
   | 'swap_confirmed'
   | 'otp_failed'
   | 'support_opened'
+  | 'handover_photo'
+  | 'return_scanned'
+  | 'rider_confirmed'
   | 'hold_released'
   | 'refund_initiated';
 
@@ -184,7 +187,9 @@ const ACTOR_RULES: Partial<Record<TransitionKey, readonly ActorRole[]>> = {
   'DELIVERED->SETTLED': ['admin'],
   'RETURN_REQUESTED->RETURN_PICKED': ['rider'],
   'RETURN_REQUESTED->RETURN_REJECTED': ['admin'],
-  'RETURN_PICKED->RETURN_RECEIVED': ['shop'],
+  // RIDE-09: the rider scans and hands returned items over at the counter;
+  // the shop also records its own receipt through inspectReturn().
+  'RETURN_PICKED->RETURN_RECEIVED': ['shop', 'rider'],
   'RETURN_RECEIVED->REFUNDED': ['admin'],
   'RETURN_RECEIVED->DISPUTED': ['shop', 'buyer'],
   'DISPUTED->RESOLVED': ['admin'],
@@ -259,6 +264,11 @@ function checkGuards(order: Order, to: OrderState, ctx: TransitionContext): void
   // Rider closes a delivery with a handover photo (RIDE-03).
   if (to === 'DELIVERED' && ctx.actor.role === 'rider' && !ctx.photoIds?.length) {
     throw new InvalidTransitionError(from, to, 'Delivery requires a handover photo');
+  }
+
+  // RIDE-09: handover at the shop needs the scanned return codes on the event.
+  if (to === 'RETURN_RECEIVED' && ctx.actor.role === 'rider' && !ctx.note) {
+    throw new InvalidTransitionError(from, to, 'Return handover requires a scan record');
   }
 }
 

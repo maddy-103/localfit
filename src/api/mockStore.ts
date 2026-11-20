@@ -1,18 +1,26 @@
 import { del, get, set } from 'idb-keyval';
 import { now, nowIso } from '@/lib/clock';
+import { WAITING_COMPENSATION_MS, LATE_NIGHT_HOUR } from '@/domain/sla';
 import { availableToBuy } from '@/domain/stock';
 import type {
   Bag,
   BagLine,
+  CompensationClaim,
   ConflictRecord,
   ListingDraft,
   Order,
   OrderLine,
   OrderRider,
   Product,
+  QueuedRiderAction,
+  RiderConfig,
+  RiderPresence,
+  RiderRegistration,
   ShopRegistration,
   ShopSettings,
+  SosAlert,
   Variant,
+  WaitingSession,
 } from './types';
 import { addresses, products, riders, shops } from './seed';
 
@@ -37,6 +45,14 @@ export interface MockState {
   /** Per-variant stock, price and visibility changes made in the shop console. */
   overrides: Record<string, VariantOverride>;
   publishedProducts: Product[];
+  /** Rider console state. Persisted in IndexedDB with the rest of the mock. */
+  riderRegistration: RiderRegistration;
+  riderPresence: RiderPresence;
+  riderConfig: RiderConfig;
+  waitingSessions: WaitingSession[];
+  compensationClaims: CompensationClaim[];
+  sosAlerts: SosAlert[];
+  riderQueue: QueuedRiderAction[];
 }
 
 export const defaultShopSettings = (): ShopSettings => ({
@@ -66,6 +82,33 @@ export const defaultRegistration = (): ShopRegistration => ({
   updatedAt: '2026-11-16T09:00:00.000Z',
 });
 
+/** Approved demo rider so /rider stays reachable without onboarding. */
+export const defaultRiderRegistration = (): RiderRegistration => ({
+  riderId: riders[0]?.id ?? 'rider-arjun',
+  fullName: riders[0]?.name ?? 'Arjun Kumar',
+  phone: riders[0]?.phone ?? '+91 98480 22011',
+  city: 'Bengaluru',
+  vehicleType: 'scooter',
+  vehicleNumber: 'KA 03 MN 4821',
+  documents: {
+    idProof: { name: 'aadhaar.jpg', type: 'image/jpeg', size: 210_000 },
+    licence: { name: 'driving-licence.jpg', type: 'image/jpeg', size: 190_000 },
+    selfie: { name: 'selfie.jpg', type: 'image/jpeg', size: 160_000 },
+  },
+  selfieMatched: true,
+  status: 'approved',
+  updatedAt: '2026-11-16T09:00:00.000Z',
+});
+
+export const defaultRiderConfig = (): RiderConfig => ({
+  waitingCompensationMs: WAITING_COMPENSATION_MS,
+  compensationPaise: 8_000,
+  lateNightHour: LATE_NIGHT_HOUR,
+  lateNightBonusPaise: 3_000,
+  tryAtDoorBonusPaise: 2_000,
+  supportPhone: '1800 123 4567',
+});
+
 export function emptyState(): MockState {
   return {
     bag: emptyBag(),
@@ -76,6 +119,13 @@ export function emptyState(): MockState {
     settings: defaultShopSettings(),
     overrides: {},
     publishedProducts: [],
+    riderRegistration: defaultRiderRegistration(),
+    riderPresence: { online: true, updatedAt: nowIso() },
+    riderConfig: defaultRiderConfig(),
+    waitingSessions: [],
+    compensationClaims: [],
+    sosAlerts: [],
+    riderQueue: [],
   };
 }
 
@@ -144,6 +194,13 @@ async function ensureLoaded(): Promise<void> {
             settings: saved.settings ?? defaultShopSettings(),
             overrides: saved.overrides ?? {},
             publishedProducts: saved.publishedProducts ?? [],
+            riderRegistration: saved.riderRegistration ?? defaultRiderRegistration(),
+            riderPresence: saved.riderPresence ?? { online: true, updatedAt: nowIso() },
+            riderConfig: saved.riderConfig ?? defaultRiderConfig(),
+            waitingSessions: saved.waitingSessions ?? [],
+            compensationClaims: saved.compensationClaims ?? [],
+            sosAlerts: saved.sosAlerts ?? [],
+            riderQueue: saved.riderQueue ?? [],
           };
         }
       } catch {
@@ -192,6 +249,8 @@ export function commitOrder(next: Order): Order {
   const publicOrder = decorateOrder(next);
   notify('orders', state.orders.map((order) => decorateOrder(order)));
   notify(`order:${next.id}`, publicOrder);
+  // RIDE-01: a rider task list must refresh as soon as its underlying order moves.
+  notify('rider-tasks', []);
   return publicOrder;
 }
 
@@ -218,6 +277,8 @@ export function resetStore(): void {
   notify('inventory', allProducts());
   notify('drafts', state.drafts);
   notify('conflicts', state.conflicts);
+  notify('rider-tasks', []);
+  notify('rider-queue', state.riderQueue);
 }
 
 export function setMockFailures(enabled: boolean): void {

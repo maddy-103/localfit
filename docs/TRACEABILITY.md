@@ -4,7 +4,7 @@ AUTH-01 | src/routes/auth/LoginPage.tsx, src/routes/auth/OtpPage.tsx | src/route
 AUTH-02 | src/routes/auth/WelcomePage.tsx, src/routes/buyer/HomePage.tsx | src/routes/router.test.tsx
 AUTH-03 | src/routes/auth/ConsentPage.tsx | src/routes/auth/__tests__/AUTH-03.test.tsx
 AUTH-04 | src/routes/auth/RegisterShopPage.tsx, src/routes/auth/RegisterShopStatusPage.tsx, src/components/shop/ShopRegistrationForm.tsx | src/routes/router.test.tsx (route coverage)
-AUTH-05 | src/routes/auth/RegisterRiderPage.tsx | (pending)
+AUTH-05 | src/routes/auth/RegisterRiderPage.tsx, src/routes/auth/RegisterRiderStatusPage.tsx, src/components/rider/RiderApprovalGate.tsx, src/routes/auth/OtpPage.tsx | src/routes/auth/__tests__/AUTH-05.test.tsx, src/routes/router.test.tsx
 AUTH-06 | src/routes/admin/AdminLoginPage.tsx | (pending)
 AUTH-07 | src/routes/buyer/ProfileRolesPage.tsx | src/routes/buyer/__tests__/AUTH-07.test.tsx
 BUY-01 | src/routes/buyer/HomePage.tsx, src/components/buyer/OccasionHub.tsx | src/routes/buyer/__tests__/BUY-15.test.tsx
@@ -37,15 +37,15 @@ SHOP-10 | src/routes/shop/*, src/components/shop/*, src/styles/tokens.css | src/
 SHOP-11 | src/routes/shop/DashboardPage.tsx (Phase2Card, "Coming in phase 2") | —
 SHOP-12 | src/routes/shop/PayoutsPage.tsx (Phase2Card, "Coming in phase 2") | —
 SHOP-13 | (phase 2 placeholder) | —
-RIDE-01 | src/routes/rider/RiderDashboard.tsx | (pending)
-RIDE-02 | src/routes/rider/RiderTaskPage.tsx | (pending)
-RIDE-03 | src/routes/rider/RiderTaskPage.tsx | (pending)
-RIDE-04 | src/routes/rider/RiderTaskPage.tsx, src/routes/buyer/OrderTrackPage.tsx | src/api/__tests__/fullDemoPath.test.ts
-RIDE-05 | src/routes/rider/RiderTaskPage.tsx | (pending)
-RIDE-06 | src/routes/rider/RiderEarningsPage.tsx | (pending)
-RIDE-07 | src/routes/rider/RiderSafetyPage.tsx | (pending)
-RIDE-08 | src/routes/rider/RiderDashboard.tsx | (pending)
-RIDE-09 | src/routes/rider/RiderTaskPage.tsx | (pending)
+RIDE-01 | src/routes/rider/DashboardPage.tsx, src/routes/rider/TasksPage.tsx, src/routes/rider/TaskPage.tsx, src/domain/rider.ts | src/api/__tests__/RIDE-01-demo-drop.test.ts, src/routes/router.test.tsx
+RIDE-02 | src/routes/rider/PickupTaskView.tsx, src/components/rider/CaptureField.tsx, src/api/mockRiderOps.ts | src/api/__tests__/RIDE-01-demo-drop.test.ts
+RIDE-03 | src/routes/rider/OtpStep.tsx, src/routes/rider/TrialStep.tsx, src/api/mockFlow.ts | src/api/__tests__/RIDE-03-otp.test.ts
+RIDE-04 | src/routes/rider/TaskPage.tsx, src/routes/buyer/OrderTrackPage.tsx | src/api/__tests__/RIDE-01-demo-drop.test.ts, src/api/__tests__/fullDemoPath.test.ts
+RIDE-05 | src/components/rider/WaitingTimer.tsx, src/routes/rider/OtpStep.tsx, src/api/mockRiderOps.ts | src/api/__tests__/RIDE-05-compensation.test.ts
+RIDE-06 | src/routes/rider/EarningsPage.tsx, src/domain/rider.ts | src/routes/router.test.tsx
+RIDE-07 | src/routes/rider/SafetyPage.tsx, src/components/rider/PressHoldButton.tsx, src/lib/gps.ts | src/routes/router.test.tsx
+RIDE-08 | src/domain/locationPolicy.ts, src/routes/rider/DashboardPage.tsx | src/domain/locationPolicy.test.ts
+RIDE-09 | src/routes/rider/ReturnPickupTaskView.tsx, src/routes/rider/CloseStep.tsx, src/domain/orderMachine.ts | src/api/__tests__/RIDE-01-demo-drop.test.ts, src/domain/orderMachine.test.ts
 ADM-01 | src/routes/admin/AdminDashboard.tsx | (pending)
 ADM-02 | src/routes/admin/AdminShopsPage.tsx | (pending)
 ADM-03 | src/routes/admin/AdminDisputesPage.tsx | (pending)
@@ -57,16 +57,16 @@ ADM-08 | src/routes/admin/AdminConfigPage.tsx | (pending)
 ADM-09 | src/components/RoleGuard.tsx, src/domain/permissions.ts | (pending)
 ADM-10 | src/routes/admin/AdminCampaignsPage.tsx (phase 2 placeholder) | —
 TRIAL-01 | src/domain/trial.ts, src/routes/buyer/OrderTrialPage.tsx | src/domain/trial.test.ts, src/api/__tests__/TRIAL-02.test.ts
-TRIAL-02 | src/routes/buyer/OrderTrialPage.tsx, src/components/buyer/EtaCountdown.tsx | src/api/__tests__/TRIAL-02.test.ts
+TRIAL-02 | src/routes/buyer/OrderTrialPage.tsx, src/components/buyer/EtaCountdown.tsx, src/routes/rider/TrialStep.tsx, src/components/rider/TrialTimer.tsx, src/api/mockRiderOps.ts | src/api/__tests__/TRIAL-02.test.ts, src/api/__tests__/TRIAL-02-rider-confirm.test.ts, src/routes/rider/__tests__/TRIAL-02-timer.test.tsx
 TRIAL-03 | src/api/mockTrial.ts, src/routes/buyer/OrderTrialPage.tsx | src/api/__tests__/TRIAL-03.test.ts, src/api/__tests__/sizeSwap.test.ts
 SPEC-13 | src/api/mockFlow.ts, src/api/mockTrial.ts, src/domain/orderMachine.ts | src/api/__tests__/SPEC-13.test.ts
 AMBIGUITY-9 | src/api/mockFlow.ts, src/api/types.ts | src/api/__tests__/checkoutSplit.test.ts
 AMBIGUITY-10 | src/domain/payments.ts, src/routes/buyer/CheckoutPage.tsx | (pending)
 AMBIGUITY-11 | src/domain/stock.ts, src/api/mockShopOps.ts | src/api/__tests__/SHOP-04-07.test.ts
 NFR-03 | src/api/mockStore.ts (BroadcastChannel inventory), src/routes/buyer/HomePage.tsx, src/routes/buyer/ProductPage.tsx, src/routes/buyer/SearchPage.tsx | src/routes/shop/__tests__/SHOP-03.test.tsx
-NFR-04 | src/api/mockShopSetup.ts (IndexedDB drafts), src/routes/shop/ListingNewPage.tsx | src/routes/shop/__tests__/SHOP-01.test.tsx
+NFR-04 | src/api/mockShopSetup.ts (IndexedDB drafts), src/routes/shop/ListingNewPage.tsx, src/components/rider/useRiderOfflineQueue.ts, src/api/mockRiderSetup.ts | src/routes/shop/__tests__/SHOP-01.test.tsx, src/api/__tests__/RIDE-01-demo-drop.test.ts
 NFR-05 | src/styles/tokens.css, src/routes/shop/shop.module.css | src/routes/shop/__tests__/SHOP-01.test.tsx
-NFR-06 | src/components/ui/StatusChip.tsx | (pending)
+NFR-06 | src/components/ui/StatusChip.tsx, src/components/rider/DecisionList.tsx, src/components/rider/WaitingTimer.tsx | src/components/ui/__tests__/NFR-06.test.tsx, src/routes/router.test.tsx
 NFR-07 | src/i18n/en.ts, src/i18n/hi.ts | src/i18n/NFR-07.test.ts
 NFR-08 | src/routes/auth/ConsentPage.tsx, src/routes/buyer/PrivacyPage.tsx | src/routes/buyer/__tests__/NFR-08.test.tsx
 NFR-11 | src/routes/buyer/PaymentMethodsPage.tsx, src/api/mock.ts | src/routes/buyer/__tests__/NFR-11.test.tsx

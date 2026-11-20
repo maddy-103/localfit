@@ -40,6 +40,7 @@ export function makeEvent(patch: {
   note?: string;
   lineId?: string;
   amountPaise?: number;
+  photoIds?: string[];
 }): OrderEvent {
   return {
     id: uid('evt'),
@@ -52,6 +53,7 @@ export function makeEvent(patch: {
     ...(patch.note ? { note: patch.note } : {}),
     ...(patch.lineId ? { lineId: patch.lineId } : {}),
     ...(patch.amountPaise !== undefined ? { amountPaise: patch.amountPaise } : {}),
+    ...(patch.photoIds?.length ? { photoIds: [...patch.photoIds] } : {}),
   };
 }
 

@@ -22,6 +22,9 @@ const ACTION_KEYS: Record<OrderEventAction, TranslationKey> = {
   swap_confirmed: 'timeline.swapConfirmed',
   otp_failed: 'timeline.otpFailed',
   support_opened: 'timeline.supportOpened',
+  handover_photo: 'timeline.handoverPhoto',
+  return_scanned: 'timeline.returnScanned',
+  rider_confirmed: 'timeline.riderConfirmed',
   hold_released: 'timeline.holdReleased',
   refund_initiated: 'timeline.refundInitiated',
 };

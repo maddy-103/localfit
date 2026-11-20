@@ -37,3 +37,57 @@ export interface ServiceArea {
 export function insideServiceArea(address: Coordinates, shop: ServiceArea): boolean {
   return distanceKm(address, shop) <= shop.serviceRadiusKm;
 }
+
+/* ------------------------------------------------------------------ */
+/* Location batching (RIDE-08)                                         */
+/* ------------------------------------------------------------------ */
+
+/** RIDE-08: fewer pings when idle, more only while actually in transit. */
+export type RiderTripPhase = 'idle' | 'assigned' | 'in_transit';
+
+/** RIDE-08: idle sends none, assigned one a minute, transit one every 15 s. */
+export const PING_INTERVAL_MS: Record<RiderTripPhase, number | null> = {
+  idle: null,
+  assigned: 60_000,
+  in_transit: 15_000,
+};
+
+export interface PingDecision {
+  phase: RiderTripPhase;
+  intervalMs: number | null;
+  shouldPing: boolean;
+  /** Milliseconds until the next ping; null when this phase never pings. */
+  nextInMs: number | null;
+}
+
+/**
+ * Pure batching decision for a trip phase. `lastPingAtMs` is null until the
+ * first ping. The caller (a future location worker) does the actual upload.
+ */
+export function pingDecision(
+  phase: RiderTripPhase,
+  lastPingAtMs: number | null,
+  atMs: number,
+): PingDecision {
+  const intervalMs = PING_INTERVAL_MS[phase];
+  if (intervalMs === null) {
+    return { phase, intervalMs: null, shouldPing: false, nextInMs: null };
+  }
+  if (lastPingAtMs === null) {
+    return { phase, intervalMs, shouldPing: true, nextInMs: intervalMs };
+  }
+  const elapsed = Math.max(0, atMs - lastPingAtMs);
+  return {
+    phase,
+    intervalMs,
+    shouldPing: elapsed >= intervalMs,
+    nextInMs: Math.max(0, intervalMs - elapsed),
+  };
+}
+
+/** Maps an order state to the RIDE-08 ping phase. */
+export function tripPhaseForOrderState(state: string): RiderTripPhase {
+  if (state === 'IN_TRANSIT') return 'in_transit';
+  if (['RIDER_ASSIGNED', 'PICKED_UP'].includes(state)) return 'assigned';
+  return 'idle';
+}

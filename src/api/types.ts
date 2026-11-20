@@ -1,5 +1,6 @@
-import type { OrderActor, OrderEvent, OrderKind, OrderState } from '@/domain/orderMachine';
+import type { GpsPoint, OrderActor, OrderEvent, OrderKind, OrderState } from '@/domain/orderMachine';
 import type { PaymentAuthorization, PaymentMethod } from '@/domain/payments';
+import type { RiderEarnings, RiderTask, WaitingEvidence } from '@/domain/rider';
 import type { SettlementReport } from '@/domain/settlements';
 import type { TrialDecision } from '@/domain/trial';
 
@@ -234,6 +235,10 @@ export interface Order {
   acceptsUntil?: string;
   /** Code the rider shows at pickup (SHOP-07). Hidden from buyer orders. */
   pickupOtp?: string;
+  /** Rider handover and return evidence (RIDE-02, RIDE-03, RIDE-09). */
+  handoverPhotoId?: string;
+  returnedScanCodes?: string[];
+  riderConfirmedAt?: string;
   swapRequests: SwapRequest[];
   returnRequest?: ReturnRequest;
 }
@@ -414,6 +419,115 @@ export interface CounterSaleResultApi {
   releasedBagLines: string[];
 }
 
+/* ------------------------------------------------------------------ */
+/* Rider console (AUTH-05, RIDE-01 to RIDE-09, NFR-04)                */
+/* ------------------------------------------------------------------ */
+
+export type RiderDocumentKind = 'idProof' | 'licence' | 'selfie';
+export type RiderApprovalStatus = 'not_started' | 'submitted' | 'pending' | 'approved' | 'rejected';
+
+export interface RiderDocument {
+  name: string;
+  type: string;
+  size: number;
+}
+
+export interface RiderRegistration {
+  riderId: string;
+  fullName: string;
+  phone: string;
+  city: string;
+  vehicleType: 'bike' | 'scooter' | 'cycle';
+  vehicleNumber: string;
+  documents: Record<RiderDocumentKind, RiderDocument | null>;
+  selfieMatched: boolean;
+  status: RiderApprovalStatus;
+  note?: string;
+  submittedAt?: string;
+  updatedAt: string;
+}
+
+export type SaveRiderRegistrationInput = Pick<
+  RiderRegistration,
+  'fullName' | 'phone' | 'city' | 'vehicleType' | 'vehicleNumber' | 'documents' | 'selfieMatched'
+> &
+  Partial<Pick<RiderRegistration, 'status' | 'note'>>;
+
+export interface SelfieMatchResult {
+  matched: boolean;
+  score: number;
+}
+
+export interface RiderPresence {
+  online: boolean;
+  updatedAt: string;
+}
+
+export interface WaitingSession {
+  orderId: string;
+  riderId: string;
+  startedAt: string;
+  arrivedAt: string;
+  gps?: GpsPoint;
+  otpAttempts: number;
+  claimed: boolean;
+}
+
+export interface CompensationClaim {
+  id: string;
+  orderId: string;
+  riderId: string;
+  amountPaise: number;
+  createdAt: string;
+  status: 'pending' | 'approved';
+  evidence: WaitingEvidence;
+}
+
+export interface RiderConfig {
+  waitingCompensationMs: number;
+  compensationPaise: number;
+  lateNightHour: number;
+  lateNightBonusPaise: number;
+  tryAtDoorBonusPaise: number;
+  supportPhone: string;
+}
+
+export interface SosAlert {
+  id: string;
+  riderId: string;
+  orderId?: string;
+  gps?: GpsPoint;
+  note?: string;
+  createdAt: string;
+  status: 'sent';
+}
+
+export interface QueuedRiderAction {
+  id: string;
+  orderId: string;
+  kind: 'pickup' | 'drop' | 'handoverPhoto';
+  payload: {
+    pickupOtp?: string;
+    scanCode?: string;
+    photoId?: string;
+    otp?: string;
+    actor: OrderActor;
+  };
+  createdAt: string;
+  status: 'pending' | 'synced';
+}
+
+export interface RiderTaskDetail {
+  task: RiderTask;
+  order: Order;
+}
+
+export interface RiderProfileView {
+  rider: Rider;
+  registration: RiderRegistration;
+  language: string;
+}
+
 export interface Api {
   listProducts(params?: { occasion?: string; q?: string; shopId?: string }): Promise<Product[]>;
   getProduct(id: string): Promise<Product | null>;
@@ -506,6 +620,41 @@ export interface Api {
   getShopSettings(shopId?: string): Promise<ShopSettings>;
   saveShopSettings(input: SaveShopSettingsInput): Promise<ShopSettings>;
 
+  /* Rider registration, tasks and safety (AUTH-05, RIDE-01 to RIDE-09). */
+  getRiderRegistration(): Promise<RiderRegistration | null>;
+  saveRiderRegistration(input: SaveRiderRegistrationInput): Promise<RiderRegistration>;
+  matchRiderSelfie(name: string): Promise<SelfieMatchResult>;
+  setRiderRegistrationStatus(
+    status: RiderApprovalStatus,
+    note?: string,
+  ): Promise<RiderRegistration>;
+  getRiderPresence(): Promise<RiderPresence>;
+  setRiderOnline(online: boolean): Promise<RiderPresence>;
+  getRiderConfig(): Promise<RiderConfig>;
+  getRiderProfile(): Promise<RiderProfileView>;
+  listRiderTasks(): Promise<RiderTask[]>;
+  getRiderTask(id: string): Promise<RiderTaskDetail | null>;
+  collectPickup(orderId: string, input: PickupInput, actor: OrderActor): Promise<Order>;
+  markArrived(orderId: string, actor: OrderActor, gps?: GpsPoint): Promise<Order>;
+  getWaitingSession(orderId: string): Promise<WaitingSession | null>;
+  claimCompensation(orderId: string, actor: OrderActor): Promise<CompensationClaim>;
+  recordHandoverPhoto(orderId: string, photoId: string, actor: OrderActor): Promise<Order>;
+  confirmRiderDecisions(orderId: string, actor: OrderActor, note?: string): Promise<Order>;
+  scanReturnedItems(orderId: string, scanCodes: string[], actor: OrderActor): Promise<Order>;
+  closeTrip(orderId: string, actor: OrderActor, photoId?: string): Promise<Order>;
+  handOverReturnAtShop(orderId: string, actor: OrderActor): Promise<Order>;
+  getRiderEarnings(): Promise<RiderEarnings>;
+  sendSos(
+    input: { orderId?: string; gps?: GpsPoint; note?: string },
+    actor: OrderActor,
+  ): Promise<SosAlert>;
+  /* NFR-04: actions made offline are kept locally until sync. */
+  queueRiderAction(
+    action: Omit<QueuedRiderAction, 'id' | 'createdAt' | 'status'>,
+  ): Promise<QueuedRiderAction[]>;
+  listQueuedRiderActions(): Promise<QueuedRiderAction[]>;
+  markRiderActionSynced(id: string): Promise<QueuedRiderAction[]>;
+
   subscribe(topic: string, callback: (data: unknown) => void): () => void;
 }
 
@@ -539,4 +688,33 @@ export type ShopApi = Pick<
   | 'getSettlementReport'
   | 'getShopSettings'
   | 'saveShopSettings'
+>;
+
+/** The rider half of Api, shared by the mock and HTTP adapters. */
+export type RiderApi = Pick<
+  Api,
+  | 'getRiderRegistration'
+  | 'saveRiderRegistration'
+  | 'matchRiderSelfie'
+  | 'setRiderRegistrationStatus'
+  | 'getRiderPresence'
+  | 'setRiderOnline'
+  | 'getRiderConfig'
+  | 'getRiderProfile'
+  | 'listRiderTasks'
+  | 'getRiderTask'
+  | 'collectPickup'
+  | 'markArrived'
+  | 'getWaitingSession'
+  | 'claimCompensation'
+  | 'recordHandoverPhoto'
+  | 'confirmRiderDecisions'
+  | 'scanReturnedItems'
+  | 'closeTrip'
+  | 'handOverReturnAtShop'
+  | 'getRiderEarnings'
+  | 'sendSos'
+  | 'queueRiderAction'
+  | 'listQueuedRiderActions'
+  | 'markRiderActionSynced'
 >;

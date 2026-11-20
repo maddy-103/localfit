@@ -6,6 +6,7 @@ import { AuthLayout } from '@/components/AuthLayout';
 import { ConsoleLayout } from '@/components/ConsoleLayout';
 import { RoleGuard } from '@/components/RoleGuard';
 import { ShopApprovalGate } from '@/components/shop/ShopApprovalGate';
+import { RiderApprovalGate } from '@/components/rider/RiderApprovalGate';
 import { Skeleton } from '@/components/ui/Skeleton';
 import styles from './router.module.css';
 
@@ -17,6 +18,7 @@ const ConsentPage = lazy(() => import('./auth/ConsentPage'));
 const RegisterShopPage = lazy(() => import('./auth/RegisterShopPage'));
 const RegisterShopStatusPage = lazy(() => import('./auth/RegisterShopStatusPage'));
 const RegisterRiderPage = lazy(() => import('./auth/RegisterRiderPage'));
+const RegisterRiderStatusPage = lazy(() => import('./auth/RegisterRiderStatusPage'));
 const AccessDeniedPage = lazy(() => import('./auth/AccessDeniedPage'));
 const NotFoundPage = lazy(() => import('./NotFoundPage'));
 
@@ -142,6 +144,7 @@ export const routes: RouteObject[] = [
           { path: 'register/shop', element: page(<RegisterShopPage />) },
           { path: 'register/shop/status', element: page(<RegisterShopStatusPage />) },
           { path: 'register/rider', element: page(<RegisterRiderPage />) },
+          { path: 'register/rider/status', element: page(<RegisterRiderStatusPage />) },
           { path: 'admin/login', element: page(<AdminLoginPage />) },
           { path: 'forbidden', element: page(<AccessDeniedPage />) },
         ],
@@ -171,7 +174,9 @@ export const routes: RouteObject[] = [
         path: 'rider',
         element: (
           <RoleGuard requiredRole="rider">
-            <ConsoleLayout role="rider" />
+            <RiderApprovalGate>
+              <ConsoleLayout role="rider" />
+            </RiderApprovalGate>
           </RoleGuard>
         ),
         children: [

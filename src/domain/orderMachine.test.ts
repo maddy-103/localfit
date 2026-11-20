@@ -64,6 +64,10 @@ function contextFor(
     ...(to === 'PICKED_UP' ? { photoIds: ['pickup-photo'] } : {}),
     ...(to === 'OTP_VERIFIED' ? { otpVerified: true } : {}),
     ...(to === 'DELIVERED' ? { photoIds: ['handover-photo'] } : {}),
+    // RIDE-09: a rider handover at the shop carries the scanned return codes.
+    ...(to === 'RETURN_RECEIVED' && actorRole === 'rider'
+      ? { note: 'Returned items scanned by the rider' }
+      : {}),
   };
 }
 
