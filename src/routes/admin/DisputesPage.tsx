@@ -6,9 +6,7 @@ import { AdminTable, type AdminColumn } from '@/components/admin/AdminTable';
 import { ReasonDialog } from '@/components/admin/ReasonDialog';
 import { useAdminActor } from '@/components/admin/useAdminActor';
 import { Button } from '@/components/ui/Button';
-import { Img } from '@/components/ui/Img';
 import { Select } from '@/components/ui/Select';
-import { Sheet } from '@/components/ui/Sheet';
 import { StatusChip } from '@/components/ui/StatusChip';
 import { disputeSla } from '@/domain/admin';
 import { useI18n } from '@/i18n';
@@ -16,6 +14,7 @@ import { formatDateTime, formatPaise } from '@/lib/format';
 import { useNow } from '@/lib/useNow';
 import { useAsync, useOnline } from '@/lib/useAsync';
 import styles from './admin.module.css';
+import { DisputeEvidenceSheet } from './DisputeEvidenceSheet';
 
 /** ADM-03 and SPEC section 13: SLA queue, full evidence and decisions. */
 export default function DisputesPage() {
@@ -167,71 +166,16 @@ export default function DisputesPage() {
         />
       </AdminStates>
 
-      <Sheet
-        open={viewing !== null}
+      <DisputeEvidenceSheet
+        caseItem={viewing}
+        canDecide={canAct('dispute.decide')}
         onClose={() => setViewing(null)}
-        title={t('admin.disputes.evidenceTitle')}
-      >
-        {viewing ? (
-          <div className={styles.stack}>
-            <p className={styles.strong}>{viewing.reason}</p>
-            <p className={styles.muted}>
-              {viewing.id} · {viewing.orderId} · {formatPaise(viewing.valuePaise)}
-            </p>
-            {viewing.evidence ? (
-              <>
-                <div className={styles.evidenceGrid}>
-                  {viewing.evidence.photos.map((photo) => (
-                    <div className={styles.photo} key={photo.alt}>
-                      <Img image={photo} />
-                    </div>
-                  ))}
-                </div>
-                <p className={styles.muted}>
-                  {t('admin.disputes.gps')}: {viewing.evidence.gps?.lat ?? t('admin.none')},{' '}
-                  {viewing.evidence.gps?.lng ?? t('admin.none')}
-                </p>
-                <p className={styles.muted}>
-                  {t('admin.disputes.otpAttempts')}: {viewing.evidence.otpAttempts}
-                </p>
-                <p className={styles.muted}>
-                  {t('admin.disputes.checkedAt')}: {formatDateTime(viewing.evidence.checkedAt)}
-                </p>
-                <h3 className={styles.panelTitle}>{t('admin.disputes.events')}</h3>
-                <ol className={styles.timeline}>
-                  {viewing.evidence.events.map((event) => (
-                    <li className={styles.timelineItem} key={event.id}>
-                      <span className={styles.timelineDot} aria-hidden="true" />
-                      <div className={styles.timelineBody}>
-                        <span className={styles.strong}>
-                          {event.from} → {event.to}
-                        </span>
-                        <span className={styles.muted}>
-                          {formatDateTime(event.timestamp)} · {event.actor.role}
-                        </span>
-                      </div>
-                    </li>
-                  ))}
-                </ol>
-              </>
-            ) : (
-              <p className={styles.notice}>{t('admin.disputes.restricted')}</p>
-            )}
-            {canAct('dispute.decide') && viewing.status !== 'decided' ? (
-              <Button
-                fullWidth
-                onClick={() => {
-                  setDecision('buyer_favoured');
-                  setDeciding(viewing);
-                  setViewing(null);
-                }}
-              >
-                {t('admin.disputes.decide')}
-              </Button>
-            ) : null}
-          </div>
-        ) : null}
-      </Sheet>
+        onDecide={(caseItem) => {
+          setDecision('buyer_favoured');
+          setDeciding(caseItem);
+          setViewing(null);
+        }}
+      />
 
       <ReasonDialog
         open={deciding !== null}

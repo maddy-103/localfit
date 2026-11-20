@@ -444,3 +444,25 @@
 - `httpApi: Api` type-checks; no production screen imports the mock directly. No live backend was
   available, so HTTP calls and realtime WebSocket/SSE were not exercised end to end.
 
+## Verification follow-up (2026-11-20)
+
+### Done
+
+- Audited the whole repository: no empty files, no stray temp files, no TODO/FIXME/debug logs, no
+  secrets, no emoji icons, generated tokens in sync, dependency tree consistent, and every test path
+  named in `docs/TRACEABILITY.md` exists.
+- Split the only two React component files over the AGENTS 250-line limit: `Icon.tsx` now imports
+  geometry from `iconPaths.tsx`, and `DisputesPage.tsx` renders the extracted
+  `DisputeEvidenceSheet.tsx`. Behaviour, copy and styles are unchanged.
+
+### Verification
+
+- `npm run i18n` (1,260 keys), `npm run css:tokens`, `npx tsc --noEmit`, `npm run lint`,
+  `npm run build`, `npm test` (44 files / 794 tests), `npm run smoke` (59 routes), `npm run axe`
+  (5/5 screens), `npm run test:e2e` (3/3) and `npm run qa:ui` were all re-run after the split and
+  pass. Initial JS remains 143.9 KiB gzip with no dev-only strings in `dist/`.
+- `router.tsx` is 263 lines but is route configuration, not a component. Six legacy raw pixel
+  spacing values remain in CSS (`-1px` border offsets, `2px`/`6px` gaps, `56px` chrome padding);
+  they were left alone because changing them would alter the agreed pixel layout, and the token
+  guard already enforces colours, radii, fonts and font sizes.
+
