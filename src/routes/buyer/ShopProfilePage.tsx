@@ -50,7 +50,7 @@ export default function ShopProfilePage() {
                 <p className={styles.muted}>{shop.area}, {shop.city}</p>
                 <p>{t('shop.distance', { distance: shop.distanceKm.toFixed(1) })}</p>
                 <p>{t('shop.hours')}: {shop.hours}</p>
-                <p>{t('shop.radius')}: {shop.serviceRadiusKm} km</p>
+                <p>{t('shop.radius')}: {shop.serviceRadiusKm} {t('common.km')}</p>
                 <div className={styles.actions}>
                   <a className={styles.outlinePill} href={`tel:${shop.phone.replace(/\s/g, '')}`}>
                     <Icon name="phone" size={16} /> {t('shop.call')}

@@ -21,7 +21,7 @@
 
 .brandName {
   font-family: var(--font-heading);
-  font-size: 20px;
+  font-size: var(--fs-lg);
   font-weight: var(--fw-heading);
   font-stretch: 125%;
   text-decoration: none;

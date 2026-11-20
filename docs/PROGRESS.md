@@ -24,7 +24,7 @@
 
 ## Known Bugs
 
-- `public/fonts/` has only a README — real woff2 files needed (Archivo, Satoshi, Noto Sans Devanagari).
+- `public/fonts/` has only a README at this point in history; real WOFF2 files were added later (see the quality-pass section).
 - `npm run tokens` requires `tsx` installed (`npm install` first).
 
 ## Next Steps (Phase 1)
@@ -72,7 +72,7 @@
 
 ## Known Bugs / Gaps
 
-- `public/fonts/` still has no real woff2 files (Archivo, Satoshi, Noto Sans Devanagari).
+- Font note from this phase is stale: real self-hosted WOFF2 files are now in `public/fonts/`.
 - No dedicated tests yet for the product size-guard announcement, COD gating, or bag grouping;
   these are marked `(pending)` in `TRACEABILITY.md`.
 - Tracking uses seeded mock GPS; a real backend replaces it via `api` (no screen changes).
@@ -128,7 +128,7 @@
 
 ## Known Bugs / Gaps (Phase 2)
 
-- `public/fonts/` still has no real woff2 files (Archivo, Satoshi, Noto Sans Devanagari).
+- Font note from this phase is stale: real self-hosted WOFF2 files are now in `public/fonts/`.
 - Payment "add new method" and wishlist alerts are deliberately disabled placeholders (phase 2
   behaviour is out of scope). `BUY-17` and `NFR-11` now have focused tests
   (`src/routes/buyer/__tests__/BUY-17.test.tsx`, `src/routes/buyer/__tests__/NFR-11.test.tsx`).
@@ -185,7 +185,7 @@
 
 ## Known Bugs / Gaps (Phase 3)
 
-- `public/fonts/` still has no real woff2 files (Archivo, Satoshi, Noto Sans Devanagari).
+- Font note from this phase is stale: real self-hosted WOFF2 files are now in `public/fonts/`.
 - SHOP-11/12/13 remain priority-S/L placeholders by design; no behaviour was faked.
 - AUTH-04 has route coverage only (`router.test.tsx`), not a dedicated registration-form test.
 - SHOP-05/08/09/10 are covered by route tests and shared component tests rather than one dedicated
@@ -197,7 +197,7 @@
 - Rider console (accept task, navigation, OTP, photo proof, earnings, safety) and admin console
   (shop verification, disputes, refunds, config, staff roles).
 - Add the remaining focused tests that are still `(pending)` in `TRACEABILITY.md`.
-- Drop real woff2 font files into `public/fonts/` and switch `VITE_API_MODE=http` against a backend;
+- Fonts are already self-hosted; switch `VITE_API_MODE=http` against a backend;
   the HTTP shop adapter is already in place, so screens do not change.
 
 ## Plan (Phase 4 — rider console)
@@ -260,7 +260,7 @@
 
 ## Known Bugs / Gaps (Phase 4)
 
-- `public/fonts/` still has no real woff2 files (Archivo, Satoshi, Noto Sans Devanagari).
+- Font note from this phase is stale: real self-hosted WOFF2 files are now in `public/fonts/`.
 - RIDE-08 is a tested policy only; there is no device location upload worker in the mock build.
 - RIDE-06/07 have route coverage rather than a dedicated interaction test per screen.
 - Admin console (ADM-01–ADM-10) and its config screens remain priority-S/L placeholders or stubs.
@@ -271,7 +271,7 @@
 - Admin console: shop verification, order oversight, disputes/refunds, config and staff roles,
   including the second-super-admin approval rule.
 - Add focused interaction tests for earnings, safety and the remaining `(pending)` traceability rows.
-- Drop real woff2 fonts into `public/fonts/` and exercise `VITE_API_MODE=http` against a backend.
+- Fonts are already self-hosted; exercise `VITE_API_MODE=http` against a backend.
 
 ## Plan (Phase 5 — admin console)
 
@@ -337,7 +337,7 @@
 
 ## Known Bugs / Gaps (Phase 5)
 
-- `public/fonts/` still has no real woff2 files (Archivo, Satoshi, Noto Sans Devanagari).
+- Font note from this phase is stale: real self-hosted WOFF2 files are now in `public/fonts/`.
 - ADM-10 and the other priority-S/L items remain labelled placeholders by design; no behaviour was
   faked.
 - `adminListDisputes()` does not take an actor, so its payload still contains evidence fields for
@@ -349,7 +349,7 @@
 
 - Exercise `VITE_API_MODE=http` against a real backend; move dispute-list redaction and permission
   delivery server-side.
-- Drop real woff2 fonts into `public/fonts/`.
+- Fonts are already self-hosted in `public/fonts/`.
 - Add dedicated interaction tests for the remaining `(pending)` rows in `TRACEABILITY.md`.
 
 ## Single-admin follow-up (2026-11-20)
@@ -386,4 +386,61 @@
 - Replace the placeholder admin name/phone with the real owner credentials before deployment.
 - Keep the HTTP backend aligned: no super-admin creation or approval endpoint, and one bootstrap
   admin seeded by the server.
+
+## Plan (Quality pass — 2026-11-20)
+
+- **Files**: add `README.md`, `scripts/check-i18n.ts`, `scripts/qa-ui.mjs`, `docs/qa/` evidence,
+  `tests/keyboard-flow.spec.ts`; extend `package.json`, `docs/TRACEABILITY.md`, both i18n files and
+  targeted tests. UI/CSS fixes stay inside existing components and token CSS.
+- **Requirement IDs**: every M row in SPEC section 7 (BUY/SHOP/RIDE/ADM), all section 13
+  acceptance scenarios, `NFR-03/04/05/06/07/10/12`, plus the dev-only bundle and backend-swap checks.
+- **Tests**: full Playwright sweep at 360/768/1024/1440 with axe and overflow checks; DemoPanel
+  state checks; keyboard try-at-door flow, focus trap and reduced-motion checks; i18n key parity
+  and hard-coded-string guard in the build; new tests for M rows currently marked `(pending)`.
+- **Approach**: build without waiting for approval; keep artifacts under `docs/qa/`, fix failures,
+  then run `npm run i18n`, `npm run build`, `npm run lint`, `npm test` and the Playwright suites.
+
+## Quality pass — results (2026-11-20)
+
+### Done
+
+- Added `README.md` (install, demo mode, logins, checks, backend swap) and `.env.example` corrected
+  to `VITE_API_BASE`.
+- Added `scripts/check-i18n.ts`, `scripts/check-css-tokens.ts` and wired both into `npm run build`.
+  Added `playwright.config.ts` so `npm run test:e2e` no longer collects Vitest `*.test.ts` files.
+- Added tests for `BUY-05`, `BUY-06`, `BUY-07`, `AMBIGUITY-10` and `SPEC-13`; replaced the pending
+  rows in `docs/TRACEABILITY.md` and added the `SHOP-13` phase-2 placeholder. No priority M row is
+  untraced and no row is pending.
+- Wired `VITE_IMAGE_BASE` into `Img`, added intrinsic dimensions/lazy loading to the two raw
+  `<img>` call sites, and tokenised all component CSS through `src/styles/tokens.ts`.
+- Fixed QA harness persistence payloads, the duplicate/nested `<main>` landmarks, and
+  `useOnScreen` so the observer survives React StrictMode's effect double-invoke; this unblocked the
+  keyboard try-at-door flow.
+
+### Verification
+
+- `npm run i18n`: 1,260 English keys, all present in Hindi; no hard-coded UI copy.
+- `npm run css:tokens`: all component colours, radii, font families and font sizes use tokens.
+- `npm test`: **44 files / 794 tests passed** (Vitest no longer collects the Playwright spec).
+- `npm run lint`, `npx tsc --noEmit`, `npm run build`: pass.
+- Initial JS: **143.9 KiB gzip** (491.9 kB raw, one entry chunk), under the 200 KB budget;
+  100 JS chunks in `dist/assets`, one per route or shared group.
+- Production bundle grep: no `DemoPanel`, `/_style`, `dev*` order helpers or devtool strings.
+- `npm run smoke`: 59 routes load without console errors. `npm run axe`: 5 core screens, zero
+  violations. `npm run test:e2e`: 3 passed (keyboard try-at-door, focus trap/Escape, reduced motion).
+- `npm run qa:ui`: 59 routes × 4 viewports = 236 screenshots, 0 load errors, 0 document overflow,
+  0 clipped controls, 0 unscrollable tables, 0 axe violations across 118 scans. The 87 offscreen
+  nodes are the intentionally clipped marquee. Full matrix: `docs/qa/ui-report.md`.
+
+### Decisions and known gaps
+
+- Theme comparison is against `docs/THEME.md` plus computed-style/DOM proxies at 360/1440; the
+  reference PNG cannot be visually inspected in this environment, so no pixel diff is claimed.
+  19 differences are listed in `docs/qa/theme-diff.md` (hero CTA/stats/media, section type scale,
+  cart heading, product typography/tabs, header affordances, named motion).
+- Offline checks confirm the banner and last-updated timestamp, not cached rows on every screen;
+  `/shop/returns` does not expose a detectable `EmptyState` title.
+- No application photos exist yet, so the WebP requirement is vacuous for API images.
+- `httpApi: Api` type-checks; no production screen imports the mock directly. No live backend was
+  available, so HTTP calls and realtime WebSocket/SSE were not exercised end to end.
 

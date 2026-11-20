@@ -59,18 +59,17 @@ const PERSONAS: Record<Persona, SessionUser | null> = {
   },
 };
 
-const PERSONA_OPTIONS = [
-  { value: 'guest', label: 'Guest' },
-  { value: 'buyer', label: 'Buyer' },
-  { value: 'shop', label: 'Shopkeeper' },
-  { value: 'rider', label: 'Rider' },
-  { value: 'admin', label: 'Admin (support)' },
-  { value: 'super_admin', label: 'Super admin' },
-];
-
 /** Development-only switchboard. Loaded through a dynamic import in DEV. */
 export default function DemoPanel() {
   const { t } = useI18n();
+  const PERSONA_OPTIONS = [
+    { value: 'guest', label: t('demo.persona.guest') },
+    { value: 'buyer', label: t('demo.persona.buyer') },
+    { value: 'shop', label: t('demo.persona.shop') },
+    { value: 'rider', label: t('demo.persona.rider') },
+    { value: 'admin', label: t('demo.persona.support') },
+    { value: 'super_admin', label: t('demo.persona.superAdmin') },
+  ];
   const session = useAppStore((state) => state.session);
   const setSession = useAppStore((state) => state.setSession);
   const [open, setOpen] = useState(false);

@@ -41,6 +41,26 @@ export const colors = {
   ok: '#01AB31',
   /** Sheet and dialog scrim */
   overlay: 'rgba(0, 0, 0, 0.45)',
+
+  /** Text and lines on the black announcement bar, footer and brand strip. */
+  onInkHover: 'rgba(255, 255, 255, 0.14)',
+  onInkLine: 'rgba(255, 255, 255, 0.2)',
+  onInkMuted: 'rgba(255, 255, 255, 0.6)',
+  onInkSoft: 'rgba(255, 255, 255, 0.7)',
+  onInkStrong: 'rgba(255, 255, 255, 0.8)',
+
+  /** Placeholder photo tones from the API `image.tone` field. */
+  toneSand: '#EFE6D8',
+  toneRose: '#F3E1E0',
+  toneSage: '#E2E8DF',
+  toneSky: '#DFE8EE',
+  toneLilac: '#E8E2EE',
+
+  /** Status backgrounds and AA-contrast text pairs. */
+  okBg: 'rgba(1, 171, 49, 0.1)',
+  okText: '#00661A',
+  starBg: 'rgba(255, 198, 51, 0.24)',
+  starText: '#6B4B00',
 } as const;
 
 export const radii = {
@@ -48,6 +68,12 @@ export const radii = {
   pill: '62px',
   /** Image tiles, filter panel, order summary, cards with a 1px line border */
   card: '20px',
+  /** Avatars, dots and swatches */
+  circle: '50%',
+  /** Small status dots and thin indicators */
+  xs: '4px',
+  /** Hairline progress and chart fills */
+  hairline: '2px',
 } as const;
 
 export const space = {
@@ -72,6 +98,8 @@ export const fontFamilies = {
   heading: "'Archivo', 'Noto Sans Devanagari', sans-serif",
   /** Satoshi 400/500/700. Inter and Noto Sans Devanagari fallbacks. */
   body: "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+  /** Codes, audit values and other monospace data. */
+  mono: "ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace",
 } as const;
 
 export const fontWeights = {
@@ -97,6 +125,10 @@ export const fontSizes = {
   small: '14px',
   price: '24px',
   stat: 'clamp(24px, 3vw, 40px)',
+  xs: '12px',
+  lg: '20px',
+  xl: '24px',
+  xxl: '28px',
 } as const;
 
 export const layout = {
@@ -137,9 +169,26 @@ export const cssTokens: Record<string, string> = {
   '--sale-bg': colors.saleBg,
   '--ok': colors.ok,
   '--overlay': colors.overlay,
+  '--on-ink-hover': colors.onInkHover,
+  '--on-ink-line': colors.onInkLine,
+  '--on-ink-muted': colors.onInkMuted,
+  '--on-ink-soft': colors.onInkSoft,
+  '--on-ink-strong': colors.onInkStrong,
+  '--tone-sand': colors.toneSand,
+  '--tone-rose': colors.toneRose,
+  '--tone-sage': colors.toneSage,
+  '--tone-sky': colors.toneSky,
+  '--tone-lilac': colors.toneLilac,
+  '--ok-bg': colors.okBg,
+  '--ok-text': colors.okText,
+  '--star-bg': colors.starBg,
+  '--star-text': colors.starText,
 
   '--radius-pill': radii.pill,
   '--radius-card': radii.card,
+  '--radius-circle': radii.circle,
+  '--radius-xs': radii.xs,
+  '--radius-hairline': radii.hairline,
 
   '--space-1': space[1],
   '--space-2': space[2],
@@ -152,6 +201,7 @@ export const cssTokens: Record<string, string> = {
 
   '--font-heading': fontFamilies.heading,
   '--font-body': fontFamilies.body,
+  '--font-mono': fontFamilies.mono,
   '--fw-body': fontWeights.body,
   '--fw-medium': fontWeights.medium,
   '--fw-bold': fontWeights.bold,
@@ -168,6 +218,10 @@ export const cssTokens: Record<string, string> = {
   '--fs-small': fontSizes.small,
   '--fs-price': fontSizes.price,
   '--fs-stat': fontSizes.stat,
+  '--fs-xs': fontSizes.xs,
+  '--fs-lg': fontSizes.lg,
+  '--fs-xl': fontSizes.xl,
+  '--fs-2xl': fontSizes.xxl,
 
   '--dur-fast': durations.fast,
   '--dur-base': durations.base,
@@ -241,6 +295,7 @@ export function tokensToFigma(): FigmaGroup {
       family: {
         heading: { $type: 'fontFamily', $value: fontFamilies.heading },
         body: { $type: 'fontFamily', $value: fontFamilies.body },
+        mono: { $type: 'fontFamily', $value: fontFamilies.mono },
       },
       weight: {
         body: { $type: 'fontWeight', $value: Number(fontWeights.body) },

@@ -141,7 +141,7 @@ export default function PayoutsPage() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <p className={styles.eyebrow}>LocalFit</p>
+        <p className={styles.eyebrow}>{t('app.name')}</p>
         <h1 className={styles.title}>{t('admin.payouts.title')}</h1>
         <p className={styles.intro}>{t('admin.payouts.subtitle')}</p>
       </header>
@@ -178,9 +178,9 @@ export default function PayoutsPage() {
               label={t('admin.filter.status')}
               options={[
                 { value: 'all', label: t('common.all') },
-                { value: 'ready', label: 'ready' },
-                { value: 'held', label: 'held' },
-                { value: 'paid', label: 'paid' },
+                { value: 'ready', label: t('admin.status.ready') },
+                { value: 'held', label: t('admin.status.held') },
+                { value: 'paid', label: t('admin.status.paid') },
               ]}
               value={status}
               onChange={(event) => setStatus(event.target.value)}

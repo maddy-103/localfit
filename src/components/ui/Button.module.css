@@ -1,6 +1,6 @@
 .btn { border-radius: var(--radius-pill); padding: 12px 24px; min-height: 44px; font-weight: 600; border: 1.5px solid var(--ink); transition: background 150ms, color 150ms; }
-.primary { background: var(--ink); color: #fff; }
-.primary:hover { background: #222; }
+.primary { background: var(--ink); color: var(--bg); }
+.primary:hover { background: var(--ink-hover); }
 .outline { background: transparent; color: var(--ink); }
-.outline:hover { background: var(--ink); color: #fff; }
+.outline:hover { background: var(--ink); color: var(--bg); }
 .full { width: 100%; }

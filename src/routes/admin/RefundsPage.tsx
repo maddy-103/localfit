@@ -122,7 +122,7 @@ export default function RefundsPage() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <p className={styles.eyebrow}>LocalFit</p>
+        <p className={styles.eyebrow}>{t('app.name')}</p>
         <h1 className={styles.title}>{t('admin.refunds.title')}</h1>
         <p className={styles.intro}>{t('admin.refunds.subtitle')}</p>
       </header>
@@ -150,9 +150,9 @@ export default function RefundsPage() {
               label={t('admin.filter.status')}
               options={[
                 { value: 'all', label: t('common.all') },
-                { value: 'pending', label: 'pending' },
-                { value: 'approved', label: 'approved' },
-                { value: 'rejected', label: 'rejected' },
+                { value: 'pending', label: t('admin.status.pending') },
+                { value: 'approved', label: t('admin.status.approved') },
+                { value: 'rejected', label: t('admin.status.rejected') },
               ]}
               value={status}
               onChange={(event) => setStatus(event.target.value)}

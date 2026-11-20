@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 /**
  * Reports once when an element has actually been on screen. Checkout uses it
@@ -7,30 +7,26 @@ import { useCallback, useEffect, useRef, useState } from 'react';
  * back to the mounted element being visible.
  */
 export function useOnScreen<T extends HTMLElement>(): [(node: T | null) => void, boolean] {
+  const [node, setNode] = useState<T | null>(null);
   const [seen, setSeen] = useState(false);
-  const observer = useRef<IntersectionObserver | null>(null);
+  const ref = useCallback((next: T | null) => setNode(next), []);
 
-  useEffect(() => () => observer.current?.disconnect(), []);
-
-  const ref = useCallback((node: T | null) => {
-    observer.current?.disconnect();
-    observer.current = null;
-    if (!node) return;
-
+  useEffect(() => {
+    if (!node || seen) return;
     if (typeof IntersectionObserver === 'undefined') {
       void Promise.resolve().then(() => setSeen(true));
       return;
     }
-
-    const next = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries) => {
       if (!entries.some((entry) => entry.isIntersecting)) return;
       setSeen(true);
-      next.disconnect();
-      observer.current = null;
+      observer.disconnect();
     });
-    observer.current = next;
-    next.observe(node);
-  }, []);
+    observer.observe(node);
+    // Recreated in setup so React 18 StrictMode's double-invoke cannot leave
+    // a disconnected observer behind.
+    return () => observer.disconnect();
+  }, [node, seen]);
 
   return [ref, seen];
 }

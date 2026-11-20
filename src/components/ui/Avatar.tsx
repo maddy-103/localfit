@@ -12,7 +12,15 @@ export function Avatar({ name, src, size = 'md' }: AvatarProps) {
   return (
     <span className={cx(styles.avatar, size === 'lg' && styles.avatarLg)} title={name}>
       {src ? (
-        <img className={styles.avatarImage} src={src} alt={name} />
+        <img
+          className={styles.avatarImage}
+          src={src}
+          alt=""
+          width={size === 'lg' ? 56 : 40}
+          height={size === 'lg' ? 56 : 40}
+          loading="lazy"
+          decoding="async"
+        />
       ) : (
         <span aria-hidden="true">{initials(name)}</span>
       )}

@@ -137,7 +137,7 @@ export default function StaffPage() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <p className={styles.eyebrow}>LocalFit</p>
+        <p className={styles.eyebrow}>{t('app.name')}</p>
         <h1 className={styles.title}>{t('admin.staff.title')}</h1>
         <p className={styles.intro}>{t('admin.staff.subtitle')}</p>
       </header>

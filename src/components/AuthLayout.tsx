@@ -8,7 +8,7 @@ export function AuthLayout() {
 
   return (
     <div className={styles.wrap}>
-      <div className={styles.panel}>
+      <main className={styles.panel}>
         <Link to="/" className={styles.brand}>
           {t('app.name').toUpperCase()}
         </Link>
@@ -16,7 +16,7 @@ export function AuthLayout() {
         <div className={styles.content}>
           <Outlet />
         </div>
-      </div>
+      </main>
     </div>
   );
 }

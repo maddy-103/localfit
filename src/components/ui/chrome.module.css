@@ -45,7 +45,7 @@
 }
 
 .announcementClose:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--on-ink-hover);
 }
 
 .announcementWrap {

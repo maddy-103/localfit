@@ -134,20 +134,22 @@ export function ConsoleLayout({ role }: { role: ConsoleRole }) {
       </aside>
 
       <div className={styles.body}>
-        <header className={styles.topbar}>
-          <div>
-            <p className={styles.consoleTitle}>{t(TITLE_KEY[role])}</p>
-            <p className={styles.session}>
-              {session
-                ? t('console.signedInAs', { name: session.name })
-                : t('role.guest')}
-            </p>
+        <main>
+          <div className={styles.topbar}>
+            <div>
+              <p className={styles.consoleTitle}>{t(TITLE_KEY[role])}</p>
+              <p className={styles.session}>
+                {session
+                  ? t('console.signedInAs', { name: session.name })
+                  : t('role.guest')}
+              </p>
+            </div>
+            <p className={styles.roleLabel}>{t('console.roleLabel', { role: roleName })}</p>
           </div>
-          <p className={styles.roleLabel}>{t('console.roleLabel', { role: roleName })}</p>
-        </header>
-        <div className={styles.content}>
-          <Outlet />
-        </div>
+          <div className={styles.content}>
+            <Outlet />
+          </div>
+        </main>
       </div>
     </div>
   );

@@ -127,7 +127,7 @@ export default function DisputesPage() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <p className={styles.eyebrow}>LocalFit</p>
+        <p className={styles.eyebrow}>{t('app.name')}</p>
         <h1 className={styles.title}>{t('admin.disputes.title')}</h1>
         <p className={styles.intro}>{t('admin.disputes.subtitle')}</p>
       </header>
@@ -155,9 +155,9 @@ export default function DisputesPage() {
               label={t('admin.filter.status')}
               options={[
                 { value: 'all', label: t('common.all') },
-                { value: 'open', label: 'open' },
-                { value: 'escalated', label: 'escalated' },
-                { value: 'decided', label: 'decided' },
+                { value: 'open', label: t('admin.status.open') },
+                { value: 'escalated', label: t('admin.status.escalated') },
+                { value: 'decided', label: t('admin.status.decided') },
               ]}
               value={status}
               onChange={(event) => setStatus(event.target.value)}

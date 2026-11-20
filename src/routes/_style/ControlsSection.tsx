@@ -14,15 +14,14 @@ import {
 import { StyleSection } from './StyleSection';
 import styles from './style.module.css';
 
-const SIZE_OPTIONS = [
-  { value: 's', label: 'S' },
-  { value: 'm', label: 'M' },
-  { value: 'l', label: 'L' },
-  { value: 'xl', label: 'XL', disabled: true },
-];
-
 export function ControlsSection() {
   const { t } = useI18n();
+  const SIZE_OPTIONS = [
+    { value: 's', label: t('style.sizeS') },
+    { value: 'm', label: t('style.sizeM') },
+    { value: 'l', label: t('style.sizeL') },
+    { value: 'xl', label: t('style.sizeXL'), disabled: true },
+  ];
   const [toggled, setToggled] = useState(true);
   const [checked, setChecked] = useState(true);
   const [size, setSize] = useState('m');
@@ -92,14 +91,14 @@ export function ControlsSection() {
               label={t('style.sampleSelect')}
               placeholder={t('style.sampleSelect')}
               options={[
-                { value: 'bengaluru', label: 'Bengaluru' },
-                { value: 'mysuru', label: 'Mysuru' },
-                { value: 'hubballi', label: 'Hubballi', disabled: true },
+                { value: 'bengaluru', label: t('style.cityBengaluru') },
+                { value: 'mysuru', label: t('style.cityMysuru') },
+                { value: 'hubballi', label: t('style.cityHubballi'), disabled: true },
               ]}
             />
             <Select
               label={t('style.sampleSelect')}
-              options={[{ value: 'bengaluru', label: 'Bengaluru' }]}
+              options={[{ value: 'bengaluru', label: t('style.cityBengaluru') }]}
               error={t('style.sampleError')}
             />
           </div>

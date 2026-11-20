@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "build": "npm run i18n && npm run css:tokens && tsc --noEmit && vite build",
+    "i18n": "tsx scripts/check-i18n.ts",
+    "css:tokens": "tsx scripts/check-css-tokens.ts",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
@@ -13,6 +15,7 @@
     "test:e2e": "playwright test",
     "smoke": "node scripts/smoke.mjs",
     "axe": "node scripts/axe.mjs",
+    "qa:ui": "node scripts/qa-ui.mjs",
     "tokens": "tsx scripts/generate-tokens.ts",
     "measure:listing": "tsx scripts/measure-listing-steps.ts"
   },

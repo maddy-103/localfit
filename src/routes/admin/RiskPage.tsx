@@ -130,7 +130,7 @@ export default function RiskPage() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <p className={styles.eyebrow}>LocalFit</p>
+        <p className={styles.eyebrow}>{t('app.name')}</p>
         <h1 className={styles.title}>{t('admin.risk.title')}</h1>
         <p className={styles.intro}>{t('admin.risk.subtitle')}</p>
       </header>
@@ -158,8 +158,8 @@ export default function RiskPage() {
               label={t('admin.risk.kind')}
               options={[
                 { value: 'all', label: t('common.all') },
-                { value: 'account', label: 'account' },
-                { value: 'address', label: 'address' },
+                { value: 'account', label: t('admin.status.account') },
+                { value: 'address', label: t('admin.status.address') },
               ]}
               value={kind}
               onChange={(event) => setKind(event.target.value)}

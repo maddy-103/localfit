@@ -22,7 +22,7 @@ export function ProductCard({ product, shop, priority = false }: ProductCardProp
 
   return (
     <article className={styles.card}>
-      <Link to={`/product/${product.id}`} aria-label={product.title}>
+      <Link to={`/product/${product.id}`}>
         <Img
           image={product.images[0] ?? {
             url: null,

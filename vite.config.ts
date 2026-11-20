@@ -18,6 +18,8 @@ export default defineConfig({
       },
     },
     globals: true,
+    // Playwright specs live in tests/ and must not be collected by Vitest.
+    exclude: ['**/node_modules/**', '**/dist/**', 'tests/**/*.spec.ts'],
     setupFiles: './src/test/setup.ts',
     css: true,
     restoreMocks: true,

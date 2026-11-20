@@ -80,7 +80,7 @@
   height: 16px;
   border: 2px solid currentColor;
   border-right-color: transparent;
-  border-radius: 50%;
+  border-radius: var(--radius-circle);
   animation: spin 700ms linear infinite;
 }
 
@@ -268,7 +268,7 @@
   left: 5px;
   width: 26px;
   height: 26px;
-  border-radius: 50%;
+  border-radius: var(--radius-circle);
   background: var(--bg);
   transition: transform var(--dur-fast) var(--ease);
 }
@@ -304,7 +304,7 @@
   height: 22px;
   margin-top: 2px;
   border: 1.5px solid var(--ink);
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
   background: var(--bg);
   color: var(--bg);
   transition: background-color var(--dur-fast) var(--ease);
@@ -437,7 +437,7 @@
   height: var(--tap-min);
   padding: 0;
   border: 0;
-  border-radius: 50%;
+  border-radius: var(--radius-circle);
   background: transparent;
   color: var(--ink);
 }
@@ -482,14 +482,14 @@
   height: var(--tap-min);
   padding: 0;
   border: 1px solid var(--line);
-  border-radius: 50%;
+  border-radius: var(--radius-circle);
   background: transparent;
 }
 
 .swatchDot {
   width: 32px;
   height: 32px;
-  border-radius: 50%;
+  border-radius: var(--radius-circle);
   border: 1px solid var(--line);
 }
 
@@ -527,7 +527,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  border-radius: 2px;
+  border-radius: var(--radius-hairline);
   background: var(--line);
   transform: translateY(-50%);
 }
@@ -536,7 +536,7 @@
   position: absolute;
   top: 50%;
   height: 2px;
-  border-radius: 2px;
+  border-radius: var(--radius-hairline);
   background: var(--ink);
   transform: translateY(-50%);
 }
@@ -555,7 +555,7 @@
   width: 20px;
   height: 20px;
   border: 2px solid var(--bg);
-  border-radius: 50%;
+  border-radius: var(--radius-circle);
   background: var(--ink);
   cursor: grab;
   appearance: none;
@@ -566,7 +566,7 @@
   width: 20px;
   height: 20px;
   border: 2px solid var(--bg);
-  border-radius: 50%;
+  border-radius: var(--radius-circle);
   background: var(--ink);
   cursor: grab;
   pointer-events: auto;

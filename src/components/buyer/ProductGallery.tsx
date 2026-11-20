@@ -24,7 +24,7 @@ export function ProductGallery({ images, label }: Props) {
             type="button"
             key={`${image.alt}-${index}`}
             className={cx(styles.thumb, index === active && styles.thumbActive)}
-            aria-label={t('product.thumbnail', { index: index + 1 })}
+            aria-label={`${t('product.thumbnail', { index: index + 1 })} ${image.alt}`}
             aria-pressed={index === active}
             onClick={() => setActive(index)}
           >

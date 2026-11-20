@@ -141,7 +141,17 @@ export function ListingForm({ draft, onSaved, onStep }: ListingFormProps) {
           {t('shop.listing.photoAdded', { name: photoName })}
         </p>
       ) : null}
-      {photo ? <img className={styles.photo} src={photo.dataUrl} alt={title || t('shop.listing.capture')} /> : null}
+      {photo ? (
+        <img
+          className={styles.photo}
+          src={photo.dataUrl}
+          alt={title || t('shop.listing.capture')}
+          width={220}
+          height={220}
+          loading="lazy"
+          decoding="async"
+        />
+      ) : null}
       {suggestions ? (
         <div className={styles.alert}>
           <Icon name="sparkle" size={18} />

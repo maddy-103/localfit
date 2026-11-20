@@ -200,6 +200,8 @@ describe('router', () => {
 
   it('renders a not-found screen for an unknown route', async () => {
     renderPath('/this-route-does-not-exist', guest);
-    expect(await screen.findByText(en['common.notFound'], {}, { timeout: 5000 })).toBeVisible();
+    expect(
+      await screen.findByRole('heading', { name: en['common.notFound'], level: 1 }, { timeout: 5000 }),
+    ).toBeVisible();
   });
 });

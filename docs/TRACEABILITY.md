@@ -11,9 +11,9 @@ BUY-01 | src/routes/buyer/HomePage.tsx, src/components/buyer/OccasionHub.tsx | s
 BUY-02 | src/routes/buyer/SearchPage.tsx, src/components/buyer/SearchFilters.tsx | src/routes/router.test.tsx
 BUY-03 | src/routes/buyer/ProductPage.tsx, src/components/buyer/ProductGallery.tsx | src/routes/buyer/__tests__/BUY-04.test.tsx
 BUY-04 | src/routes/buyer/ProductPage.tsx | src/routes/buyer/__tests__/BUY-04.test.tsx
-BUY-05 | src/routes/buyer/ProductPage.tsx, src/components/buyer/SizeGuideSheet.tsx | (pending)
-BUY-06 | src/routes/buyer/ProductPage.tsx, src/components/buyer/TryTermsSheet.tsx | (pending)
-BUY-07 | src/routes/buyer/BagPage.tsx, src/components/buyer/EtaCountdown.tsx | (pending)
+BUY-05 | src/routes/buyer/ProductPage.tsx, src/components/buyer/SizeGuideSheet.tsx | src/routes/buyer/__tests__/BUY-05-06.test.tsx
+BUY-06 | src/routes/buyer/ProductPage.tsx, src/components/buyer/TryTermsSheet.tsx | src/routes/buyer/__tests__/BUY-05-06.test.tsx
+BUY-07 | src/routes/buyer/BagPage.tsx, src/components/buyer/EtaCountdown.tsx | src/routes/buyer/__tests__/BUY-07.test.tsx
 BUY-08 | src/routes/buyer/CheckoutPage.tsx, src/components/buyer/TrialTermsBlock.tsx | src/routes/buyer/__tests__/BUY-08.test.tsx
 BUY-09 | src/routes/buyer/OrderTrackPage.tsx, src/components/buyer/OrderTimeline.tsx | src/api/__tests__/SPEC-13.test.ts, src/api/__tests__/fullDemoPath.test.ts
 BUY-10 | src/routes/buyer/OrderTrialPage.tsx, src/api/mockTrial.ts | src/api/__tests__/TRIAL-02.test.ts, src/api/__tests__/TRIAL-03.test.ts, src/api/__tests__/sizeSwap.test.ts
@@ -36,7 +36,7 @@ SHOP-09 | src/routes/shop/ReturnsPage.tsx, src/api/mockShopReports.ts | src/rout
 SHOP-10 | src/routes/shop/*, src/components/shop/*, src/styles/tokens.css | src/routes/shop/__tests__/SHOP-01.test.tsx, src/i18n/NFR-07.test.ts
 SHOP-11 | src/routes/shop/DashboardPage.tsx (Phase2Card, "Coming in phase 2") | —
 SHOP-12 | src/routes/shop/PayoutsPage.tsx (Phase2Card, "Coming in phase 2") | —
-SHOP-13 | (phase 2 placeholder) | —
+SHOP-13 | src/routes/shop/SettingsPage.tsx, src/components/shop/Phase2Card.tsx (Coming in phase 2) | src/routes/router.test.tsx
 RIDE-01 | src/routes/rider/DashboardPage.tsx, src/routes/rider/TasksPage.tsx, src/routes/rider/TaskPage.tsx, src/domain/rider.ts | src/api/__tests__/RIDE-01-demo-drop.test.ts, src/routes/router.test.tsx
 RIDE-02 | src/routes/rider/PickupTaskView.tsx, src/components/rider/CaptureField.tsx, src/api/mockRiderOps.ts | src/api/__tests__/RIDE-01-demo-drop.test.ts
 RIDE-03 | src/routes/rider/OtpStep.tsx, src/routes/rider/TrialStep.tsx, src/api/mockFlow.ts | src/api/__tests__/RIDE-03-otp.test.ts
@@ -60,8 +60,16 @@ TRIAL-01 | src/domain/trial.ts, src/routes/buyer/OrderTrialPage.tsx | src/domain
 TRIAL-02 | src/routes/buyer/OrderTrialPage.tsx, src/components/buyer/EtaCountdown.tsx, src/routes/rider/TrialStep.tsx, src/components/rider/TrialTimer.tsx, src/api/mockRiderOps.ts | src/api/__tests__/TRIAL-02.test.ts, src/api/__tests__/TRIAL-02-rider-confirm.test.ts, src/routes/rider/__tests__/TRIAL-02-timer.test.tsx
 TRIAL-03 | src/api/mockTrial.ts, src/routes/buyer/OrderTrialPage.tsx | src/api/__tests__/TRIAL-03.test.ts, src/api/__tests__/sizeSwap.test.ts
 SPEC-13 | src/api/mockFlow.ts, src/api/mockTrial.ts, src/domain/orderMachine.ts | src/api/__tests__/SPEC-13.test.ts
+SPEC-13.1 terms before Pay | src/routes/buyer/CheckoutPage.tsx, src/components/buyer/TrialTermsBlock.tsx | src/routes/buyer/__tests__/BUY-08.test.tsx
+SPEC-13.2 unmarked defaults to return | src/routes/buyer/OrderTrialPage.tsx, src/domain/payments.ts | src/api/__tests__/TRIAL-02.test.ts, src/domain/payments.test.ts
+SPEC-13.3 counter sale updates buyer stock | src/routes/buyer/ProductPage.tsx, src/components/buyer/StockBadge.tsx | src/routes/shop/__tests__/SHOP-03.test.tsx, src/api/__tests__/SHOP-04-07.test.ts
+SPEC-13.4 committed-unit conflict | src/routes/admin/DashboardPage.tsx, src/routes/buyer/OrderDetailPage.tsx, src/api/mockShopOps.ts | src/api/__tests__/SPEC-13-stock-conflict.test.ts
+SPEC-13.5 three wrong OTPs | src/routes/rider/OtpStep.tsx, src/api/mockFlow.ts | src/api/__tests__/SPEC-13.test.ts, src/api/__tests__/RIDE-03-otp.test.ts
+SPEC-13.6 waiting compensation | src/components/rider/WaitingTimer.tsx, src/routes/rider/OtpStep.tsx | src/api/__tests__/RIDE-05-compensation.test.ts
+SPEC-13.7 offline listing publishes | src/routes/shop/ListingNewPage.tsx, src/api/mockShopSetup.ts | src/routes/shop/__tests__/SHOP-01.test.tsx
+SPEC-13.8 24-hour dispute escalation | src/routes/admin/DisputesPage.tsx, src/domain/admin.ts | src/api/__tests__/ADM-03-escalation.test.ts
 AMBIGUITY-9 | src/api/mockFlow.ts, src/api/types.ts | src/api/__tests__/checkoutSplit.test.ts
-AMBIGUITY-10 | src/domain/payments.ts, src/routes/buyer/CheckoutPage.tsx | (pending)
+AMBIGUITY-10 | src/domain/payments.ts, src/routes/buyer/CheckoutPage.tsx | src/domain/payments.test.ts
 AMBIGUITY-11 | src/domain/stock.ts, src/api/mockShopOps.ts | src/api/__tests__/SHOP-04-07.test.ts
 AMBIGUITY-13 (deliberately overridden: single admin; no super-admin creation/approval) | src/api/seed.ts, src/api/mockAdminSetup.ts, src/routes/admin/StaffPage.tsx | src/api/__tests__/ADM-admin-actions.test.ts, src/api/seed.test.ts
 NFR-03 | src/api/mockStore.ts (BroadcastChannel inventory), src/routes/buyer/HomePage.tsx, src/routes/buyer/ProductPage.tsx, src/routes/buyer/SearchPage.tsx | src/routes/shop/__tests__/SHOP-03.test.tsx

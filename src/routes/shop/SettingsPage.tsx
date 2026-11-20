@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react';
 import { api } from '@/api/client';
 import type { ShopSettings, ShopStaff } from '@/api/types';
+import { Phase2Card } from '@/components/shop/Phase2Card';
 import { ShopStates } from '@/components/shop/ShopStates';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
@@ -196,6 +197,8 @@ export default function SettingsPage() {
                 </div>
               </div>
             </Card>
+
+            <Phase2Card label={t('shop.settings.counters')} icon="box" />
 
             <div className={styles.actions}>
               <Button type="submit" size="lg" loading={busy}>

@@ -100,9 +100,9 @@ export function SearchFilters({ value, onChange, products, onApply, onClear }: S
         value={String(value.distanceKm)}
         options={[
           { value: '0', label: t('common.all') },
-          { value: '2', label: '≤ 2 km' },
-          { value: '5', label: '≤ 5 km' },
-          { value: '10', label: '≤ 10 km' },
+          { value: '2', label: t('search.distance2') },
+          { value: '5', label: t('search.distance5') },
+          { value: '10', label: t('search.distance10') },
         ]}
         onChange={(next) => onChange({ ...value, distanceKm: Number(next) })}
       />
@@ -113,8 +113,8 @@ export function SearchFilters({ value, onChange, products, onApply, onClear }: S
         value={String(value.etaMin)}
         options={[
           { value: '0', label: t('common.all') },
-          { value: '45', label: '≤ 45 min' },
-          { value: '60', label: '≤ 60 min' },
+          { value: '45', label: t('search.eta45') },
+          { value: '60', label: t('search.eta60') },
         ]}
         onChange={(next) => onChange({ ...value, etaMin: Number(next) })}
       />

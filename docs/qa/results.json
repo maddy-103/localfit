@@ -1,0 +1,4465 @@
+{
+  "screens": [
+    {
+      "id": "guest-root-360",
+      "role": "guest",
+      "route": "/",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [
+        {
+          "el": "div._marqueeTrack_84qjl_95",
+          "left": -37,
+          "right": 2774
+        },
+        {
+          "el": "div._marqueeGroup_84qjl_112",
+          "left": -37,
+          "right": 1369
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": -37,
+          "right": 133
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 197,
+          "right": 429
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 493,
+          "right": 706
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 770,
+          "right": 996
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1060,
+          "right": 1305
+        },
+        {
+          "el": "div._marqueeGroup_84qjl_112",
+          "left": 1369,
+          "right": 2774
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1369,
+          "right": 1539
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1603,
+          "right": 1834
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1898,
+          "right": 2112
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2176,
+          "right": 2401
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2465,
+          "right": 2710
+        }
+      ],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-occasion-party-tonight-360",
+      "role": "guest",
+      "route": "/occasion/party-tonight",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-search-360",
+      "role": "guest",
+      "route": "/search",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-product-prod-kurta-set-360",
+      "role": "guest",
+      "route": "/product/prod-kurta-set",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-shop-shop-kiran-360",
+      "role": "guest",
+      "route": "/shop/shop-kiran",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-bag-360",
+      "role": "guest",
+      "route": "/bag",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-support-360",
+      "role": "guest",
+      "route": "/support",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-welcome-360",
+      "role": "guest",
+      "route": "/welcome",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-login-360",
+      "role": "guest",
+      "route": "/login",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-login-otp-360",
+      "role": "guest",
+      "route": "/login/otp",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-onboarding-profile-360",
+      "role": "guest",
+      "route": "/onboarding/profile",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-consent-360",
+      "role": "guest",
+      "route": "/consent",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-register-shop-360",
+      "role": "guest",
+      "route": "/register/shop",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-register-rider-360",
+      "role": "guest",
+      "route": "/register/rider",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-admin-login-360",
+      "role": "guest",
+      "route": "/admin/login",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-style-360",
+      "role": "guest",
+      "route": "/_style",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [
+        {
+          "el": "div._marqueeTrack_84qjl_95",
+          "left": -21,
+          "right": 2790
+        },
+        {
+          "el": "div._marqueeGroup_84qjl_112",
+          "left": -21,
+          "right": 1385
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": -21,
+          "right": 149
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 213,
+          "right": 445
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 509,
+          "right": 722
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 786,
+          "right": 1012
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1076,
+          "right": 1321
+        },
+        {
+          "el": "div._marqueeGroup_84qjl_112",
+          "left": 1385,
+          "right": 2790
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1385,
+          "right": 1555
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1619,
+          "right": 1850
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1914,
+          "right": 2128
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2192,
+          "right": 2417
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2481,
+          "right": 2726
+        }
+      ],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-this-route-does-not-exist-360",
+      "role": "guest",
+      "route": "/this-route-does-not-exist",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-checkout-360",
+      "role": "buyer",
+      "route": "/checkout",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-orders-360",
+      "role": "buyer",
+      "route": "/orders",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-order-order-1-confirmed-360",
+      "role": "buyer",
+      "route": "/order/order-1/confirmed",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-order-order-1-track-360",
+      "role": "buyer",
+      "route": "/order/order-1/track",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-order-order-1-trial-360",
+      "role": "buyer",
+      "route": "/order/order-1/trial",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-order-order-1-return-360",
+      "role": "buyer",
+      "route": "/order/order-1/return",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-wishlist-360",
+      "role": "buyer",
+      "route": "/wishlist",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-360",
+      "role": "buyer",
+      "route": "/profile",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-addresses-360",
+      "role": "buyer",
+      "route": "/profile/addresses",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-payments-360",
+      "role": "buyer",
+      "route": "/profile/payments",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-language-360",
+      "role": "buyer",
+      "route": "/profile/language",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-privacy-360",
+      "role": "buyer",
+      "route": "/profile/privacy",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-roles-360",
+      "role": "buyer",
+      "route": "/profile/roles",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-360",
+      "role": "shop",
+      "route": "/shop",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-orders-360",
+      "role": "shop",
+      "route": "/shop/orders",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-orders-order-1-360",
+      "role": "shop",
+      "route": "/shop/orders/order-1",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-listing-new-360",
+      "role": "shop",
+      "route": "/shop/listing/new",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-inventory-360",
+      "role": "shop",
+      "route": "/shop/inventory",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-returns-360",
+      "role": "shop",
+      "route": "/shop/returns",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-payouts-360",
+      "role": "shop",
+      "route": "/shop/payouts",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-settings-360",
+      "role": "shop",
+      "route": "/shop/settings",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-support-360",
+      "role": "shop",
+      "route": "/shop/support",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-360",
+      "role": "rider",
+      "route": "/rider",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-tasks-360",
+      "role": "rider",
+      "route": "/rider/tasks",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-tasks-order-1-360",
+      "role": "rider",
+      "route": "/rider/tasks/order-1",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-earnings-360",
+      "role": "rider",
+      "route": "/rider/earnings",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-safety-360",
+      "role": "rider",
+      "route": "/rider/safety",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-profile-360",
+      "role": "rider",
+      "route": "/rider/profile",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-support-360",
+      "role": "rider",
+      "route": "/rider/support",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-360",
+      "role": "admin",
+      "route": "/admin",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-shops-360",
+      "role": "admin",
+      "route": "/admin/shops",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-orders-360",
+      "role": "admin",
+      "route": "/admin/orders",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-orders-order-1-360",
+      "role": "admin",
+      "route": "/admin/orders/order-1",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-disputes-360",
+      "role": "admin",
+      "route": "/admin/disputes",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-refunds-360",
+      "role": "admin",
+      "route": "/admin/refunds",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-payouts-360",
+      "role": "admin",
+      "route": "/admin/payouts",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-riders-360",
+      "role": "admin",
+      "route": "/admin/riders",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-risk-360",
+      "role": "admin",
+      "route": "/admin/risk",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-campaigns-360",
+      "role": "admin",
+      "route": "/admin/campaigns",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-config-360",
+      "role": "admin",
+      "route": "/admin/config",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-staff-360",
+      "role": "admin",
+      "route": "/admin/staff",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-audit-360",
+      "role": "admin",
+      "route": "/admin/audit",
+      "width": 360,
+      "shot": true,
+      "viewport": 360,
+      "docScrollWidth": 360,
+      "bodyScrollWidth": 360,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-root-768",
+      "role": "guest",
+      "route": "/",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [
+        {
+          "el": "div._marqueeTrack_84qjl_95",
+          "left": -16,
+          "right": 2795
+        },
+        {
+          "el": "div._marqueeGroup_84qjl_112",
+          "left": -16,
+          "right": 1389
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": -16,
+          "right": 154
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 791,
+          "right": 1016
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1080,
+          "right": 1325
+        },
+        {
+          "el": "div._marqueeGroup_84qjl_112",
+          "left": 1389,
+          "right": 2795
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1389,
+          "right": 1559
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1623,
+          "right": 1854
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1918,
+          "right": 2132
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2196,
+          "right": 2421
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2485,
+          "right": 2731
+        }
+      ],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-occasion-party-tonight-768",
+      "role": "guest",
+      "route": "/occasion/party-tonight",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-search-768",
+      "role": "guest",
+      "route": "/search",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-product-prod-kurta-set-768",
+      "role": "guest",
+      "route": "/product/prod-kurta-set",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-shop-shop-kiran-768",
+      "role": "guest",
+      "route": "/shop/shop-kiran",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-bag-768",
+      "role": "guest",
+      "route": "/bag",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-support-768",
+      "role": "guest",
+      "route": "/support",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-welcome-768",
+      "role": "guest",
+      "route": "/welcome",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-login-768",
+      "role": "guest",
+      "route": "/login",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-login-otp-768",
+      "role": "guest",
+      "route": "/login/otp",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-onboarding-profile-768",
+      "role": "guest",
+      "route": "/onboarding/profile",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-consent-768",
+      "role": "guest",
+      "route": "/consent",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-register-shop-768",
+      "role": "guest",
+      "route": "/register/shop",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-register-rider-768",
+      "role": "guest",
+      "route": "/register/rider",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-admin-login-768",
+      "role": "guest",
+      "route": "/admin/login",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-style-768",
+      "role": "guest",
+      "route": "/_style",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [
+        {
+          "el": "div._marqueeTrack_84qjl_95",
+          "left": 2,
+          "right": 2813
+        },
+        {
+          "el": "div._marqueeGroup_84qjl_112",
+          "left": 2,
+          "right": 1408
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 809,
+          "right": 1035
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1099,
+          "right": 1344
+        },
+        {
+          "el": "div._marqueeGroup_84qjl_112",
+          "left": 1408,
+          "right": 2813
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1408,
+          "right": 1578
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1642,
+          "right": 1873
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1937,
+          "right": 2151
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2215,
+          "right": 2440
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2504,
+          "right": 2749
+        }
+      ],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-this-route-does-not-exist-768",
+      "role": "guest",
+      "route": "/this-route-does-not-exist",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-checkout-768",
+      "role": "buyer",
+      "route": "/checkout",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-orders-768",
+      "role": "buyer",
+      "route": "/orders",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-order-order-1-confirmed-768",
+      "role": "buyer",
+      "route": "/order/order-1/confirmed",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-order-order-1-track-768",
+      "role": "buyer",
+      "route": "/order/order-1/track",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-order-order-1-trial-768",
+      "role": "buyer",
+      "route": "/order/order-1/trial",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-order-order-1-return-768",
+      "role": "buyer",
+      "route": "/order/order-1/return",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-wishlist-768",
+      "role": "buyer",
+      "route": "/wishlist",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-768",
+      "role": "buyer",
+      "route": "/profile",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-addresses-768",
+      "role": "buyer",
+      "route": "/profile/addresses",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-payments-768",
+      "role": "buyer",
+      "route": "/profile/payments",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-language-768",
+      "role": "buyer",
+      "route": "/profile/language",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-privacy-768",
+      "role": "buyer",
+      "route": "/profile/privacy",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-roles-768",
+      "role": "buyer",
+      "route": "/profile/roles",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-768",
+      "role": "shop",
+      "route": "/shop",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-orders-768",
+      "role": "shop",
+      "route": "/shop/orders",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-orders-order-1-768",
+      "role": "shop",
+      "route": "/shop/orders/order-1",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-listing-new-768",
+      "role": "shop",
+      "route": "/shop/listing/new",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-inventory-768",
+      "role": "shop",
+      "route": "/shop/inventory",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-returns-768",
+      "role": "shop",
+      "route": "/shop/returns",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-payouts-768",
+      "role": "shop",
+      "route": "/shop/payouts",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-settings-768",
+      "role": "shop",
+      "route": "/shop/settings",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-support-768",
+      "role": "shop",
+      "route": "/shop/support",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-768",
+      "role": "rider",
+      "route": "/rider",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-tasks-768",
+      "role": "rider",
+      "route": "/rider/tasks",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-tasks-order-1-768",
+      "role": "rider",
+      "route": "/rider/tasks/order-1",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-earnings-768",
+      "role": "rider",
+      "route": "/rider/earnings",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-safety-768",
+      "role": "rider",
+      "route": "/rider/safety",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-profile-768",
+      "role": "rider",
+      "route": "/rider/profile",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-support-768",
+      "role": "rider",
+      "route": "/rider/support",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-768",
+      "role": "admin",
+      "route": "/admin",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-shops-768",
+      "role": "admin",
+      "route": "/admin/shops",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-orders-768",
+      "role": "admin",
+      "route": "/admin/orders",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-orders-order-1-768",
+      "role": "admin",
+      "route": "/admin/orders/order-1",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-disputes-768",
+      "role": "admin",
+      "route": "/admin/disputes",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-refunds-768",
+      "role": "admin",
+      "route": "/admin/refunds",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-payouts-768",
+      "role": "admin",
+      "route": "/admin/payouts",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-riders-768",
+      "role": "admin",
+      "route": "/admin/riders",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-risk-768",
+      "role": "admin",
+      "route": "/admin/risk",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-campaigns-768",
+      "role": "admin",
+      "route": "/admin/campaigns",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-config-768",
+      "role": "admin",
+      "route": "/admin/config",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-staff-768",
+      "role": "admin",
+      "route": "/admin/staff",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-audit-768",
+      "role": "admin",
+      "route": "/admin/audit",
+      "width": 768,
+      "shot": true,
+      "viewport": 768,
+      "docScrollWidth": 768,
+      "bodyScrollWidth": 768,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-root-1024",
+      "role": "guest",
+      "route": "/",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [
+        {
+          "el": "div._marqueeTrack_84qjl_95",
+          "left": -24,
+          "right": 3221
+        },
+        {
+          "el": "div._marqueeGroup_84qjl_112",
+          "left": -24,
+          "right": 1598
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": -24,
+          "right": 180
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 906,
+          "right": 1176
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1240,
+          "right": 1534
+        },
+        {
+          "el": "div._marqueeGroup_84qjl_112",
+          "left": 1598,
+          "right": 3221
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1598,
+          "right": 1803
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1867,
+          "right": 2144
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2208,
+          "right": 2464
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2528,
+          "right": 2799
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2863,
+          "right": 3157
+        }
+      ],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-occasion-party-tonight-1024",
+      "role": "guest",
+      "route": "/occasion/party-tonight",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-search-1024",
+      "role": "guest",
+      "route": "/search",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-product-prod-kurta-set-1024",
+      "role": "guest",
+      "route": "/product/prod-kurta-set",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-shop-shop-kiran-1024",
+      "role": "guest",
+      "route": "/shop/shop-kiran",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-bag-1024",
+      "role": "guest",
+      "route": "/bag",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-support-1024",
+      "role": "guest",
+      "route": "/support",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-welcome-1024",
+      "role": "guest",
+      "route": "/welcome",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-login-1024",
+      "role": "guest",
+      "route": "/login",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-login-otp-1024",
+      "role": "guest",
+      "route": "/login/otp",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-onboarding-profile-1024",
+      "role": "guest",
+      "route": "/onboarding/profile",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-consent-1024",
+      "role": "guest",
+      "route": "/consent",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-register-shop-1024",
+      "role": "guest",
+      "route": "/register/shop",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-register-rider-1024",
+      "role": "guest",
+      "route": "/register/rider",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-admin-login-1024",
+      "role": "guest",
+      "route": "/admin/login",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-style-1024",
+      "role": "guest",
+      "route": "/_style",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [
+        {
+          "el": "div._marqueeTrack_84qjl_95",
+          "left": 68,
+          "right": 3313
+        },
+        {
+          "el": "div._marqueeGroup_84qjl_112",
+          "left": 68,
+          "right": 1690
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 998,
+          "right": 1268
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1332,
+          "right": 1626
+        },
+        {
+          "el": "div._marqueeGroup_84qjl_112",
+          "left": 1690,
+          "right": 3313
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1690,
+          "right": 1894
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1958,
+          "right": 2236
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2300,
+          "right": 2556
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2620,
+          "right": 2891
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2955,
+          "right": 3249
+        }
+      ],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-this-route-does-not-exist-1024",
+      "role": "guest",
+      "route": "/this-route-does-not-exist",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-checkout-1024",
+      "role": "buyer",
+      "route": "/checkout",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-orders-1024",
+      "role": "buyer",
+      "route": "/orders",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-order-order-1-confirmed-1024",
+      "role": "buyer",
+      "route": "/order/order-1/confirmed",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-order-order-1-track-1024",
+      "role": "buyer",
+      "route": "/order/order-1/track",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-order-order-1-trial-1024",
+      "role": "buyer",
+      "route": "/order/order-1/trial",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-order-order-1-return-1024",
+      "role": "buyer",
+      "route": "/order/order-1/return",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-wishlist-1024",
+      "role": "buyer",
+      "route": "/wishlist",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-1024",
+      "role": "buyer",
+      "route": "/profile",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-addresses-1024",
+      "role": "buyer",
+      "route": "/profile/addresses",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-payments-1024",
+      "role": "buyer",
+      "route": "/profile/payments",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-language-1024",
+      "role": "buyer",
+      "route": "/profile/language",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-privacy-1024",
+      "role": "buyer",
+      "route": "/profile/privacy",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-roles-1024",
+      "role": "buyer",
+      "route": "/profile/roles",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-1024",
+      "role": "shop",
+      "route": "/shop",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-orders-1024",
+      "role": "shop",
+      "route": "/shop/orders",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-orders-order-1-1024",
+      "role": "shop",
+      "route": "/shop/orders/order-1",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-listing-new-1024",
+      "role": "shop",
+      "route": "/shop/listing/new",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-inventory-1024",
+      "role": "shop",
+      "route": "/shop/inventory",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-returns-1024",
+      "role": "shop",
+      "route": "/shop/returns",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-payouts-1024",
+      "role": "shop",
+      "route": "/shop/payouts",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-settings-1024",
+      "role": "shop",
+      "route": "/shop/settings",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-support-1024",
+      "role": "shop",
+      "route": "/shop/support",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-1024",
+      "role": "rider",
+      "route": "/rider",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-tasks-1024",
+      "role": "rider",
+      "route": "/rider/tasks",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-tasks-order-1-1024",
+      "role": "rider",
+      "route": "/rider/tasks/order-1",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-earnings-1024",
+      "role": "rider",
+      "route": "/rider/earnings",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-safety-1024",
+      "role": "rider",
+      "route": "/rider/safety",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-profile-1024",
+      "role": "rider",
+      "route": "/rider/profile",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-support-1024",
+      "role": "rider",
+      "route": "/rider/support",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-1024",
+      "role": "admin",
+      "route": "/admin",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-shops-1024",
+      "role": "admin",
+      "route": "/admin/shops",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-orders-1024",
+      "role": "admin",
+      "route": "/admin/orders",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-orders-order-1-1024",
+      "role": "admin",
+      "route": "/admin/orders/order-1",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-disputes-1024",
+      "role": "admin",
+      "route": "/admin/disputes",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-refunds-1024",
+      "role": "admin",
+      "route": "/admin/refunds",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-payouts-1024",
+      "role": "admin",
+      "route": "/admin/payouts",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-riders-1024",
+      "role": "admin",
+      "route": "/admin/riders",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-risk-1024",
+      "role": "admin",
+      "route": "/admin/risk",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-campaigns-1024",
+      "role": "admin",
+      "route": "/admin/campaigns",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-config-1024",
+      "role": "admin",
+      "route": "/admin/config",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-staff-1024",
+      "role": "admin",
+      "route": "/admin/staff",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-audit-1024",
+      "role": "admin",
+      "route": "/admin/audit",
+      "width": 1024,
+      "shot": true,
+      "viewport": 1024,
+      "docScrollWidth": 1024,
+      "bodyScrollWidth": 1024,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-root-1440",
+      "role": "guest",
+      "route": "/",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [
+        {
+          "el": "div._marqueeTrack_84qjl_95",
+          "left": -22,
+          "right": 3224
+        },
+        {
+          "el": "div._marqueeGroup_84qjl_112",
+          "left": -22,
+          "right": 1601
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": -22,
+          "right": 183
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1243,
+          "right": 1537
+        },
+        {
+          "el": "div._marqueeGroup_84qjl_112",
+          "left": 1601,
+          "right": 3224
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1601,
+          "right": 1805
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1869,
+          "right": 2147
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2211,
+          "right": 2467
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2531,
+          "right": 2801
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2865,
+          "right": 3160
+        }
+      ],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-occasion-party-tonight-1440",
+      "role": "guest",
+      "route": "/occasion/party-tonight",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-search-1440",
+      "role": "guest",
+      "route": "/search",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-product-prod-kurta-set-1440",
+      "role": "guest",
+      "route": "/product/prod-kurta-set",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-shop-shop-kiran-1440",
+      "role": "guest",
+      "route": "/shop/shop-kiran",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-bag-1440",
+      "role": "guest",
+      "route": "/bag",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-support-1440",
+      "role": "guest",
+      "route": "/support",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-welcome-1440",
+      "role": "guest",
+      "route": "/welcome",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-login-1440",
+      "role": "guest",
+      "route": "/login",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-login-otp-1440",
+      "role": "guest",
+      "route": "/login/otp",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-onboarding-profile-1440",
+      "role": "guest",
+      "route": "/onboarding/profile",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-consent-1440",
+      "role": "guest",
+      "route": "/consent",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-register-shop-1440",
+      "role": "guest",
+      "route": "/register/shop",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-register-rider-1440",
+      "role": "guest",
+      "route": "/register/rider",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-admin-login-1440",
+      "role": "guest",
+      "route": "/admin/login",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-style-1440",
+      "role": "guest",
+      "route": "/_style",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [
+        {
+          "el": "div._marqueeTrack_84qjl_95",
+          "left": 166,
+          "right": 3411
+        },
+        {
+          "el": "div._marqueeGroup_84qjl_112",
+          "left": 166,
+          "right": 1788
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1430,
+          "right": 1724
+        },
+        {
+          "el": "div._marqueeGroup_84qjl_112",
+          "left": 1788,
+          "right": 3411
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 1788,
+          "right": 1993
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2057,
+          "right": 2334
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2398,
+          "right": 2654
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 2718,
+          "right": 2989
+        },
+        {
+          "el": "span._marqueeItem_84qjl_119",
+          "left": 3053,
+          "right": 3347
+        }
+      ],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "guest-this-route-does-not-exist-1440",
+      "role": "guest",
+      "route": "/this-route-does-not-exist",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-checkout-1440",
+      "role": "buyer",
+      "route": "/checkout",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-orders-1440",
+      "role": "buyer",
+      "route": "/orders",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-order-order-1-confirmed-1440",
+      "role": "buyer",
+      "route": "/order/order-1/confirmed",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-order-order-1-track-1440",
+      "role": "buyer",
+      "route": "/order/order-1/track",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-order-order-1-trial-1440",
+      "role": "buyer",
+      "route": "/order/order-1/trial",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-order-order-1-return-1440",
+      "role": "buyer",
+      "route": "/order/order-1/return",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-wishlist-1440",
+      "role": "buyer",
+      "route": "/wishlist",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-1440",
+      "role": "buyer",
+      "route": "/profile",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-addresses-1440",
+      "role": "buyer",
+      "route": "/profile/addresses",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-payments-1440",
+      "role": "buyer",
+      "route": "/profile/payments",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-language-1440",
+      "role": "buyer",
+      "route": "/profile/language",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-privacy-1440",
+      "role": "buyer",
+      "route": "/profile/privacy",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "buyer-profile-roles-1440",
+      "role": "buyer",
+      "route": "/profile/roles",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-1440",
+      "role": "shop",
+      "route": "/shop",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-orders-1440",
+      "role": "shop",
+      "route": "/shop/orders",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-orders-order-1-1440",
+      "role": "shop",
+      "route": "/shop/orders/order-1",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-listing-new-1440",
+      "role": "shop",
+      "route": "/shop/listing/new",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-inventory-1440",
+      "role": "shop",
+      "route": "/shop/inventory",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-returns-1440",
+      "role": "shop",
+      "route": "/shop/returns",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-payouts-1440",
+      "role": "shop",
+      "route": "/shop/payouts",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-settings-1440",
+      "role": "shop",
+      "route": "/shop/settings",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "shop-shop-support-1440",
+      "role": "shop",
+      "route": "/shop/support",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-1440",
+      "role": "rider",
+      "route": "/rider",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-tasks-1440",
+      "role": "rider",
+      "route": "/rider/tasks",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-tasks-order-1-1440",
+      "role": "rider",
+      "route": "/rider/tasks/order-1",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-earnings-1440",
+      "role": "rider",
+      "route": "/rider/earnings",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-safety-1440",
+      "role": "rider",
+      "route": "/rider/safety",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-profile-1440",
+      "role": "rider",
+      "route": "/rider/profile",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "rider-rider-support-1440",
+      "role": "rider",
+      "route": "/rider/support",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-1440",
+      "role": "admin",
+      "route": "/admin",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-shops-1440",
+      "role": "admin",
+      "route": "/admin/shops",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-orders-1440",
+      "role": "admin",
+      "route": "/admin/orders",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-orders-order-1-1440",
+      "role": "admin",
+      "route": "/admin/orders/order-1",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-disputes-1440",
+      "role": "admin",
+      "route": "/admin/disputes",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-refunds-1440",
+      "role": "admin",
+      "route": "/admin/refunds",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-payouts-1440",
+      "role": "admin",
+      "route": "/admin/payouts",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-riders-1440",
+      "role": "admin",
+      "route": "/admin/riders",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-risk-1440",
+      "role": "admin",
+      "route": "/admin/risk",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-campaigns-1440",
+      "role": "admin",
+      "route": "/admin/campaigns",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-config-1440",
+      "role": "admin",
+      "route": "/admin/config",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-staff-1440",
+      "role": "admin",
+      "route": "/admin/staff",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    },
+    {
+      "id": "admin-admin-audit-1440",
+      "role": "admin",
+      "route": "/admin/audit",
+      "width": 1440,
+      "shot": true,
+      "viewport": 1440,
+      "docScrollWidth": 1440,
+      "bodyScrollWidth": 1440,
+      "offscreen": [],
+      "clipped": [],
+      "tables": []
+    }
+  ],
+  "axeResults": [
+    {
+      "id": "guest-root-360",
+      "role": "guest",
+      "route": "/",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-occasion-party-tonight-360",
+      "role": "guest",
+      "route": "/occasion/party-tonight",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-search-360",
+      "role": "guest",
+      "route": "/search",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-product-prod-kurta-set-360",
+      "role": "guest",
+      "route": "/product/prod-kurta-set",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-shop-shop-kiran-360",
+      "role": "guest",
+      "route": "/shop/shop-kiran",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-bag-360",
+      "role": "guest",
+      "route": "/bag",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-support-360",
+      "role": "guest",
+      "route": "/support",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-welcome-360",
+      "role": "guest",
+      "route": "/welcome",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-login-360",
+      "role": "guest",
+      "route": "/login",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-login-otp-360",
+      "role": "guest",
+      "route": "/login/otp",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-onboarding-profile-360",
+      "role": "guest",
+      "route": "/onboarding/profile",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-consent-360",
+      "role": "guest",
+      "route": "/consent",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-register-shop-360",
+      "role": "guest",
+      "route": "/register/shop",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-register-rider-360",
+      "role": "guest",
+      "route": "/register/rider",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-admin-login-360",
+      "role": "guest",
+      "route": "/admin/login",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-style-360",
+      "role": "guest",
+      "route": "/_style",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-this-route-does-not-exist-360",
+      "role": "guest",
+      "route": "/this-route-does-not-exist",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "buyer-checkout-360",
+      "role": "buyer",
+      "route": "/checkout",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "buyer-orders-360",
+      "role": "buyer",
+      "route": "/orders",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "buyer-order-order-1-confirmed-360",
+      "role": "buyer",
+      "route": "/order/order-1/confirmed",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "buyer-order-order-1-track-360",
+      "role": "buyer",
+      "route": "/order/order-1/track",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "buyer-order-order-1-trial-360",
+      "role": "buyer",
+      "route": "/order/order-1/trial",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "buyer-order-order-1-return-360",
+      "role": "buyer",
+      "route": "/order/order-1/return",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "buyer-wishlist-360",
+      "role": "buyer",
+      "route": "/wishlist",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "buyer-profile-360",
+      "role": "buyer",
+      "route": "/profile",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "buyer-profile-addresses-360",
+      "role": "buyer",
+      "route": "/profile/addresses",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "buyer-profile-payments-360",
+      "role": "buyer",
+      "route": "/profile/payments",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "buyer-profile-language-360",
+      "role": "buyer",
+      "route": "/profile/language",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "buyer-profile-privacy-360",
+      "role": "buyer",
+      "route": "/profile/privacy",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "buyer-profile-roles-360",
+      "role": "buyer",
+      "route": "/profile/roles",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-360",
+      "role": "shop",
+      "route": "/shop",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-orders-360",
+      "role": "shop",
+      "route": "/shop/orders",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-orders-order-1-360",
+      "role": "shop",
+      "route": "/shop/orders/order-1",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-listing-new-360",
+      "role": "shop",
+      "route": "/shop/listing/new",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-inventory-360",
+      "role": "shop",
+      "route": "/shop/inventory",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-returns-360",
+      "role": "shop",
+      "route": "/shop/returns",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-payouts-360",
+      "role": "shop",
+      "route": "/shop/payouts",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-settings-360",
+      "role": "shop",
+      "route": "/shop/settings",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-support-360",
+      "role": "shop",
+      "route": "/shop/support",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "rider-rider-360",
+      "role": "rider",
+      "route": "/rider",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "rider-rider-tasks-360",
+      "role": "rider",
+      "route": "/rider/tasks",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "rider-rider-tasks-order-1-360",
+      "role": "rider",
+      "route": "/rider/tasks/order-1",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "rider-rider-earnings-360",
+      "role": "rider",
+      "route": "/rider/earnings",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "rider-rider-safety-360",
+      "role": "rider",
+      "route": "/rider/safety",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "rider-rider-profile-360",
+      "role": "rider",
+      "route": "/rider/profile",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "rider-rider-support-360",
+      "role": "rider",
+      "route": "/rider/support",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-360",
+      "role": "admin",
+      "route": "/admin",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-shops-360",
+      "role": "admin",
+      "route": "/admin/shops",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-orders-360",
+      "role": "admin",
+      "route": "/admin/orders",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-orders-order-1-360",
+      "role": "admin",
+      "route": "/admin/orders/order-1",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-disputes-360",
+      "role": "admin",
+      "route": "/admin/disputes",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-refunds-360",
+      "role": "admin",
+      "route": "/admin/refunds",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-payouts-360",
+      "role": "admin",
+      "route": "/admin/payouts",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-riders-360",
+      "role": "admin",
+      "route": "/admin/riders",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-risk-360",
+      "role": "admin",
+      "route": "/admin/risk",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-campaigns-360",
+      "role": "admin",
+      "route": "/admin/campaigns",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-config-360",
+      "role": "admin",
+      "route": "/admin/config",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-staff-360",
+      "role": "admin",
+      "route": "/admin/staff",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-audit-360",
+      "role": "admin",
+      "route": "/admin/audit",
+      "width": 360,
+      "violations": []
+    },
+    {
+      "id": "guest-root-1440",
+      "role": "guest",
+      "route": "/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "guest-occasion-party-tonight-1440",
+      "role": "guest",
+      "route": "/occasion/party-tonight",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "guest-search-1440",
+      "role": "guest",
+      "route": "/search",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "guest-product-prod-kurta-set-1440",
+      "role": "guest",
+      "route": "/product/prod-kurta-set",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "guest-shop-shop-kiran-1440",
+      "role": "guest",
+      "route": "/shop/shop-kiran",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "guest-bag-1440",
+      "role": "guest",
+      "route": "/bag",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "guest-support-1440",
+      "role": "guest",
+      "route": "/support",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "guest-welcome-1440",
+      "role": "guest",
+      "route": "/welcome",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "guest-login-1440",
+      "role": "guest",
+      "route": "/login",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "guest-login-otp-1440",
+      "role": "guest",
+      "route": "/login/otp",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "guest-onboarding-profile-1440",
+      "role": "guest",
+      "route": "/onboarding/profile",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "guest-consent-1440",
+      "role": "guest",
+      "route": "/consent",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "guest-register-shop-1440",
+      "role": "guest",
+      "route": "/register/shop",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "guest-register-rider-1440",
+      "role": "guest",
+      "route": "/register/rider",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "guest-admin-login-1440",
+      "role": "guest",
+      "route": "/admin/login",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "guest-style-1440",
+      "role": "guest",
+      "route": "/_style",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "guest-this-route-does-not-exist-1440",
+      "role": "guest",
+      "route": "/this-route-does-not-exist",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "buyer-checkout-1440",
+      "role": "buyer",
+      "route": "/checkout",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "buyer-orders-1440",
+      "role": "buyer",
+      "route": "/orders",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "buyer-order-order-1-confirmed-1440",
+      "role": "buyer",
+      "route": "/order/order-1/confirmed",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "buyer-order-order-1-track-1440",
+      "role": "buyer",
+      "route": "/order/order-1/track",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "buyer-order-order-1-trial-1440",
+      "role": "buyer",
+      "route": "/order/order-1/trial",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "buyer-order-order-1-return-1440",
+      "role": "buyer",
+      "route": "/order/order-1/return",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "buyer-wishlist-1440",
+      "role": "buyer",
+      "route": "/wishlist",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "buyer-profile-1440",
+      "role": "buyer",
+      "route": "/profile",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "buyer-profile-addresses-1440",
+      "role": "buyer",
+      "route": "/profile/addresses",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "buyer-profile-payments-1440",
+      "role": "buyer",
+      "route": "/profile/payments",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "buyer-profile-language-1440",
+      "role": "buyer",
+      "route": "/profile/language",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "buyer-profile-privacy-1440",
+      "role": "buyer",
+      "route": "/profile/privacy",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "buyer-profile-roles-1440",
+      "role": "buyer",
+      "route": "/profile/roles",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-1440",
+      "role": "shop",
+      "route": "/shop",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-orders-1440",
+      "role": "shop",
+      "route": "/shop/orders",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-orders-order-1-1440",
+      "role": "shop",
+      "route": "/shop/orders/order-1",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-listing-new-1440",
+      "role": "shop",
+      "route": "/shop/listing/new",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-inventory-1440",
+      "role": "shop",
+      "route": "/shop/inventory",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-returns-1440",
+      "role": "shop",
+      "route": "/shop/returns",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-payouts-1440",
+      "role": "shop",
+      "route": "/shop/payouts",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-settings-1440",
+      "role": "shop",
+      "route": "/shop/settings",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "shop-shop-support-1440",
+      "role": "shop",
+      "route": "/shop/support",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "rider-rider-1440",
+      "role": "rider",
+      "route": "/rider",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "rider-rider-tasks-1440",
+      "role": "rider",
+      "route": "/rider/tasks",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "rider-rider-tasks-order-1-1440",
+      "role": "rider",
+      "route": "/rider/tasks/order-1",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "rider-rider-earnings-1440",
+      "role": "rider",
+      "route": "/rider/earnings",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "rider-rider-safety-1440",
+      "role": "rider",
+      "route": "/rider/safety",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "rider-rider-profile-1440",
+      "role": "rider",
+      "route": "/rider/profile",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "rider-rider-support-1440",
+      "role": "rider",
+      "route": "/rider/support",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-1440",
+      "role": "admin",
+      "route": "/admin",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-shops-1440",
+      "role": "admin",
+      "route": "/admin/shops",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-orders-1440",
+      "role": "admin",
+      "route": "/admin/orders",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-orders-order-1-1440",
+      "role": "admin",
+      "route": "/admin/orders/order-1",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-disputes-1440",
+      "role": "admin",
+      "route": "/admin/disputes",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-refunds-1440",
+      "role": "admin",
+      "route": "/admin/refunds",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-payouts-1440",
+      "role": "admin",
+      "route": "/admin/payouts",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-riders-1440",
+      "role": "admin",
+      "route": "/admin/riders",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-risk-1440",
+      "role": "admin",
+      "route": "/admin/risk",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-campaigns-1440",
+      "role": "admin",
+      "route": "/admin/campaigns",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-config-1440",
+      "role": "admin",
+      "route": "/admin/config",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-staff-1440",
+      "role": "admin",
+      "route": "/admin/staff",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "id": "admin-admin-audit-1440",
+      "role": "admin",
+      "route": "/admin/audit",
+      "width": 1440,
+      "violations": []
+    }
+  ],
+  "stateResults": {
+    "errors": {
+      "buyer": [
+        {
+          "route": "/orders",
+          "alert": "SOMETHING WENT WRONG\n\nMock request failed on purpose. Turn off mock failures in the demo panel.\n\nTry again",
+          "nextAction": true
+        },
+        {
+          "route": "/product/prod-kurta-set",
+          "alert": "SOMETHING WENT WRONG\n\nMock request failed on purpose. Turn off mock failures in the demo panel.\n\nTry again",
+          "nextAction": true
+        }
+      ],
+      "shop": [
+        {
+          "route": "/shop/orders",
+          "alert": "SOMETHING WENT WRONG\n\nMock request failed on purpose. Turn off mock failures in the demo panel.\n\nTry again",
+          "nextAction": true
+        },
+        {
+          "route": "/shop/inventory",
+          "alert": "SOMETHING WENT WRONG\n\nMock request failed on purpose. Turn off mock failures in the demo panel.\n\nTry again",
+          "nextAction": true
+        }
+      ],
+      "rider": [
+        {
+          "route": "/rider/tasks",
+          "alert": "SOMETHING WENT WRONG\n\nMock request failed on purpose. Turn off mock failures in the demo panel.\n\nTry again",
+          "nextAction": true
+        },
+        {
+          "route": "/rider/earnings",
+          "alert": "SOMETHING WENT WRONG\n\nMock request failed on purpose. Turn off mock failures in the demo panel.\n\nTry again",
+          "nextAction": true
+        }
+      ],
+      "admin": [
+        {
+          "route": "/admin/orders",
+          "alert": "SOMETHING WENT WRONG\n\nMock request failed on purpose. Turn off mock failures in the demo panel.\n\nTry again",
+          "nextAction": true
+        },
+        {
+          "route": "/admin/shops",
+          "alert": "SOMETHING WENT WRONG\n\nMock request failed on purpose. Turn off mock failures in the demo panel.\n\nTry again",
+          "nextAction": true
+        }
+      ]
+    },
+    "offline": {
+      "buyer": {
+        "route": "/orders",
+        "banner": "Offline. Showing the last saved data.\nLast updated 01:50 pm",
+        "lastUpdated": true,
+        "cachedRows": 0
+      },
+      "shop": {
+        "route": "/shop/orders",
+        "banner": "Offline. Showing the last saved data.\nLast updated 01:50 pm",
+        "lastUpdated": true,
+        "cachedRows": 0
+      },
+      "rider": {
+        "route": "/rider/tasks",
+        "banner": "Offline. Showing the last saved data.\nLast updated 01:50 pm",
+        "lastUpdated": true,
+        "cachedRows": 0
+      },
+      "admin": {
+        "route": "/admin/orders",
+        "banner": "Offline. Showing the last saved data.\nLast updated 01:50 pm",
+        "lastUpdated": true,
+        "cachedRows": 0
+      }
+    },
+    "empty": [
+      {
+        "role": "buyer",
+        "route": "/bag",
+        "title": "YOUR BAG IS EMPTY"
+      },
+      {
+        "role": "buyer",
+        "route": "/wishlist",
+        "title": "SAVE AN ITEM TO SEE IT HERE."
+      },
+      {
+        "role": "buyer",
+        "route": "/search?q=zzzznotathing",
+        "title": "NO ITEMS MATCH THESE FILTERS."
+      },
+      {
+        "role": "shop",
+        "route": "/shop/returns",
+        "title": "RETURNS"
+      },
+      {
+        "role": "rider",
+        "route": "/rider/earnings",
+        "title": "COMPLETE A TRIP TO SEE EARNINGS HERE."
+      }
+    ],
+    "loading": [
+      {
+        "role": "buyer",
+        "route": "/orders",
+        "observed": true
+      },
+      {
+        "role": "buyer",
+        "route": "/product/prod-kurta-set",
+        "observed": true
+      },
+      {
+        "role": "admin",
+        "route": "/admin/shops",
+        "observed": true
+      }
+    ]
+  }
+}

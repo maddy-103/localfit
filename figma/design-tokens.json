@@ -59,6 +59,62 @@
     "overlay": {
       "$type": "color",
       "$value": "rgba(0, 0, 0, 0.45)"
+    },
+    "onInkHover": {
+      "$type": "color",
+      "$value": "rgba(255, 255, 255, 0.14)"
+    },
+    "onInkLine": {
+      "$type": "color",
+      "$value": "rgba(255, 255, 255, 0.2)"
+    },
+    "onInkMuted": {
+      "$type": "color",
+      "$value": "rgba(255, 255, 255, 0.6)"
+    },
+    "onInkSoft": {
+      "$type": "color",
+      "$value": "rgba(255, 255, 255, 0.7)"
+    },
+    "onInkStrong": {
+      "$type": "color",
+      "$value": "rgba(255, 255, 255, 0.8)"
+    },
+    "toneSand": {
+      "$type": "color",
+      "$value": "#EFE6D8"
+    },
+    "toneRose": {
+      "$type": "color",
+      "$value": "#F3E1E0"
+    },
+    "toneSage": {
+      "$type": "color",
+      "$value": "#E2E8DF"
+    },
+    "toneSky": {
+      "$type": "color",
+      "$value": "#DFE8EE"
+    },
+    "toneLilac": {
+      "$type": "color",
+      "$value": "#E8E2EE"
+    },
+    "okBg": {
+      "$type": "color",
+      "$value": "rgba(1, 171, 49, 0.1)"
+    },
+    "okText": {
+      "$type": "color",
+      "$value": "#00661A"
+    },
+    "starBg": {
+      "$type": "color",
+      "$value": "rgba(255, 198, 51, 0.24)"
+    },
+    "starText": {
+      "$type": "color",
+      "$value": "#6B4B00"
     }
   },
   "radius": {
@@ -69,6 +125,18 @@
     "card": {
       "$type": "dimension",
       "$value": "20px"
+    },
+    "circle": {
+      "$type": "dimension",
+      "$value": "50%"
+    },
+    "xs": {
+      "$type": "dimension",
+      "$value": "4px"
+    },
+    "hairline": {
+      "$type": "dimension",
+      "$value": "2px"
     }
   },
   "spacing": {
@@ -114,6 +182,10 @@
       "body": {
         "$type": "fontFamily",
         "$value": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif"
+      },
+      "mono": {
+        "$type": "fontFamily",
+        "$value": "ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace"
       }
     },
     "weight": {
@@ -176,6 +248,22 @@
       "stat": {
         "$type": "dimension",
         "$value": "clamp(24px, 3vw, 40px)"
+      },
+      "xs": {
+        "$type": "dimension",
+        "$value": "12px"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "24px"
+      },
+      "xxl": {
+        "$type": "dimension",
+        "$value": "28px"
       }
     }
   },

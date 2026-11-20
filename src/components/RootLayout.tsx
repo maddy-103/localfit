@@ -70,7 +70,12 @@ export function RootLayout() {
             ))}
           </nav>
 
-          <form className={styles.search} role="search" onSubmit={submitSearch}>
+          <form
+            className={styles.search}
+            role="search"
+            aria-label={t('search.headerForm')}
+            onSubmit={submitSearch}
+          >
             <Icon name="search" size={18} />
             <label className="u-visually-hidden" htmlFor="header-search">
               {t('nav.search')}
@@ -106,9 +111,10 @@ export function RootLayout() {
         </div>
       </header>
 
-      <main id="main" className={styles.main}>
+      {/* Buyer pages own their <main>; this is the skip-link target container. */}
+      <div id="main" className={styles.main}>
         <Outlet />
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <div className={cx('u-container', styles.footerInner)}>

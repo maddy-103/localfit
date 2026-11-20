@@ -35,7 +35,18 @@ for (const [role, path] of CASES) {
   await context.addInitScript((session) => {
     localStorage.setItem(
       'lf:app',
-      JSON.stringify({ state: { session, settings: { lang: 'en' } }, version: 0 }),
+      JSON.stringify({
+        state: {
+          session,
+          settings: {
+            lang: 'en',
+            consent: { location: false, marketing: false, personalisation: false, termsAccepted: true },
+            onboarded: true,
+            notifications: { orders: true, offers: false },
+          },
+        },
+        version: 0,
+      }),
     );
   }, SESSIONS[role]);
   const page = await context.newPage();

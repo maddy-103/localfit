@@ -131,7 +131,7 @@ export default function RidersPage() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <p className={styles.eyebrow}>LocalFit</p>
+        <p className={styles.eyebrow}>{t('app.name')}</p>
         <h1 className={styles.title}>{t('admin.riders.title')}</h1>
         <p className={styles.intro}>{t('admin.riders.subtitle')}</p>
       </header>
@@ -159,9 +159,9 @@ export default function RidersPage() {
               label={t('admin.filter.status')}
               options={[
                 { value: 'all', label: t('common.all') },
-                { value: 'pending', label: 'pending' },
-                { value: 'approved', label: 'approved' },
-                { value: 'suspended', label: 'suspended' },
+                { value: 'pending', label: t('admin.status.pending') },
+                { value: 'approved', label: t('admin.status.approved') },
+                { value: 'suspended', label: t('admin.status.suspended') },
               ]}
               value={status}
               onChange={(event) => setStatus(event.target.value)}

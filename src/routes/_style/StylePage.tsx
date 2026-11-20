@@ -15,7 +15,7 @@ export default function StylePage() {
   const { t } = useI18n();
 
   return (
-    <div className={styles.page}>
+    <main className={styles.page}>
       <p className={styles.eyebrow}>{t('app.name')}</p>
       <h1 className={styles.title}>{t('style.title')}</h1>
       <p className={styles.intro}>{t('style.intro')}</p>
@@ -25,6 +25,6 @@ export default function StylePage() {
       <FeedbackSection />
       <SurfacesSection />
       <ChromeSection />
-    </div>
+    </main>
   );
 }

@@ -107,7 +107,7 @@ export default function HomePage() {
                 <span className={styles.small}>{t('home.statItems')}</span>
               </div>
               <div className={styles.stat}>
-                <span className={styles.statNumber}>12k</span>
+                <span className={styles.statNumber}>{t('home.statBuyersShort')}</span>
                 <span className={styles.small}>{t('home.statBuyers')}</span>
               </div>
             </div>
@@ -185,7 +185,7 @@ export default function HomePage() {
                 </span>
                 <span className={styles.etaMeta}>
                   <span className={styles.bold}>{shop.name}</span>
-                  <span className={styles.small}>{shop.area} · {shop.distanceKm} km</span>
+                  <span className={styles.small}>{shop.area} · {shop.distanceKm} {t('common.km')}</span>
                   <Rating value={shop.rating} count={shop.reviewCount} />
                 </span>
               </Link>

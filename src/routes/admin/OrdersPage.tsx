@@ -90,7 +90,7 @@ export default function OrdersPage() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <p className={styles.eyebrow}>LocalFit</p>
+        <p className={styles.eyebrow}>{t('app.name')}</p>
         <h1 className={styles.title}>{t('admin.orders.title')}</h1>
         <p className={styles.intro}>{t('admin.orders.subtitle')}</p>
       </header>

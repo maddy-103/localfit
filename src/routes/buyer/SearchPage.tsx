@@ -141,6 +141,7 @@ export default function SearchPage() {
         <form
           className={styles.row}
           role="search"
+          aria-label={t('search.pageForm')}
           onSubmit={(event) => { event.preventDefault(); updateQuery(text); }}
         >
           <Input

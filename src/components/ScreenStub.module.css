@@ -32,7 +32,7 @@
 }
 
 .path {
-  font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  font-family: var(--font-mono);
   font-size: var(--fs-small);
   color: var(--muted);
 }

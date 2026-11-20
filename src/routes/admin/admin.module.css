@@ -133,7 +133,7 @@
 }
 
 .mono {
-  font-family: ui-monospace, 'SFMono-Regular', Consolas, monospace;
+  font-family: var(--font-mono);
   font-size: var(--fs-small);
 }
 
@@ -161,7 +161,7 @@
 .timelineDot {
   width: 12px;
   height: 12px;
-  border-radius: 50%;
+  border-radius: var(--radius-circle);
   background: var(--ink);
   margin-top: 6px;
 }
@@ -234,8 +234,8 @@
   display: block;
   margin-top: var(--space-1);
   color: var(--muted);
-  font-family: ui-monospace, 'SFMono-Regular', Consolas, monospace;
-  font-size: 12px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
   overflow-wrap: anywhere;
 }
 
@@ -254,7 +254,7 @@
 }
 
 .code {
-  font-family: ui-monospace, 'SFMono-Regular', Consolas, monospace;
+  font-family: var(--font-mono);
   font-weight: var(--fw-bold);
 }
 
@@ -264,6 +264,6 @@
   }
 
   .title {
-    font-size: clamp(32px, 3vw, 48px);
+    font-size: var(--fs-h2);
   }
 }
