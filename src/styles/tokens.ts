@@ -131,6 +131,54 @@ export const fontSizes = {
   xxl: '28px',
 } as const;
 
+/**
+ * Concrete ends of the clamp() sizes above. THEME.md gives desktop / mobile
+ * pairs; Figma cannot import clamp(), so both ends are exported as dimensions.
+ */
+export const fontSizesDesktop = {
+  h1: '64px',
+  h2: '48px',
+  h3: '24px',
+  productTitle: '20px',
+  body: '16px',
+  small: '14px',
+  price: '24px',
+  stat: '40px',
+  xs: '12px',
+  lg: '20px',
+  xl: '24px',
+  xxl: '28px',
+} as const;
+
+export const fontSizesMobile = {
+  h1: '36px',
+  h2: '32px',
+  h3: '20px',
+  productTitle: '20px',
+  body: '16px',
+  small: '14px',
+  price: '24px',
+  stat: '24px',
+  xs: '12px',
+  lg: '20px',
+  xl: '24px',
+  xxl: '28px',
+} as const;
+
+/**
+ * Tracking used in component CSS, converted from em to px at the 16px body
+ * base so Tokens Studio receives absolute, portable values.
+ */
+export const letterSpacing = {
+  normal: '0px',
+  heading: '-0.32px',
+  display: '-0.16px',
+  eyebrow: '1.28px',
+  label: '0.96px',
+  wide: '1.92px',
+  code: '4.8px',
+} as const;
+
 export const layout = {
   maxWidth: '1240px',
   gutterMobile: '16px',
@@ -263,9 +311,22 @@ ${body}
 `;
 }
 
+type FigmaTokenType =
+  | 'color'
+  | 'dimension'
+  | 'fontFamily'
+  | 'fontWeight'
+  | 'duration'
+  | 'cubicBezier'
+  | 'shadow'
+  | 'number'
+  | 'typography';
+
+type FigmaValue = string | number | [number, number, number, number] | Record<string, string | number>;
+
 type FigmaToken = {
-  $type: 'color' | 'dimension' | 'fontFamily' | 'fontWeight' | 'duration' | 'cubicBezier' | 'shadow' | 'number';
-  $value: string | number | [number, number, number, number];
+  $type: FigmaTokenType;
+  $value: FigmaValue;
   $description?: string;
 };
 
@@ -285,44 +346,97 @@ function dimensionGroup(source: Record<string, string>): FigmaGroup {
   );
 }
 
-/** W3C Design Tokens JSON that Figma Token Studio can import. */
+function numberGroup(source: Record<string, string>): FigmaGroup {
+  return Object.fromEntries(
+    Object.entries(source).map(([key, value]) => [key, { $type: 'number', $value: Number(value) }]),
+  );
+}
+
+function durationGroup(source: Record<string, string>): FigmaGroup {
+  return Object.fromEntries(
+    Object.entries(source).map(([key, value]) => [key, { $type: 'duration', $value: value }]),
+  );
+}
+
+/** Splits the single CSS shadow string into Tokens Studio's shadow object. */
+function boxShadowToken(css: string): FigmaToken {
+  const [offsetX = '0px', offsetY = '0px', blur = '0px', ...color] = css.split(' ');
+  return {
+    $type: 'shadow',
+    $value: { color: color.join(' '), offsetX, offsetY, blur, spread: '0px' },
+  };
+}
+
+type TypeKey = keyof typeof fontSizesDesktop;
+const TYPE_STYLES: Record<
+  TypeKey,
+  { family: keyof typeof fontFamilies; weight: keyof typeof fontWeights; line: keyof typeof lineHeights; tracking: keyof typeof letterSpacing }
+> = {
+  h1: { family: 'heading', weight: 'heading', line: 'heading', tracking: 'heading' },
+  h2: { family: 'heading', weight: 'heading', line: 'heading', tracking: 'heading' },
+  h3: { family: 'heading', weight: 'heading', line: 'tight', tracking: 'heading' },
+  productTitle: { family: 'body', weight: 'bold', line: 'tight', tracking: 'normal' },
+  body: { family: 'body', weight: 'body', line: 'body', tracking: 'normal' },
+  small: { family: 'body', weight: 'body', line: 'body', tracking: 'normal' },
+  price: { family: 'body', weight: 'bold', line: 'tight', tracking: 'normal' },
+  stat: { family: 'heading', weight: 'heading', line: 'heading', tracking: 'heading' },
+  xs: { family: 'body', weight: 'body', line: 'body', tracking: 'normal' },
+  lg: { family: 'body', weight: 'medium', line: 'tight', tracking: 'normal' },
+  xl: { family: 'body', weight: 'medium', line: 'tight', tracking: 'normal' },
+  xxl: { family: 'body', weight: 'medium', line: 'tight', tracking: 'normal' },
+};
+
+function typographyGroup(sizes: Record<TypeKey, string>): FigmaGroup {
+  return Object.fromEntries(
+    Object.entries(TYPE_STYLES).map(([key, style]) => [
+      key,
+      {
+        $type: 'typography',
+        $value: {
+          fontFamily: fontFamilies[style.family],
+          fontWeight: Number(fontWeights[style.weight]),
+          fontSize: sizes[key as TypeKey],
+          lineHeight: Number(lineHeights[style.line]),
+          letterSpacing: letterSpacing[style.tracking],
+        },
+      },
+    ]),
+  );
+}
+
+/** Tokens Studio compatible W3C tokens generated from this file only. */
 export function tokensToFigma(): FigmaGroup {
   return {
     color: colorGroup(),
-    radius: dimensionGroup(radii),
     spacing: dimensionGroup(space),
-    typography: {
-      family: {
-        heading: { $type: 'fontFamily', $value: fontFamilies.heading },
-        body: { $type: 'fontFamily', $value: fontFamilies.body },
-        mono: { $type: 'fontFamily', $value: fontFamilies.mono },
-      },
-      weight: {
-        body: { $type: 'fontWeight', $value: Number(fontWeights.body) },
-        medium: { $type: 'fontWeight', $value: Number(fontWeights.medium) },
-        bold: { $type: 'fontWeight', $value: Number(fontWeights.bold) },
-        heading: { $type: 'fontWeight', $value: Number(fontWeights.heading) },
-      },
-      lineHeight: {
-        heading: { $type: 'number', $value: Number(lineHeights.heading) },
-        body: { $type: 'number', $value: Number(lineHeights.body) },
-      },
-      size: dimensionGroup(fontSizes),
+    borderRadius: dimensionGroup(radii),
+    boxShadow: { sheet: boxShadowToken(shadows.sheet) },
+    fontFamilies: {
+      heading: { $type: 'fontFamily', $value: fontFamilies.heading },
+      body: { $type: 'fontFamily', $value: fontFamilies.body },
+      mono: { $type: 'fontFamily', $value: fontFamilies.mono },
     },
+    fontSizes: {
+      desktop: dimensionGroup(fontSizesDesktop),
+      mobile: dimensionGroup(fontSizesMobile),
+    },
+    lineHeights: numberGroup(lineHeights),
+    letterSpacing: dimensionGroup(letterSpacing),
     motion: {
-      duration: dimensionGroup(durations),
-      easing: {
-        standard: { $type: 'cubicBezier', $value: [0.2, 0.7, 0.2, 1] },
-      },
+      duration: durationGroup(durations),
+      easing: { standard: { $type: 'cubicBezier', $value: [0.2, 0.7, 0.2, 1] } },
     },
-    shadow: {
-      sheet: { $type: 'shadow', $value: shadows.sheet },
-    },
-    layout: {
+    sizing: {
+      tapMin: { $type: 'dimension', $value: layout.tapMin },
+      tapPrimary: { $type: 'dimension', $value: layout.tapPrimary },
       maxWidth: { $type: 'dimension', $value: layout.maxWidth },
       gutterMobile: { $type: 'dimension', $value: layout.gutterMobile },
       gutterTablet: { $type: 'dimension', $value: layout.gutterTablet },
       gutterDesktop: { $type: 'dimension', $value: layout.gutterDesktop },
+    },
+    typography: {
+      desktop: typographyGroup(fontSizesDesktop),
+      mobile: typographyGroup(fontSizesMobile),
     },
   };
 }

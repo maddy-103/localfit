@@ -117,28 +117,6 @@
       "$value": "#6B4B00"
     }
   },
-  "radius": {
-    "pill": {
-      "$type": "dimension",
-      "$value": "62px"
-    },
-    "card": {
-      "$type": "dimension",
-      "$value": "20px"
-    },
-    "circle": {
-      "$type": "dimension",
-      "$value": "50%"
-    },
-    "xs": {
-      "$type": "dimension",
-      "$value": "4px"
-    },
-    "hairline": {
-      "$type": "dimension",
-      "$value": "2px"
-    }
-  },
   "spacing": {
     "1": {
       "$type": "dimension",
@@ -173,61 +151,67 @@
       "$value": "64px"
     }
   },
-  "typography": {
-    "family": {
-      "heading": {
-        "$type": "fontFamily",
-        "$value": "'Archivo', 'Noto Sans Devanagari', sans-serif"
-      },
-      "body": {
-        "$type": "fontFamily",
-        "$value": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif"
-      },
-      "mono": {
-        "$type": "fontFamily",
-        "$value": "ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace"
-      }
+  "borderRadius": {
+    "pill": {
+      "$type": "dimension",
+      "$value": "62px"
     },
-    "weight": {
-      "body": {
-        "$type": "fontWeight",
-        "$value": 400
-      },
-      "medium": {
-        "$type": "fontWeight",
-        "$value": 500
-      },
-      "bold": {
-        "$type": "fontWeight",
-        "$value": 700
-      },
-      "heading": {
-        "$type": "fontWeight",
-        "$value": 900
-      }
+    "card": {
+      "$type": "dimension",
+      "$value": "20px"
     },
-    "lineHeight": {
-      "heading": {
-        "$type": "number",
-        "$value": 0.98
-      },
-      "body": {
-        "$type": "number",
-        "$value": 1.5
-      }
+    "circle": {
+      "$type": "dimension",
+      "$value": "50%"
     },
-    "size": {
+    "xs": {
+      "$type": "dimension",
+      "$value": "4px"
+    },
+    "hairline": {
+      "$type": "dimension",
+      "$value": "2px"
+    }
+  },
+  "boxShadow": {
+    "sheet": {
+      "$type": "shadow",
+      "$value": {
+        "color": "rgba(0, 0, 0, 0.18)",
+        "offsetX": "0",
+        "offsetY": "24px",
+        "blur": "64px",
+        "spread": "0px"
+      }
+    }
+  },
+  "fontFamilies": {
+    "heading": {
+      "$type": "fontFamily",
+      "$value": "'Archivo', 'Noto Sans Devanagari', sans-serif"
+    },
+    "body": {
+      "$type": "fontFamily",
+      "$value": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif"
+    },
+    "mono": {
+      "$type": "fontFamily",
+      "$value": "ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace"
+    }
+  },
+  "fontSizes": {
+    "desktop": {
       "h1": {
         "$type": "dimension",
-        "$value": "clamp(36px, 5vw, 64px)"
+        "$value": "64px"
       },
       "h2": {
         "$type": "dimension",
-        "$value": "clamp(32px, 4vw, 48px)"
+        "$value": "48px"
       },
       "h3": {
         "$type": "dimension",
-        "$value": "clamp(20px, 2.5vw, 24px)"
+        "$value": "24px"
       },
       "productTitle": {
         "$type": "dimension",
@@ -247,7 +231,57 @@
       },
       "stat": {
         "$type": "dimension",
-        "$value": "clamp(24px, 3vw, 40px)"
+        "$value": "40px"
+      },
+      "xs": {
+        "$type": "dimension",
+        "$value": "12px"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "24px"
+      },
+      "xxl": {
+        "$type": "dimension",
+        "$value": "28px"
+      }
+    },
+    "mobile": {
+      "h1": {
+        "$type": "dimension",
+        "$value": "36px"
+      },
+      "h2": {
+        "$type": "dimension",
+        "$value": "32px"
+      },
+      "h3": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "productTitle": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "body": {
+        "$type": "dimension",
+        "$value": "16px"
+      },
+      "small": {
+        "$type": "dimension",
+        "$value": "14px"
+      },
+      "price": {
+        "$type": "dimension",
+        "$value": "24px"
+      },
+      "stat": {
+        "$type": "dimension",
+        "$value": "24px"
       },
       "xs": {
         "$type": "dimension",
@@ -267,18 +301,62 @@
       }
     }
   },
+  "lineHeights": {
+    "heading": {
+      "$type": "number",
+      "$value": 0.98
+    },
+    "body": {
+      "$type": "number",
+      "$value": 1.5
+    },
+    "tight": {
+      "$type": "number",
+      "$value": 1.2
+    }
+  },
+  "letterSpacing": {
+    "normal": {
+      "$type": "dimension",
+      "$value": "0px"
+    },
+    "heading": {
+      "$type": "dimension",
+      "$value": "-0.32px"
+    },
+    "display": {
+      "$type": "dimension",
+      "$value": "-0.16px"
+    },
+    "eyebrow": {
+      "$type": "dimension",
+      "$value": "1.28px"
+    },
+    "label": {
+      "$type": "dimension",
+      "$value": "0.96px"
+    },
+    "wide": {
+      "$type": "dimension",
+      "$value": "1.92px"
+    },
+    "code": {
+      "$type": "dimension",
+      "$value": "4.8px"
+    }
+  },
   "motion": {
     "duration": {
       "fast": {
-        "$type": "dimension",
+        "$type": "duration",
         "$value": "150ms"
       },
       "base": {
-        "$type": "dimension",
+        "$type": "duration",
         "$value": "250ms"
       },
       "slow": {
-        "$type": "dimension",
+        "$type": "duration",
         "$value": "300ms"
       }
     },
@@ -294,13 +372,15 @@
       }
     }
   },
-  "shadow": {
-    "sheet": {
-      "$type": "shadow",
-      "$value": "0 24px 64px rgba(0, 0, 0, 0.18)"
-    }
-  },
-  "layout": {
+  "sizing": {
+    "tapMin": {
+      "$type": "dimension",
+      "$value": "44px"
+    },
+    "tapPrimary": {
+      "$type": "dimension",
+      "$value": "48px"
+    },
     "maxWidth": {
       "$type": "dimension",
       "$value": "1240px"
@@ -316,6 +396,252 @@
     "gutterDesktop": {
       "$type": "dimension",
       "$value": "100px"
+    }
+  },
+  "typography": {
+    "desktop": {
+      "h1": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Archivo', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 900,
+          "fontSize": "64px",
+          "lineHeight": 0.98,
+          "letterSpacing": "-0.32px"
+        }
+      },
+      "h2": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Archivo', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 900,
+          "fontSize": "48px",
+          "lineHeight": 0.98,
+          "letterSpacing": "-0.32px"
+        }
+      },
+      "h3": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Archivo', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 900,
+          "fontSize": "24px",
+          "lineHeight": 1.2,
+          "letterSpacing": "-0.32px"
+        }
+      },
+      "productTitle": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 700,
+          "fontSize": "20px",
+          "lineHeight": 1.2,
+          "letterSpacing": "0px"
+        }
+      },
+      "body": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 400,
+          "fontSize": "16px",
+          "lineHeight": 1.5,
+          "letterSpacing": "0px"
+        }
+      },
+      "small": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 400,
+          "fontSize": "14px",
+          "lineHeight": 1.5,
+          "letterSpacing": "0px"
+        }
+      },
+      "price": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 700,
+          "fontSize": "24px",
+          "lineHeight": 1.2,
+          "letterSpacing": "0px"
+        }
+      },
+      "stat": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Archivo', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 900,
+          "fontSize": "40px",
+          "lineHeight": 0.98,
+          "letterSpacing": "-0.32px"
+        }
+      },
+      "xs": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 400,
+          "fontSize": "12px",
+          "lineHeight": 1.5,
+          "letterSpacing": "0px"
+        }
+      },
+      "lg": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 500,
+          "fontSize": "20px",
+          "lineHeight": 1.2,
+          "letterSpacing": "0px"
+        }
+      },
+      "xl": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 500,
+          "fontSize": "24px",
+          "lineHeight": 1.2,
+          "letterSpacing": "0px"
+        }
+      },
+      "xxl": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 500,
+          "fontSize": "28px",
+          "lineHeight": 1.2,
+          "letterSpacing": "0px"
+        }
+      }
+    },
+    "mobile": {
+      "h1": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Archivo', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 900,
+          "fontSize": "36px",
+          "lineHeight": 0.98,
+          "letterSpacing": "-0.32px"
+        }
+      },
+      "h2": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Archivo', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 900,
+          "fontSize": "32px",
+          "lineHeight": 0.98,
+          "letterSpacing": "-0.32px"
+        }
+      },
+      "h3": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Archivo', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 900,
+          "fontSize": "20px",
+          "lineHeight": 1.2,
+          "letterSpacing": "-0.32px"
+        }
+      },
+      "productTitle": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 700,
+          "fontSize": "20px",
+          "lineHeight": 1.2,
+          "letterSpacing": "0px"
+        }
+      },
+      "body": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 400,
+          "fontSize": "16px",
+          "lineHeight": 1.5,
+          "letterSpacing": "0px"
+        }
+      },
+      "small": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 400,
+          "fontSize": "14px",
+          "lineHeight": 1.5,
+          "letterSpacing": "0px"
+        }
+      },
+      "price": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 700,
+          "fontSize": "24px",
+          "lineHeight": 1.2,
+          "letterSpacing": "0px"
+        }
+      },
+      "stat": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Archivo', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 900,
+          "fontSize": "24px",
+          "lineHeight": 0.98,
+          "letterSpacing": "-0.32px"
+        }
+      },
+      "xs": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 400,
+          "fontSize": "12px",
+          "lineHeight": 1.5,
+          "letterSpacing": "0px"
+        }
+      },
+      "lg": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 500,
+          "fontSize": "20px",
+          "lineHeight": 1.2,
+          "letterSpacing": "0px"
+        }
+      },
+      "xl": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 500,
+          "fontSize": "24px",
+          "lineHeight": 1.2,
+          "letterSpacing": "0px"
+        }
+      },
+      "xxl": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "'Satoshi', 'Inter', 'Noto Sans Devanagari', sans-serif",
+          "fontWeight": 500,
+          "fontSize": "28px",
+          "lineHeight": 1.2,
+          "letterSpacing": "0px"
+        }
+      }
     }
   }
 }

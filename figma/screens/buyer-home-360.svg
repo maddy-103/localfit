@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="3500" viewBox="0 0 360 3500" role="img" aria-label="buyer/home">
+  <title>buyer/home</title>
+  <rect id="frame-background" x="0" y="0" width="360" height="3500" fill="#FFFFFF"/>
+  <rect id="announcement-bar" x="0" y="0" width="360" height="64" fill="#000000"/>
+  <text id="announcement-copy-line-1" x="16" y="29" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF">Sign up and get 20% off your</text>
+  <text id="announcement-copy-line-2" x="16" y="50.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF">first order. Sign up now</text>
+  <rect id="announcement-close-hit-area" x="310" y="10" width="44" height="44" fill="none"/>
+  <g id="announcement-close" transform="translate(320 20) scale(1)"><g fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 6 12 12M18 6 6 18"></path></g></g>
+  <rect id="site-header" x="0" y="64" width="360" height="72" fill="#FFFFFF"/>
+  <text id="header-logo-line-1" x="16" y="110" font-family="Archivo" font-weight="900" font-size="24" fill="#000000" letter-spacing="-0.32px">LOCALFIT</text>
+  <rect id="header-menu-hit-area" x="174" y="78" width="44" height="44" fill="none"/>
+  <g id="header-menu" transform="translate(184 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7h17M3.5 12h17M3.5 17h17"></path></g></g>
+  <rect id="header-search-hit-area" x="218" y="78" width="44" height="44" fill="none"/>
+  <g id="header-search" transform="translate(228 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m16.4 16.4 4.1 4.1"></path></g></g>
+  <rect id="header-cart-hit-area" x="262" y="78" width="44" height="44" fill="none"/>
+  <g id="header-cart" transform="translate(272 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.2l2.3 10.8a1.8 1.8 0 0 0 1.8 1.4h7.9a1.8 1.8 0 0 0 1.8-1.4L21 8H6"></path><circle cx="10" cy="20" r="1.2"></circle><circle cx="18" cy="20" r="1.2"></circle></g></g>
+  <rect id="header-account-hit-area" x="306" y="78" width="44" height="44" fill="none"/>
+  <g id="header-account" transform="translate(316 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="9.5" r="3"></circle><path d="M6.4 18.4a6.2 6.2 0 0 1 11.2 0"></path></g></g>
+  <path id="header-divider" d="M0 136L360 136" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1" fill="none"/>
+  <rect id="hero-band" x="0" y="136" width="360" height="820" fill="#F2F0F1"/>
+  <text id="hero-title-line-1" x="16" y="212" font-family="Archivo" font-weight="900" font-size="36" fill="#000000" letter-spacing="-0.32px">FIND CLOTHES</text>
+  <text id="hero-title-line-2" x="16" y="248" font-family="Archivo" font-weight="900" font-size="36" fill="#000000" letter-spacing="-0.32px">THAT MATCH</text>
+  <text id="hero-title-line-3" x="16" y="284" font-family="Archivo" font-weight="900" font-size="36" fill="#000000" letter-spacing="-0.32px">YOUR OCCASION</text>
+  <text id="hero-body-line-1" x="16" y="472" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Real stock from shops around the</text>
+  <text id="hero-body-line-2" x="16" y="493.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">corner. Try at your door before you</text>
+  <text id="hero-body-line-3" x="16" y="515.2" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">decide.</text>
+  <rect id="hero-shop-now" x="16" y="574" width="210" height="52" fill="#000000" rx="62"/>
+  <text id="hero-shop-now-label-line-1" x="24" y="606" font-family="Satoshi" font-weight="700" font-size="16" fill="#FFFFFF" text-anchor="middle">Shop now</text>
+  <text id="hero-stat-partner-shops-value-line-1" x="16" y="666" font-family="Archivo" font-weight="900" font-size="24" fill="#000000">200+</text>
+  <text id="hero-stat-partner-shops-label-line-1" x="16" y="694" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Partner shops</text>
+  <text id="hero-stat-items-in-stock-value-line-1" x="16" y="750" font-family="Archivo" font-weight="900" font-size="24" fill="#000000">2,000+</text>
+  <text id="hero-stat-items-in-stock-label-line-1" x="16" y="778" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Items in stock</text>
+  <path id="hero-stat-divider-1" d="M-12 714L-12 766" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1" fill="none"/>
+  <text id="hero-stat-happy-buyers-value-line-1" x="16" y="834" font-family="Archivo" font-weight="900" font-size="24" fill="#000000">30,000+</text>
+  <text id="hero-stat-happy-buyers-label-line-1" x="16" y="862" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Happy buyers</text>
+  <path id="hero-stat-divider-2" d="M-12 798L-12 850" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1" fill="none"/>
+  <rect id="hero-photo" x="100" y="636" width="240" height="300" fill="#EFE6D8" rx="20"/>
+  <rect id="hero-sparkle-top-hit-area" x="286" y="650" width="68" height="68" fill="none"/>
+  <g id="hero-sparkle-top" transform="translate(296 660) scale(2)"><path d="M12 2c1.1 5.2 4.8 8.9 10 10-5.2 1.1-8.9 4.8-10 10-1.1-5.2-4.8-8.9-10-10 5.2-1.1 8.9-4.8 10-10Z" fill="#000000" stroke="none"></path></g>
+  <rect id="hero-sparkle-left-hit-area" x="106" y="806" width="60" height="60" fill="none"/>
+  <g id="hero-sparkle-left" transform="translate(116 816) scale(1.7)"><path d="M12 2c1.1 5.2 4.8 8.9 10 10-5.2 1.1-8.9 4.8-10 10-1.1-5.2-4.8-8.9-10-10 5.2-1.1 8.9-4.8 10-10Z" fill="#000000" stroke="none"></path></g>
+  <rect id="hero-live-stock" x="108" y="872" width="200" height="64" fill="#FFFFFF" rx="20"/>
+  <text id="hero-live-stock-label-line-1" x="124" y="904" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Live in your size</text>
+  <text id="hero-live-stock-detail-line-1" x="124" y="928" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Cotton kurta · Size M</text>
+  <text id="need-today-title-line-1" x="16" y="1004" font-family="Archivo" font-weight="900" font-size="28" fill="#000000">NEED IT TODAY</text>
+  <text id="need-today-help-line-1" x="16" y="1036" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">In stock now, with a live delivery</text>
+  <text id="need-today-help-line-2" x="16" y="1057.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">window.</text>
+  <rect id="need-card-0-photo" x="16" y="1068" width="158" height="176" fill="#F3E1E0" rx="20"/>
+  <rect id="need-card-0-try-pill" x="28" y="1080" width="116" height="32" fill="#000000" rx="62"/>
+  <text id="need-card-0-try-pill-label-line-1" x="86" y="1102" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF" text-anchor="middle">Try at door</text>
+  <rect id="need-card-0-discount-pill" x="104" y="1080" width="58" height="32" fill="rgba(255, 51, 51, 0.1)" rx="62"/>
+  <text id="need-card-0-discount-label-line-1" x="133" y="1102" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828" text-anchor="middle">20% off</text>
+  <text id="need-card-0-name-line-1" x="16" y="1272" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">Cotton kurta</text>
+  <text id="need-card-0-name-line-2" x="16" y="1299" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">set</text>
+  <rect id="need-card-0-star-hit-area" x="3" y="1273" width="44" height="44" fill="none"/>
+  <g id="need-card-0-star" transform="translate(16 1286) scale(0.8)"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 17.4l-5.8 3 1.1-6.4-4.7-4.6 6.5-.9L12 2.6Z" fill="#FFC633" stroke="none"></path></g>
+  <text id="need-card-0-rating-line-1" x="42" y="1301" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">4.5/5</text>
+  <text id="need-card-0-price-line-1" x="16" y="1338" font-family="Satoshi" font-weight="700" font-size="24" fill="#000000">₹1,299</text>
+  <text id="need-card-0-mrp-line-1" x="124" y="1338" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">₹1,699</text>
+  <text id="need-card-0-eta-line-1" x="16" y="1370" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">2 km away ·</text>
+  <text id="need-card-0-eta-line-2" x="16" y="1391.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Arrives in 45–60</text>
+  <text id="need-card-0-eta-line-3" x="16" y="1413.2" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">min</text>
+  <rect id="need-card-1-photo" x="190" y="1068" width="158" height="176" fill="#F3E1E0" rx="20"/>
+  <rect id="need-card-1-try-pill" x="202" y="1080" width="116" height="32" fill="#000000" rx="62"/>
+  <text id="need-card-1-try-pill-label-line-1" x="260" y="1102" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF" text-anchor="middle">Try at door</text>
+  <rect id="need-card-1-discount-pill" x="278" y="1080" width="58" height="32" fill="rgba(255, 51, 51, 0.1)" rx="62"/>
+  <text id="need-card-1-discount-label-line-1" x="307" y="1102" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828" text-anchor="middle">20% off</text>
+  <text id="need-card-1-name-line-1" x="190" y="1272" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">Cotton kurta</text>
+  <text id="need-card-1-name-line-2" x="190" y="1299" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">set</text>
+  <rect id="need-card-1-star-hit-area" x="177" y="1273" width="44" height="44" fill="none"/>
+  <g id="need-card-1-star" transform="translate(190 1286) scale(0.8)"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 17.4l-5.8 3 1.1-6.4-4.7-4.6 6.5-.9L12 2.6Z" fill="#FFC633" stroke="none"></path></g>
+  <text id="need-card-1-rating-line-1" x="216" y="1301" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">4.5/5</text>
+  <text id="need-card-1-price-line-1" x="190" y="1338" font-family="Satoshi" font-weight="700" font-size="24" fill="#000000">₹1,299</text>
+  <text id="need-card-1-mrp-line-1" x="298" y="1338" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">₹1,699</text>
+  <text id="need-card-1-eta-line-1" x="190" y="1370" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">2 km away ·</text>
+  <text id="need-card-1-eta-line-2" x="190" y="1391.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Arrives in 45–60</text>
+  <text id="need-card-1-eta-line-3" x="190" y="1413.2" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">min</text>
+  <rect id="need-card-2-photo" x="16" y="1448" width="158" height="176" fill="#F3E1E0" rx="20"/>
+  <rect id="need-card-2-try-pill" x="28" y="1460" width="116" height="32" fill="#000000" rx="62"/>
+  <text id="need-card-2-try-pill-label-line-1" x="86" y="1482" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF" text-anchor="middle">Try at door</text>
+  <rect id="need-card-2-discount-pill" x="104" y="1460" width="58" height="32" fill="rgba(255, 51, 51, 0.1)" rx="62"/>
+  <text id="need-card-2-discount-label-line-1" x="133" y="1482" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828" text-anchor="middle">20% off</text>
+  <text id="need-card-2-name-line-1" x="16" y="1652" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">Cotton kurta</text>
+  <text id="need-card-2-name-line-2" x="16" y="1679" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">set</text>
+  <rect id="need-card-2-star-hit-area" x="3" y="1653" width="44" height="44" fill="none"/>
+  <g id="need-card-2-star" transform="translate(16 1666) scale(0.8)"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 17.4l-5.8 3 1.1-6.4-4.7-4.6 6.5-.9L12 2.6Z" fill="#FFC633" stroke="none"></path></g>
+  <text id="need-card-2-rating-line-1" x="42" y="1681" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">4.5/5</text>
+  <text id="need-card-2-price-line-1" x="16" y="1718" font-family="Satoshi" font-weight="700" font-size="24" fill="#000000">₹1,299</text>
+  <text id="need-card-2-mrp-line-1" x="124" y="1718" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">₹1,699</text>
+  <text id="need-card-2-eta-line-1" x="16" y="1750" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">2 km away ·</text>
+  <text id="need-card-2-eta-line-2" x="16" y="1771.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Arrives in 45–60</text>
+  <text id="need-card-2-eta-line-3" x="16" y="1793.2" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">min</text>
+  <rect id="need-card-3-photo" x="190" y="1448" width="158" height="176" fill="#F3E1E0" rx="20"/>
+  <rect id="need-card-3-try-pill" x="202" y="1460" width="116" height="32" fill="#000000" rx="62"/>
+  <text id="need-card-3-try-pill-label-line-1" x="260" y="1482" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF" text-anchor="middle">Try at door</text>
+  <rect id="need-card-3-discount-pill" x="278" y="1460" width="58" height="32" fill="rgba(255, 51, 51, 0.1)" rx="62"/>
+  <text id="need-card-3-discount-label-line-1" x="307" y="1482" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828" text-anchor="middle">20% off</text>
+  <text id="need-card-3-name-line-1" x="190" y="1652" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">Cotton kurta</text>
+  <text id="need-card-3-name-line-2" x="190" y="1679" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">set</text>
+  <rect id="need-card-3-star-hit-area" x="177" y="1653" width="44" height="44" fill="none"/>
+  <g id="need-card-3-star" transform="translate(190 1666) scale(0.8)"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 17.4l-5.8 3 1.1-6.4-4.7-4.6 6.5-.9L12 2.6Z" fill="#FFC633" stroke="none"></path></g>
+  <text id="need-card-3-rating-line-1" x="216" y="1681" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">4.5/5</text>
+  <text id="need-card-3-price-line-1" x="190" y="1718" font-family="Satoshi" font-weight="700" font-size="24" fill="#000000">₹1,299</text>
+  <text id="need-card-3-mrp-line-1" x="298" y="1718" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">₹1,699</text>
+  <text id="need-card-3-eta-line-1" x="190" y="1750" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">2 km away ·</text>
+  <text id="need-card-3-eta-line-2" x="190" y="1771.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Arrives in 45–60</text>
+  <text id="need-card-3-eta-line-3" x="190" y="1793.2" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">min</text>
+  <text id="occasion-title-line-1" x="16" y="1848" font-family="Archivo" font-weight="900" font-size="28" fill="#000000">SHOP BY OCCASION</text>
+  <rect id="occasion-tile-0" x="16" y="1888" width="158" height="110" fill="#E2E8DF" rx="20"/>
+  <text id="occasion-label-0-line-1" x="16" y="2020" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Party tonight</text>
+  <rect id="occasion-tile-1" x="190" y="1888" width="158" height="110" fill="#E2E8DF" rx="20"/>
+  <text id="occasion-label-1-line-1" x="190" y="2020" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Farewell</text>
+  <rect id="occasion-tile-2" x="16" y="2028" width="158" height="110" fill="#E2E8DF" rx="20"/>
+  <text id="occasion-label-2-line-1" x="16" y="2160" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Festive kurta</text>
+  <rect id="occasion-tile-3" x="190" y="2028" width="158" height="110" fill="#E2E8DF" rx="20"/>
+  <text id="occasion-label-3-line-1" x="190" y="2160" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Engagement</text>
+  <text id="arrivals-title-line-1" x="16" y="2188" font-family="Archivo" font-weight="900" font-size="28" fill="#000000">NEW ARRIVALS</text>
+  <rect id="arrival-card-0-photo" x="16" y="2228" width="158" height="176" fill="#F3E1E0" rx="20"/>
+  <rect id="arrival-card-0-try-pill" x="28" y="2240" width="116" height="32" fill="#000000" rx="62"/>
+  <text id="arrival-card-0-try-pill-label-line-1" x="86" y="2262" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF" text-anchor="middle">Try at door</text>
+  <rect id="arrival-card-0-discount-pill" x="104" y="2240" width="58" height="32" fill="rgba(255, 51, 51, 0.1)" rx="62"/>
+  <text id="arrival-card-0-discount-label-line-1" x="133" y="2262" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828" text-anchor="middle">20% off</text>
+  <text id="arrival-card-0-name-line-1" x="16" y="2432" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">Cotton kurta</text>
+  <text id="arrival-card-0-name-line-2" x="16" y="2459" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">set</text>
+  <rect id="arrival-card-0-star-hit-area" x="3" y="2433" width="44" height="44" fill="none"/>
+  <g id="arrival-card-0-star" transform="translate(16 2446) scale(0.8)"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 17.4l-5.8 3 1.1-6.4-4.7-4.6 6.5-.9L12 2.6Z" fill="#FFC633" stroke="none"></path></g>
+  <text id="arrival-card-0-rating-line-1" x="42" y="2461" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">4.5/5</text>
+  <text id="arrival-card-0-price-line-1" x="16" y="2498" font-family="Satoshi" font-weight="700" font-size="24" fill="#000000">₹1,299</text>
+  <text id="arrival-card-0-mrp-line-1" x="124" y="2498" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">₹1,699</text>
+  <text id="arrival-card-0-eta-line-1" x="16" y="2530" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">2 km away ·</text>
+  <text id="arrival-card-0-eta-line-2" x="16" y="2551.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Arrives in 45–60</text>
+  <text id="arrival-card-0-eta-line-3" x="16" y="2573.2" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">min</text>
+  <rect id="arrival-card-1-photo" x="190" y="2228" width="158" height="176" fill="#F3E1E0" rx="20"/>
+  <rect id="arrival-card-1-try-pill" x="202" y="2240" width="116" height="32" fill="#000000" rx="62"/>
+  <text id="arrival-card-1-try-pill-label-line-1" x="260" y="2262" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF" text-anchor="middle">Try at door</text>
+  <rect id="arrival-card-1-discount-pill" x="278" y="2240" width="58" height="32" fill="rgba(255, 51, 51, 0.1)" rx="62"/>
+  <text id="arrival-card-1-discount-label-line-1" x="307" y="2262" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828" text-anchor="middle">20% off</text>
+  <text id="arrival-card-1-name-line-1" x="190" y="2432" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">Cotton kurta</text>
+  <text id="arrival-card-1-name-line-2" x="190" y="2459" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">set</text>
+  <rect id="arrival-card-1-star-hit-area" x="177" y="2433" width="44" height="44" fill="none"/>
+  <g id="arrival-card-1-star" transform="translate(190 2446) scale(0.8)"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 17.4l-5.8 3 1.1-6.4-4.7-4.6 6.5-.9L12 2.6Z" fill="#FFC633" stroke="none"></path></g>
+  <text id="arrival-card-1-rating-line-1" x="216" y="2461" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">4.5/5</text>
+  <text id="arrival-card-1-price-line-1" x="190" y="2498" font-family="Satoshi" font-weight="700" font-size="24" fill="#000000">₹1,299</text>
+  <text id="arrival-card-1-mrp-line-1" x="298" y="2498" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">₹1,699</text>
+  <text id="arrival-card-1-eta-line-1" x="190" y="2530" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">2 km away ·</text>
+  <text id="arrival-card-1-eta-line-2" x="190" y="2551.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Arrives in 45–60</text>
+  <text id="arrival-card-1-eta-line-3" x="190" y="2573.2" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">min</text>
+  <rect id="arrival-card-2-photo" x="16" y="2608" width="158" height="176" fill="#F3E1E0" rx="20"/>
+  <rect id="arrival-card-2-try-pill" x="28" y="2620" width="116" height="32" fill="#000000" rx="62"/>
+  <text id="arrival-card-2-try-pill-label-line-1" x="86" y="2642" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF" text-anchor="middle">Try at door</text>
+  <rect id="arrival-card-2-discount-pill" x="104" y="2620" width="58" height="32" fill="rgba(255, 51, 51, 0.1)" rx="62"/>
+  <text id="arrival-card-2-discount-label-line-1" x="133" y="2642" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828" text-anchor="middle">20% off</text>
+  <text id="arrival-card-2-name-line-1" x="16" y="2812" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">Cotton kurta</text>
+  <text id="arrival-card-2-name-line-2" x="16" y="2839" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">set</text>
+  <rect id="arrival-card-2-star-hit-area" x="3" y="2813" width="44" height="44" fill="none"/>
+  <g id="arrival-card-2-star" transform="translate(16 2826) scale(0.8)"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 17.4l-5.8 3 1.1-6.4-4.7-4.6 6.5-.9L12 2.6Z" fill="#FFC633" stroke="none"></path></g>
+  <text id="arrival-card-2-rating-line-1" x="42" y="2841" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">4.5/5</text>
+  <text id="arrival-card-2-price-line-1" x="16" y="2878" font-family="Satoshi" font-weight="700" font-size="24" fill="#000000">₹1,299</text>
+  <text id="arrival-card-2-mrp-line-1" x="124" y="2878" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">₹1,699</text>
+  <text id="arrival-card-2-eta-line-1" x="16" y="2910" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">2 km away ·</text>
+  <text id="arrival-card-2-eta-line-2" x="16" y="2931.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Arrives in 45–60</text>
+  <text id="arrival-card-2-eta-line-3" x="16" y="2953.2" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">min</text>
+  <rect id="arrival-card-3-photo" x="190" y="2608" width="158" height="176" fill="#F3E1E0" rx="20"/>
+  <rect id="arrival-card-3-try-pill" x="202" y="2620" width="116" height="32" fill="#000000" rx="62"/>
+  <text id="arrival-card-3-try-pill-label-line-1" x="260" y="2642" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF" text-anchor="middle">Try at door</text>
+  <rect id="arrival-card-3-discount-pill" x="278" y="2620" width="58" height="32" fill="rgba(255, 51, 51, 0.1)" rx="62"/>
+  <text id="arrival-card-3-discount-label-line-1" x="307" y="2642" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828" text-anchor="middle">20% off</text>
+  <text id="arrival-card-3-name-line-1" x="190" y="2812" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">Cotton kurta</text>
+  <text id="arrival-card-3-name-line-2" x="190" y="2839" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">set</text>
+  <rect id="arrival-card-3-star-hit-area" x="177" y="2813" width="44" height="44" fill="none"/>
+  <g id="arrival-card-3-star" transform="translate(190 2826) scale(0.8)"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4L12 17.4l-5.8 3 1.1-6.4-4.7-4.6 6.5-.9L12 2.6Z" fill="#FFC633" stroke="none"></path></g>
+  <text id="arrival-card-3-rating-line-1" x="216" y="2841" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">4.5/5</text>
+  <text id="arrival-card-3-price-line-1" x="190" y="2878" font-family="Satoshi" font-weight="700" font-size="24" fill="#000000">₹1,299</text>
+  <text id="arrival-card-3-mrp-line-1" x="298" y="2878" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">₹1,699</text>
+  <text id="arrival-card-3-eta-line-1" x="190" y="2910" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">2 km away ·</text>
+  <text id="arrival-card-3-eta-line-2" x="190" y="2931.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Arrives in 45–60</text>
+  <text id="arrival-card-3-eta-line-3" x="190" y="2953.2" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">min</text>
+  <rect id="brand-strip" x="0" y="3008" width="360" height="140" fill="#000000"/>
+  <text id="brand-name-0-line-1" x="16" y="3048" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF">Anaya Studio</text>
+  <text id="brand-name-1-line-1" x="196" y="3048" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF">Studio Kadam</text>
+  <text id="brand-name-2-line-1" x="16" y="3092" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF">Niki Collection</text>
+  <text id="brand-name-3-line-1" x="196" y="3092" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF">The Local Fit</text>
+  <text id="brand-name-4-line-1" x="16" y="3136" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF">Rupa House</text>
+  <text id="brand-name-5-line-1" x="196" y="3136" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF">Meera Styles</text>
+  <rect id="site-footer" x="0" y="3148" width="360" height="176" fill="#000000"/>
+  <text id="footer-brand-line-1" x="16" y="3196" font-family="Archivo" font-weight="900" font-size="24" fill="#FFFFFF">LOCALFIT</text>
+  <text id="footer-tagline-line-1" x="16" y="3236" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.7)">Nearby shops. Real stock. Fifteen</text>
+  <text id="footer-tagline-line-2" x="16" y="3257.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.7)">minutes to decide at your door.</text>
+  <text id="footer-legal-line-1" x="16" y="3280" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.6)">Prices include GST. LocalFit is a</text>
+  <text id="footer-legal-line-2" x="16" y="3301.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.6)">marketplace for verified local shops.</text>
+</svg>

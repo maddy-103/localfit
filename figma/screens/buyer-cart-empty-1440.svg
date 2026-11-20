@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="850" viewBox="0 0 1440 850" role="img" aria-label="buyer/cart empty">
+  <title>buyer/cart empty</title>
+  <rect id="frame-background" x="0" y="0" width="1440" height="850" fill="#FFFFFF"/>
+  <rect id="announcement-bar" x="0" y="0" width="1440" height="64" fill="#000000"/>
+  <text id="announcement-copy-line-1" x="100" y="29" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF">Sign up and get 20% off your first order. Sign up now</text>
+  <rect id="announcement-close-hit-area" x="1390" y="10" width="44" height="44" fill="none"/>
+  <g id="announcement-close" transform="translate(1400 20) scale(1)"><g fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 6 12 12M18 6 6 18"></path></g></g>
+  <rect id="site-header" x="0" y="64" width="1440" height="72" fill="#FFFFFF"/>
+  <text id="header-logo-line-1" x="100" y="110" font-family="Archivo" font-weight="900" font-size="24" fill="#000000" letter-spacing="-0.32px">LOCALFIT</text>
+  <text id="header-nav-0-line-1" x="280" y="110" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Shop</text>
+  <rect id="header-nav-chevron-hit-area" x="350" y="88" width="44" height="44" fill="none"/>
+  <g id="header-nav-chevron" transform="translate(364 102) scale(0.7)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></g></g>
+  <text id="header-nav-1-line-1" x="400" y="110" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Occasions</text>
+  <text id="header-nav-2-line-1" x="520" y="110" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Near you</text>
+  <rect id="header-search-field" x="700" y="76" width="420" height="48" fill="#F0F0F0" rx="62"/>
+  <rect id="header-search-icon-hit-area" x="706" y="78" width="44" height="44" fill="none"/>
+  <g id="header-search-icon" transform="translate(716 88) scale(1)"><g fill="none" stroke="rgba(0, 0, 0, 0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m16.4 16.4 4.1 4.1"></path></g></g>
+  <text id="header-search-placeholder-line-1" x="750" y="107" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Search for a size, colour or shop</text>
+  <rect id="header-cart-hit-area" x="1242" y="78" width="44" height="44" fill="none"/>
+  <g id="header-cart" transform="translate(1252 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.2l2.3 10.8a1.8 1.8 0 0 0 1.8 1.4h7.9a1.8 1.8 0 0 0 1.8-1.4L21 8H6"></path><circle cx="10" cy="20" r="1.2"></circle><circle cx="18" cy="20" r="1.2"></circle></g></g>
+  <rect id="header-account-hit-area" x="1286" y="78" width="44" height="44" fill="none"/>
+  <g id="header-account" transform="translate(1296 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="9.5" r="3"></circle><path d="M6.4 18.4a6.2 6.2 0 0 1 11.2 0"></path></g></g>
+  <path id="header-divider" d="M0 136L1440 136" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1" fill="none"/>
+  <text id="cart-title-line-1" x="100" y="200" font-family="Archivo" font-weight="900" font-size="48" fill="#000000">YOUR CART</text>
+  <rect id="cart-empty-card" x="100" y="246" width="1240" height="320" fill="#FFFFFF" rx="20" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <rect id="cart-empty-icon-hit-area" x="114" y="276" width="68" height="68" fill="none"/>
+  <g id="cart-empty-icon" transform="translate(124 286) scale(2)"><g fill="none" stroke="rgba(0, 0, 0, 0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.2l2.3 10.8a1.8 1.8 0 0 0 1.8 1.4h7.9a1.8 1.8 0 0 0 1.8-1.4L21 8H6"></path><circle cx="10" cy="20" r="1.2"></circle><circle cx="18" cy="20" r="1.2"></circle></g></g>
+  <text id="cart-empty-title-line-1" x="124" y="376" font-family="Archivo" font-weight="900" font-size="24" fill="#000000">Your bag is empty</text>
+  <text id="cart-empty-body-line-1" x="124" y="424" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Items from nearby shops show live stock and a delivery window before you add them.</text>
+  <rect id="cart-empty-action" x="124" y="480" width="200" height="48" fill="#000000" rx="62"/>
+  <text id="cart-empty-action-label-line-1" x="132" y="510" font-family="Satoshi" font-weight="700" font-size="16" fill="#FFFFFF" text-anchor="middle">Browse shops</text>
+</svg>

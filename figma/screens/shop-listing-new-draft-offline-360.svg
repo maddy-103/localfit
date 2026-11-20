@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1600" viewBox="0 0 360 1600" role="img" aria-label="shop/listing-new offline draft">
+  <title>shop/listing-new offline draft</title>
+  <rect id="frame-background" x="0" y="0" width="360" height="1600" fill="#FFFFFF"/>
+  <rect id="console-topbar" x="0" y="0" width="360" height="64" fill="#000000"/>
+  <text id="console-role-line-1" x="16" y="40" font-family="Archivo" font-weight="900" font-size="20" fill="#FFFFFF" letter-spacing="1.28px">SHOP</text>
+  <rect id="console-page-background" x="0" y="64" width="360" height="1536" fill="#F2F0F1"/>
+  <rect id="listing-offline-banner" x="16" y="100" width="328" height="64" fill="#F0F0F0" rx="20"/>
+  <rect id="listing-offline-icon-hit-area" x="22" y="106" width="44" height="44" fill="none"/>
+  <g id="listing-offline-icon" transform="translate(32 116) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a15 15 0 0 1 6-2.4M15.5 7.2A15 15 0 0 1 21 9M6.5 12.5a10 10 0 0 1 3-1.3M15 11.4a10 10 0 0 1 2.5 1.1M9.2 16a5 5 0 0 1 5.6 0M12 19.5h.01"></path><path d="m3 3 18 18"></path></g></g>
+  <text id="listing-offline-copy-line-1" x="68" y="140" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Saved on this device. It will</text>
+  <text id="listing-offline-copy-line-2" x="68" y="161.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">publish when you are back</text>
+  <text id="listing-offline-copy-line-3" x="68" y="183.2" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">online.</text>
+  <text id="listing-step-line-1" x="16" y="212" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Step 1 of 3: Take or choose a photo</text>
+  <rect id="listing-photo" x="16" y="240" width="328" height="260" fill="#EFE6D8" rx="20"/>
+  <rect id="listing-capture" x="16" y="520" width="328" height="48" fill="#000000" rx="62"/>
+  <text id="listing-capture-label-line-1" x="60" y="550" font-family="Satoshi" font-weight="700" font-size="16" fill="#FFFFFF" text-anchor="start">Take or choose a photo</text>
+  <rect id="listing-capture-icon-hit-area" x="18" y="522" width="44" height="44" fill="none"/>
+  <g id="listing-capture-icon" transform="translate(28 532) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5h3l1.6-2.2h7.8l1.6 2.2h3v10h-17v-10Z"></path><circle cx="12" cy="13.2" r="3.2"></circle></g></g>
+  <rect id="listing-suggested-card" x="16" y="588" width="328" height="240" fill="#FFFFFF" rx="20" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <text id="listing-suggested-title-line-1" x="36" y="628" font-family="Satoshi" font-weight="700" font-size="16" fill="#00661A">Suggested, please check.</text>
+  <text id="listing-field-0-line-1" x="36" y="670" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Cotton kurta set</text>
+  <text id="listing-field-1-line-1" x="36" y="706" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Ethnic sets</text>
+  <text id="listing-field-2-line-1" x="36" y="742" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Rose</text>
+  <text id="listing-field-3-line-1" x="36" y="778" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Cotton</text>
+  <text id="listing-sizes-label-line-1" x="16" y="860" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Sizes and quantities</text>
+  <rect id="listing-size-s" x="16" y="882" width="68" height="48" fill="#F0F0F0" rx="62"/>
+  <text id="listing-size-s-label-line-1" x="50" y="914" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000" text-anchor="middle">S</text>
+  <rect id="listing-size-m" x="92" y="882" width="68" height="48" fill="#F0F0F0" rx="62"/>
+  <text id="listing-size-m-label-line-1" x="126" y="914" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000" text-anchor="middle">M</text>
+  <rect id="listing-size-l" x="168" y="882" width="68" height="48" fill="#F0F0F0" rx="62"/>
+  <text id="listing-size-l-label-line-1" x="202" y="914" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000" text-anchor="middle">L</text>
+  <rect id="listing-size-xl" x="244" y="882" width="68" height="48" fill="#F0F0F0" rx="62"/>
+  <text id="listing-size-xl-label-line-1" x="278" y="914" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000" text-anchor="middle">XL</text>
+  <rect id="listing-save" x="16" y="956" width="328" height="48" fill="#000000" rx="62"/>
+  <text id="listing-save-label-line-1" x="24" y="986" font-family="Satoshi" font-weight="700" font-size="16" fill="#FFFFFF" text-anchor="middle">Save listing</text>
+  <text id="listing-drafts-title-line-1" x="16" y="1044" font-family="Archivo" font-weight="900" font-size="24" fill="#000000">YOUR DRAFTS</text>
+  <rect id="listing-draft-row" x="16" y="1070" width="328" height="84" fill="#FFFFFF" rx="20" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <text id="listing-draft-name-line-1" x="36" y="1108" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Cotton kurta set · 3 sizes</text>
+  <text id="listing-draft-state-line-1" x="36" y="1138" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828">Waiting for connection</text>
+  <rect id="listing-sync-now" x="184" y="1088" width="144" height="48" fill="#FFFFFF" rx="62" stroke="#000000" stroke-width="1.5"/>
+  <text id="listing-sync-now-label-line-1" x="192" y="1118" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000" text-anchor="middle">Sync now</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1700" viewBox="0 0 360 1700" role="img" aria-label="admin/disputes-detail restricted">
+  <title>admin/disputes-detail restricted</title>
+  <rect id="frame-background" x="0" y="0" width="360" height="1700" fill="#FFFFFF"/>
+  <rect id="console-topbar" x="0" y="0" width="360" height="64" fill="#000000"/>
+  <text id="console-role-line-1" x="16" y="40" font-family="Archivo" font-weight="900" font-size="20" fill="#FFFFFF" letter-spacing="1.28px">ADMIN</text>
+  <rect id="console-page-background" x="0" y="64" width="360" height="1636" fill="#F2F0F1"/>
+  <text id="disputes-subtitle-line-1" x="16" y="120" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">A case with no decision for 24 hours</text>
+  <text id="disputes-subtitle-line-2" x="16" y="141.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">escalates to a senior admin.</text>
+  <rect id="disputes-table-header" x="16" y="152" width="328" height="48" fill="#F0F0F0" rx="4"/>
+  <text id="disputes-column-0-line-1" x="28" y="183" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Case</text>
+  <text id="disputes-column-1-line-1" x="110" y="183" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Order</text>
+  <text id="disputes-column-2-line-1" x="192" y="183" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Value</text>
+  <text id="disputes-column-3-line-1" x="274" y="183" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Decision</text>
+  <text id="disputes-column-3-line-2" x="274" y="204.6" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">SLA</text>
+  <rect id="dispute-row-0" x="16" y="200" width="328" height="56" fill="#FFFFFF" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <text id="dispute-row-0-case-line-1" x="28" y="234" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">D-1042</text>
+  <text id="dispute-row-0-order-line-1" x="110" y="234" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">ORD-2481</text>
+  <text id="dispute-row-0-value-line-1" x="192" y="234" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">₹1,299</text>
+  <text id="dispute-row-0-sla-line-1" x="274" y="234" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828">SLA</text>
+  <text id="dispute-row-0-sla-line-2" x="274" y="255.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828">breached</text>
+  <rect id="dispute-row-1" x="16" y="256" width="328" height="56" fill="#FFFFFF" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <text id="dispute-row-1-case-line-1" x="28" y="290" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">D-1041</text>
+  <text id="dispute-row-1-order-line-1" x="110" y="290" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">ORD-2477</text>
+  <text id="dispute-row-1-value-line-1" x="192" y="290" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">₹899</text>
+  <text id="dispute-row-1-sla-line-1" x="274" y="290" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">6h left</text>
+  <rect id="dispute-row-2" x="16" y="312" width="328" height="56" fill="#FFFFFF" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <text id="dispute-row-2-case-line-1" x="28" y="346" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">D-1040</text>
+  <text id="dispute-row-2-order-line-1" x="110" y="346" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">ORD-2469</text>
+  <text id="dispute-row-2-value-line-1" x="192" y="346" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">₹2,198</text>
+  <text id="dispute-row-2-sla-line-1" x="274" y="346" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">19h left</text>
+  <rect id="evidence-sheet-overlay" x="0" y="0" width="360" height="1700" fill="rgba(0, 0, 0, 0.45)"/>
+  <rect id="evidence-sheet" x="0" y="520" width="360" height="1140" fill="#FFFFFF" rx="20"/>
+  <text id="evidence-sheet-title-line-1" x="24" y="568" font-family="Archivo" font-weight="900" font-size="28" fill="#000000">CASE EVIDENCE</text>
+  <text id="evidence-case-line-line-1" x="24" y="604" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">D-1042 · ORD-2481 · ₹1,299</text>
+  <rect id="evidence-restricted-note" x="24" y="640" width="312" height="96" fill="#F0F0F0" rx="20"/>
+  <text id="evidence-restricted-copy-line-1" x="44" y="684" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Your role cannot view dispute</text>
+  <text id="evidence-restricted-copy-line-2" x="44" y="705.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">photos, GPS, OTP logs or event</text>
+  <text id="evidence-restricted-copy-line-3" x="44" y="727.2" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">history.</text>
+</svg>

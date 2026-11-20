@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="850" viewBox="0 0 1440 850" role="img" aria-label="buyer/cart">
+  <title>buyer/cart</title>
+  <rect id="frame-background" x="0" y="0" width="1440" height="850" fill="#FFFFFF"/>
+  <rect id="announcement-bar" x="0" y="0" width="1440" height="64" fill="#000000"/>
+  <text id="announcement-copy-line-1" x="100" y="29" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF">Sign up and get 20% off your first order. Sign up now</text>
+  <rect id="announcement-close-hit-area" x="1390" y="10" width="44" height="44" fill="none"/>
+  <g id="announcement-close" transform="translate(1400 20) scale(1)"><g fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 6 12 12M18 6 6 18"></path></g></g>
+  <rect id="site-header" x="0" y="64" width="1440" height="72" fill="#FFFFFF"/>
+  <text id="header-logo-line-1" x="100" y="110" font-family="Archivo" font-weight="900" font-size="24" fill="#000000" letter-spacing="-0.32px">LOCALFIT</text>
+  <text id="header-nav-0-line-1" x="280" y="110" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Shop</text>
+  <rect id="header-nav-chevron-hit-area" x="350" y="88" width="44" height="44" fill="none"/>
+  <g id="header-nav-chevron" transform="translate(364 102) scale(0.7)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></g></g>
+  <text id="header-nav-1-line-1" x="400" y="110" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Occasions</text>
+  <text id="header-nav-2-line-1" x="520" y="110" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Near you</text>
+  <rect id="header-search-field" x="700" y="76" width="420" height="48" fill="#F0F0F0" rx="62"/>
+  <rect id="header-search-icon-hit-area" x="706" y="78" width="44" height="44" fill="none"/>
+  <g id="header-search-icon" transform="translate(716 88) scale(1)"><g fill="none" stroke="rgba(0, 0, 0, 0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m16.4 16.4 4.1 4.1"></path></g></g>
+  <text id="header-search-placeholder-line-1" x="750" y="107" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Search for a size, colour or shop</text>
+  <rect id="header-cart-hit-area" x="1242" y="78" width="44" height="44" fill="none"/>
+  <g id="header-cart" transform="translate(1252 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.2l2.3 10.8a1.8 1.8 0 0 0 1.8 1.4h7.9a1.8 1.8 0 0 0 1.8-1.4L21 8H6"></path><circle cx="10" cy="20" r="1.2"></circle><circle cx="18" cy="20" r="1.2"></circle></g></g>
+  <rect id="header-account-hit-area" x="1286" y="78" width="44" height="44" fill="none"/>
+  <g id="header-account" transform="translate(1296 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="9.5" r="3"></circle><path d="M6.4 18.4a6.2 6.2 0 0 1 11.2 0"></path></g></g>
+  <path id="header-divider" d="M0 136L1440 136" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1" fill="none"/>
+  <text id="cart-title-line-1" x="100" y="200" font-family="Archivo" font-weight="900" font-size="48" fill="#000000">YOUR CART</text>
+  <rect id="cart-row-0" x="100" y="246" width="768.8" height="192" fill="#FFFFFF" rx="20" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <rect id="cart-row-0-photo" x="116" y="262" width="120" height="120" fill="#F3E1E0" rx="20"/>
+  <text id="cart-row-0-name-line-1" x="252" y="290" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">Cotton kurta set</text>
+  <text id="cart-row-0-variant-line-1" x="252" y="324" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Size M · Rose</text>
+  <text id="cart-row-0-price-line-1" x="252" y="362" font-family="Satoshi" font-weight="700" font-size="24" fill="#000000">₹1,299</text>
+  <rect id="cart-row-0-trash-hit-area" x="814.8" y="252" width="44" height="44" fill="none"/>
+  <g id="cart-row-0-trash" transform="translate(824.8 262) scale(1)"><g fill="none" stroke="#FF3333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V5h6v2M6.5 7l.8 12a1.5 1.5 0 0 0 1.5 1.4h6.4a1.5 1.5 0 0 0 1.5-1.4l.8-12"></path><path d="M10 11v5M14 11v5"></path></g></g>
+  <rect id="cart-row-0-stepper" x="720.8" y="374" width="132" height="48" fill="#F0F0F0" rx="62"/>
+  <rect id="cart-row-0-minus-hit-area" x="718.8" y="376" width="44" height="44" fill="none"/>
+  <g id="cart-row-0-minus" transform="translate(728.8 386) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path></g></g>
+  <text id="cart-row-0-quantity-line-1" x="786.8" y="405" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000" text-anchor="middle">1</text>
+  <rect id="cart-row-0-plus-hit-area" x="814.8" y="376" width="44" height="44" fill="none"/>
+  <g id="cart-row-0-plus" transform="translate(824.8 386) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></g></g>
+  <text id="cart-row-0-hold-line-1" x="252" y="410" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Stock held</text>
+  <rect id="cart-row-1" x="100" y="454" width="768.8" height="192" fill="#FFFFFF" rx="20" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <rect id="cart-row-1-photo" x="116" y="470" width="120" height="120" fill="#E2E8DF" rx="20"/>
+  <text id="cart-row-1-name-line-1" x="252" y="498" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">Linen shirt</text>
+  <text id="cart-row-1-variant-line-1" x="252" y="532" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Size L · White</text>
+  <text id="cart-row-1-price-line-1" x="252" y="570" font-family="Satoshi" font-weight="700" font-size="24" fill="#000000">₹1,099</text>
+  <rect id="cart-row-1-trash-hit-area" x="814.8" y="460" width="44" height="44" fill="none"/>
+  <g id="cart-row-1-trash" transform="translate(824.8 470) scale(1)"><g fill="none" stroke="#FF3333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V5h6v2M6.5 7l.8 12a1.5 1.5 0 0 0 1.5 1.4h6.4a1.5 1.5 0 0 0 1.5-1.4l.8-12"></path><path d="M10 11v5M14 11v5"></path></g></g>
+  <rect id="cart-row-1-stepper" x="720.8" y="582" width="132" height="48" fill="#F0F0F0" rx="62"/>
+  <rect id="cart-row-1-minus-hit-area" x="718.8" y="584" width="44" height="44" fill="none"/>
+  <g id="cart-row-1-minus" transform="translate(728.8 594) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path></g></g>
+  <text id="cart-row-1-quantity-line-1" x="786.8" y="613" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000" text-anchor="middle">1</text>
+  <rect id="cart-row-1-plus-hit-area" x="814.8" y="584" width="44" height="44" fill="none"/>
+  <g id="cart-row-1-plus" transform="translate(824.8 594) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></g></g>
+  <text id="cart-row-1-hold-line-1" x="252" y="618" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Stock held</text>
+  <rect id="order-summary" x="892.8" y="246" width="447.2" height="340" fill="#FFFFFF" rx="20" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <text id="order-summary-title-line-1" x="916.8" y="290" font-family="Archivo" font-weight="900" font-size="24" fill="#000000">Order summary</text>
+  <text id="summary-subtotal-label-line-1" x="916.8" y="342" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Subtotal</text>
+  <text id="summary-subtotal-value-line-1" x="1316" y="342" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000" text-anchor="end">₹2,398</text>
+  <text id="summary-discount-label-line-1" x="916.8" y="382" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Discount</text>
+  <text id="summary-discount-value-line-1" x="1316" y="382" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828" text-anchor="end">−₹200</text>
+  <text id="summary-delivery-label-line-1" x="916.8" y="422" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Delivery fee</text>
+  <text id="summary-delivery-value-line-1" x="1316" y="422" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000" text-anchor="end">Free</text>
+  <path id="summary-divider" d="M916.8 466L1316 466" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1" fill="none"/>
+  <text id="summary-total-label-line-1" x="916.8" y="506" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Total</text>
+  <text id="summary-total-value-line-1" x="1316" y="506" font-family="Satoshi" font-weight="700" font-size="24" fill="#000000" text-anchor="end">₹2,198</text>
+  <rect id="checkout-button" x="916.8" y="522" width="399.2" height="48" fill="#000000" rx="62"/>
+  <text id="checkout-button-label-line-1" x="960.8" y="552" font-family="Satoshi" font-weight="700" font-size="16" fill="#FFFFFF" text-anchor="start">Go to checkout</text>
+  <rect id="checkout-button-icon-hit-area" x="918.8" y="524" width="44" height="44" fill="none"/>
+  <g id="checkout-button-icon" transform="translate(928.8 534) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"></path></g></g>
+  <rect id="site-footer" x="0" y="620" width="1440" height="176" fill="#000000"/>
+  <text id="footer-brand-line-1" x="16" y="668" font-family="Archivo" font-weight="900" font-size="24" fill="#FFFFFF">LOCALFIT</text>
+  <text id="footer-tagline-line-1" x="16" y="708" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.7)">Nearby shops. Real stock. Fifteen minutes to decide at your door.</text>
+  <text id="footer-legal-line-1" x="16" y="752" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.6)">Prices include GST. LocalFit is a marketplace for verified local shops.</text>
+</svg>

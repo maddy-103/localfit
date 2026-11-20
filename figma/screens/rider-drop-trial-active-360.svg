@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1500" viewBox="0 0 360 1500" role="img" aria-label="rider/drop trial active">
+  <title>rider/drop trial active</title>
+  <rect id="frame-background" x="0" y="0" width="360" height="1500" fill="#FFFFFF"/>
+  <rect id="console-topbar" x="0" y="0" width="360" height="64" fill="#000000"/>
+  <text id="console-role-line-1" x="16" y="40" font-family="Archivo" font-weight="900" font-size="20" fill="#FFFFFF" letter-spacing="1.28px">RIDER</text>
+  <rect id="console-page-background" x="0" y="64" width="360" height="1436" fill="#F2F0F1"/>
+  <rect id="drop-task-card" x="16" y="104" width="328" height="190" fill="#FFFFFF" rx="20" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <rect id="drop-type-pill" x="32" y="120" width="96" height="32" fill="#000000" rx="62"/>
+  <text id="drop-type-label-line-1" x="80" y="142" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF" text-anchor="middle">DROP</text>
+  <text id="drop-order-id-line-1" x="144" y="143" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Order ORD-2481</text>
+  <text id="drop-address-label-line-1" x="32" y="194" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">To buyer</text>
+  <text id="drop-address-line-1" x="32" y="228" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">42, Second Cross, Indiranagar,</text>
+  <text id="drop-address-line-2" x="32" y="249.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Bengaluru</text>
+  <rect id="drop-navigate" x="164" y="124" width="164" height="44" fill="#FFFFFF" rx="62" stroke="#000000" stroke-width="1.5"/>
+  <text id="drop-navigate-label-line-1" x="208" y="152" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000" text-anchor="start">Open in maps</text>
+  <rect id="drop-navigate-icon-hit-area" x="166" y="124" width="44" height="44" fill="none"/>
+  <g id="drop-navigate-icon" transform="translate(176 134) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s6.5-5.7 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.3 12 21 12 21Z"></path><circle cx="12" cy="10.3" r="2.4"></circle></g></g>
+  <rect id="drop-map" x="16" y="312" width="328" height="200" fill="#DFE8EE" rx="20"/>
+  <rect id="drop-map-pin-hit-area" x="146" y="366" width="68" height="68" fill="none"/>
+  <g id="drop-map-pin" transform="translate(156 376) scale(2)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s6.5-5.7 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.3 12 21 12 21Z"></path><circle cx="12" cy="10.3" r="2.4"></circle></g></g>
+  <rect id="drop-arrived" x="16" y="540" width="328" height="48" fill="#000000" rx="62"/>
+  <text id="drop-arrived-label-line-1" x="24" y="570" font-family="Satoshi" font-weight="700" font-size="16" fill="#FFFFFF" text-anchor="middle">I have arrived</text>
+  <rect id="drop-otp-card" x="16" y="608" width="328" height="160" fill="#FFFFFF" rx="20" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <text id="drop-otp-label-line-1" x="32" y="646" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Buyer handover code</text>
+  <text id="drop-otp-hint-line-1" x="32" y="678" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Ask the buyer to read the four</text>
+  <text id="drop-otp-hint-line-2" x="32" y="699.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">digits on their order screen.</text>
+  <rect id="drop-otp-input" x="32" y="704" width="296" height="48" fill="#F0F0F0" rx="62"/>
+  <text id="drop-otp-digits-line-1" x="48" y="736" font-family="ui-monospace, monospace" font-weight="400" font-size="20" fill="#000000" letter-spacing="4.8px">4 8 3 2</text>
+  <rect id="drop-verify-otp" x="16" y="784" width="328" height="48" fill="#000000" rx="62"/>
+  <text id="drop-verify-otp-label-line-1" x="24" y="814" font-family="Satoshi" font-weight="700" font-size="16" fill="#FFFFFF" text-anchor="middle">Verify code</text>
+  <rect id="drop-handover-photo" x="16" y="848" width="328" height="48" fill="#FFFFFF" rx="62" stroke="#000000" stroke-width="1.5"/>
+  <text id="drop-handover-photo-label-line-1" x="60" y="878" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000" text-anchor="start">Handover photo</text>
+  <rect id="drop-handover-photo-icon-hit-area" x="18" y="850" width="44" height="44" fill="none"/>
+  <g id="drop-handover-photo-icon" transform="translate(28 860) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5h3l1.6-2.2h7.8l1.6 2.2h3v10h-17v-10Z"></path><circle cx="12" cy="13.2" r="3.2"></circle></g></g>
+  <rect id="rider-trial-timer" x="16" y="916" width="328" height="100" fill="rgba(255, 51, 51, 0.1)" rx="20"/>
+  <rect id="rider-trial-alert-hit-area" x="22" y="934" width="44" height="44" fill="none"/>
+  <g id="rider-trial-alert" transform="translate(32 944) scale(1)"><g fill="none" stroke="#C62828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 21 20H3L12 3.5Z"></path><path d="M12 9v5M12 17h.01"></path></g></g>
+  <text id="rider-trial-label-line-1" x="68" y="962" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Try window</text>
+  <text id="rider-timer-remaining-line-1" x="68" y="998" font-family="ui-monospace, monospace" font-weight="700" font-size="24" fill="#C62828" letter-spacing="1.92px">01:38</text>
+  <text id="rider-decisions-label-line-1" x="16" y="1044" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Buyer decisions</text>
+  <text id="rider-decision-keep-line-1" x="16" y="1080" font-family="Satoshi" font-weight="400" font-size="16" fill="#00661A">Keep</text>
+  <text id="rider-decision-return-line-1" x="176" y="1080" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828">Return</text>
+  <rect id="rider-confirm-decisions" x="16" y="1108" width="328" height="48" fill="#000000" rx="62"/>
+  <text id="rider-confirm-decisions-label-line-1" x="24" y="1138" font-family="Satoshi" font-weight="700" font-size="16" fill="#FFFFFF" text-anchor="middle">Confirm decisions</text>
+  <rect id="rider-action-bar" x="0" y="1420" width="360" height="80" fill="#000000"/>
+  <rect id="rider-primary-action" x="16" y="1432" width="328" height="48" fill="#000000" rx="62"/>
+  <text id="rider-primary-action-label-line-1" x="24" y="1462" font-family="Satoshi" font-weight="700" font-size="16" fill="#FFFFFF" text-anchor="middle">Close trip</text>
+</svg>

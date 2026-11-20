@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1400" viewBox="0 0 1440 1400" role="img" aria-label="rider/drop otp pending">
+  <title>rider/drop otp pending</title>
+  <rect id="frame-background" x="0" y="0" width="1440" height="1400" fill="#FFFFFF"/>
+  <rect id="console-sidebar" x="0" y="0" width="240" height="1400" fill="#000000"/>
+  <text id="console-sidebar-label-line-1" x="24" y="56" font-family="Archivo" font-weight="900" font-size="24" fill="#FFFFFF">LOCALFIT</text>
+  <text id="console-nav-0-line-1" x="24" y="128" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF">Home</text>
+  <text id="console-nav-1-line-1" x="24" y="184" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.6)">Orders</text>
+  <text id="console-nav-2-line-1" x="24" y="240" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.6)">Inventory</text>
+  <text id="console-nav-3-line-1" x="24" y="296" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.6)">Reports</text>
+  <text id="console-nav-4-line-1" x="24" y="352" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.6)">Settings</text>
+  <rect id="console-page-background" x="240" y="0" width="1200" height="1400" fill="#F2F0F1"/>
+  <text id="console-page-title-line-1" x="280" y="64" font-family="Archivo" font-weight="900" font-size="40" fill="#000000">TODAY’S TASKS</text>
+  <rect id="console-content" x="280" y="96" width="880" height="1240" fill="#FFFFFF" rx="20"/>
+  <rect id="drop-task-card" x="280" y="144" width="880" height="190" fill="#FFFFFF" rx="20" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <rect id="drop-type-pill" x="296" y="160" width="96" height="32" fill="#000000" rx="62"/>
+  <text id="drop-type-label-line-1" x="344" y="182" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF" text-anchor="middle">DROP</text>
+  <text id="drop-order-id-line-1" x="408" y="183" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Order ORD-2481</text>
+  <text id="drop-address-label-line-1" x="296" y="234" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">To buyer</text>
+  <text id="drop-address-line-1" x="296" y="268" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">42, Second Cross, Indiranagar, Bengaluru</text>
+  <rect id="drop-navigate" x="980" y="164" width="164" height="44" fill="#FFFFFF" rx="62" stroke="#000000" stroke-width="1.5"/>
+  <text id="drop-navigate-label-line-1" x="1024" y="192" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000" text-anchor="start">Open in maps</text>
+  <rect id="drop-navigate-icon-hit-area" x="982" y="164" width="44" height="44" fill="none"/>
+  <g id="drop-navigate-icon" transform="translate(992 174) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s6.5-5.7 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.3 12 21 12 21Z"></path><circle cx="12" cy="10.3" r="2.4"></circle></g></g>
+  <rect id="drop-map" x="280" y="352" width="880" height="240" fill="#DFE8EE" rx="20"/>
+  <rect id="drop-map-pin-hit-area" x="686" y="430" width="68" height="68" fill="none"/>
+  <g id="drop-map-pin" transform="translate(696 440) scale(2)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s6.5-5.7 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.3 12 21 12 21Z"></path><circle cx="12" cy="10.3" r="2.4"></circle></g></g>
+  <rect id="drop-arrived" x="280" y="580" width="880" height="48" fill="#000000" rx="62"/>
+  <text id="drop-arrived-label-line-1" x="288" y="610" font-family="Satoshi" font-weight="700" font-size="16" fill="#FFFFFF" text-anchor="middle">I have arrived</text>
+  <rect id="drop-otp-card" x="280" y="648" width="880" height="160" fill="#FFFFFF" rx="20" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <text id="drop-otp-label-line-1" x="296" y="686" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Buyer handover code</text>
+  <text id="drop-otp-hint-line-1" x="296" y="718" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Ask the buyer to read the four digits on their order screen.</text>
+  <rect id="drop-otp-input" x="296" y="744" width="848" height="48" fill="#F0F0F0" rx="62"/>
+  <text id="drop-otp-digits-line-1" x="312" y="776" font-family="ui-monospace, monospace" font-weight="400" font-size="20" fill="rgba(0, 0, 0, 0.6)" letter-spacing="4.8px">4 8 3 2</text>
+  <rect id="drop-verify-otp" x="280" y="824" width="880" height="48" fill="#F0F0F0" rx="62"/>
+  <text id="drop-verify-otp-label-line-1" x="288" y="854" font-family="Satoshi" font-weight="700" font-size="16" fill="rgba(0, 0, 0, 0.6)" text-anchor="middle">Verify code</text>
+  <rect id="drop-handover-photo" x="280" y="888" width="880" height="48" fill="#FFFFFF" rx="62" stroke="#000000" stroke-width="1.5"/>
+  <text id="drop-handover-photo-label-line-1" x="324" y="918" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000" text-anchor="start">Handover photo</text>
+  <rect id="drop-handover-photo-icon-hit-area" x="282" y="890" width="44" height="44" fill="none"/>
+  <g id="drop-handover-photo-icon" transform="translate(292 900) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5h3l1.6-2.2h7.8l1.6 2.2h3v10h-17v-10Z"></path><circle cx="12" cy="13.2" r="3.2"></circle></g></g>
+  <rect id="rider-action-bar" x="0" y="1320" width="1440" height="80" fill="#000000"/>
+  <rect id="rider-primary-action" x="280" y="1332" width="880" height="48" fill="#000000" rx="62"/>
+  <text id="rider-primary-action-label-line-1" x="288" y="1362" font-family="Satoshi" font-weight="700" font-size="16" fill="#FFFFFF" text-anchor="middle">I have arrived</text>
+</svg>

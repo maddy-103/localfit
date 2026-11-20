@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1950" viewBox="0 0 360 1950" role="img" aria-label="buyer/checkout pay disabled">
+  <title>buyer/checkout pay disabled</title>
+  <rect id="frame-background" x="0" y="0" width="360" height="1950" fill="#FFFFFF"/>
+  <rect id="announcement-bar" x="0" y="0" width="360" height="64" fill="#000000"/>
+  <text id="announcement-copy-line-1" x="16" y="29" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF">Sign up and get 20% off your</text>
+  <text id="announcement-copy-line-2" x="16" y="50.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF">first order. Sign up now</text>
+  <rect id="announcement-close-hit-area" x="310" y="10" width="44" height="44" fill="none"/>
+  <g id="announcement-close" transform="translate(320 20) scale(1)"><g fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 6 12 12M18 6 6 18"></path></g></g>
+  <rect id="site-header" x="0" y="64" width="360" height="72" fill="#FFFFFF"/>
+  <text id="header-logo-line-1" x="16" y="110" font-family="Archivo" font-weight="900" font-size="24" fill="#000000" letter-spacing="-0.32px">LOCALFIT</text>
+  <rect id="header-menu-hit-area" x="174" y="78" width="44" height="44" fill="none"/>
+  <g id="header-menu" transform="translate(184 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7h17M3.5 12h17M3.5 17h17"></path></g></g>
+  <rect id="header-search-hit-area" x="218" y="78" width="44" height="44" fill="none"/>
+  <g id="header-search" transform="translate(228 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m16.4 16.4 4.1 4.1"></path></g></g>
+  <rect id="header-cart-hit-area" x="262" y="78" width="44" height="44" fill="none"/>
+  <g id="header-cart" transform="translate(272 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.2l2.3 10.8a1.8 1.8 0 0 0 1.8 1.4h7.9a1.8 1.8 0 0 0 1.8-1.4L21 8H6"></path><circle cx="10" cy="20" r="1.2"></circle><circle cx="18" cy="20" r="1.2"></circle></g></g>
+  <rect id="header-account-hit-area" x="306" y="78" width="44" height="44" fill="none"/>
+  <g id="header-account" transform="translate(316 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="9.5" r="3"></circle><path d="M6.4 18.4a6.2 6.2 0 0 1 11.2 0"></path></g></g>
+  <path id="header-divider" d="M0 136L360 136" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1" fill="none"/>
+  <text id="checkout-title-line-1" x="16" y="200" font-family="Archivo" font-weight="900" font-size="36" fill="#000000">CHECKOUT</text>
+  <rect id="address-card" x="16" y="236" width="328" height="130" fill="#FFFFFF" rx="20" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <rect id="address-pin-hit-area" x="26" y="250" width="44" height="44" fill="none"/>
+  <g id="address-pin" transform="translate(36 260) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s6.5-5.7 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.3 12 21 12 21Z"></path><circle cx="12" cy="10.3" r="2.4"></circle></g></g>
+  <text id="address-title-line-1" x="72" y="280" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Deliver to</text>
+  <text id="address-lines-line-1" x="72" y="314" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">42, Second Cross,</text>
+  <text id="address-lines-line-2" x="72" y="335.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Indiranagar, Bengaluru</text>
+  <text id="address-lines-line-3" x="72" y="357.2" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">560038</text>
+  <text id="address-inside-area-line-1" x="72" y="346" font-family="Satoshi" font-weight="400" font-size="16" fill="#00661A">Inside this shop’s delivery area</text>
+  <rect id="payment-card" x="16" y="386" width="328" height="200" fill="#FFFFFF" rx="20" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <text id="payment-title-line-1" x="40" y="428" font-family="Satoshi" font-weight="700" font-size="20" fill="#000000">Payment method</text>
+  <rect id="payment-radio-upi" x="40" y="456" width="128" height="48" fill="#F2F0F1" rx="62" stroke="#000000" stroke-width="1"/>
+  <text id="payment-radio-upi-label-line-1" x="60" y="487" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">UPI</text>
+  <rect id="payment-radio-card" x="192" y="456" width="128" height="48" fill="#FFFFFF" rx="62" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <text id="payment-radio-card-label-line-1" x="212" y="487" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Card</text>
+  <rect id="payment-radio-wallet" x="40" y="516" width="128" height="48" fill="#FFFFFF" rx="62" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <text id="payment-radio-wallet-label-line-1" x="60" y="547" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Wallet</text>
+  <rect id="payment-radio-cod" x="192" y="516" width="128" height="48" fill="#FFFFFF" rx="62" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <text id="payment-radio-cod-label-line-1" x="212" y="547" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Cash on</text>
+  <text id="payment-radio-cod-label-line-2" x="212" y="568.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">delivery</text>
+  <text id="checkout-split-note-line-1" x="16" y="612" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Items from 2 shops become 2 orders,</text>
+  <text id="checkout-split-note-line-2" x="16" y="633.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">each with its own ETA and settlement.</text>
+  <rect id="trial-terms-block" x="16" y="656" width="328" height="860" fill="#FFFFFF" rx="20" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <text id="trial-terms-title-line-1" x="40" y="698" font-family="Archivo" font-weight="900" font-size="28" fill="#000000">Try before you</text>
+  <text id="trial-terms-title-line-2" x="40" y="735.8" font-family="Archivo" font-weight="900" font-size="28" fill="#000000">pay</text>
+  <text id="trial-terms-copy-line-1" x="40" y="738" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">You can try items at your door.</text>
+  <text id="trial-terms-copy-line-2" x="40" y="759.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Items you don’t keep go back with</text>
+  <text id="trial-terms-copy-line-3" x="40" y="781.2" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">the rider, and you pay only for</text>
+  <text id="trial-terms-copy-line-4" x="40" y="802.8" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">what you keep.</text>
+  <text id="trial-terms-default-title-line-1" x="40" y="832" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Not marked yet — returns by default</text>
+  <text id="trial-terms-default-line-1" x="40" y="864" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">If you don’t mark an item before</text>
+  <text id="trial-terms-default-line-2" x="40" y="885.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">the 15-minute timer ends, it is</text>
+  <text id="trial-terms-default-line-3" x="40" y="907.2" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">treated as Return and goes back</text>
+  <text id="trial-terms-default-line-4" x="40" y="928.8" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">with the rider.</text>
+  <text id="trial-terms-payment-title-line-1" x="40" y="964" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Authorization hold or charge</text>
+  <text id="trial-terms-card-line-1" x="40" y="996" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Card: the full amount is held</text>
+  <text id="trial-terms-card-line-2" x="40" y="1017.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">when you order. On confirmation</text>
+  <text id="trial-terms-card-line-3" x="40" y="1039.2" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">only kept items are captured, and</text>
+  <text id="trial-terms-card-line-4" x="40" y="1060.8" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">the hold on returned items is</text>
+  <text id="trial-terms-card-line-5" x="40" y="1082.4" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">released. Released holds can take</text>
+  <text id="trial-terms-card-line-6" x="40" y="1104" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">5–7 working days to drop off your</text>
+  <text id="trial-terms-card-line-7" x="40" y="1125.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">statement.</text>
+  <text id="trial-terms-upi-line-1" x="40" y="1112" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">UPI: the full amount is charged</text>
+  <text id="trial-terms-upi-line-2" x="40" y="1133.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">when you order. Returned items</text>
+  <text id="trial-terms-upi-line-3" x="40" y="1155.2" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">are refunded to your UPI 2–3</text>
+  <text id="trial-terms-upi-line-4" x="40" y="1176.8" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">working days after the shop</text>
+  <text id="trial-terms-upi-line-5" x="40" y="1198.4" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">receives them back.</text>
+  <text id="trial-terms-wallet-line-1" x="40" y="1196" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Wallet: the full amount is</text>
+  <text id="trial-terms-wallet-line-2" x="40" y="1217.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">charged when you order. Returned</text>
+  <text id="trial-terms-wallet-line-3" x="40" y="1239.2" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">items are refunded to your wallet</text>
+  <text id="trial-terms-wallet-line-4" x="40" y="1260.8" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">0–1 working day after the shop</text>
+  <text id="trial-terms-wallet-line-5" x="40" y="1282.4" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">receives them back.</text>
+  <text id="trial-terms-cod-line-1" x="40" y="1280" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828">Cash on delivery is never</text>
+  <text id="trial-terms-cod-line-2" x="40" y="1301.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828">available on try-at-door orders.</text>
+  <rect id="terms-checkbox-unchecked" x="16" y="1532" width="44" height="44" fill="#FFFFFF" rx="8" stroke="#000000" stroke-width="1"/>
+  <text id="terms-checkbox-label-line-1" x="76" y="1562" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">I have read these terms</text>
+  <rect id="pay-button-disabled" x="16" y="1600" width="328" height="52" fill="#F0F0F0" rx="62"/>
+  <text id="pay-button-disabled-label-line-1" x="24" y="1632" font-family="Satoshi" font-weight="700" font-size="16" fill="rgba(0, 0, 0, 0.6)" text-anchor="middle">Pay ₹2,198</text>
+  <rect id="site-footer" x="0" y="1720" width="360" height="176" fill="#000000"/>
+  <text id="footer-brand-line-1" x="16" y="1768" font-family="Archivo" font-weight="900" font-size="24" fill="#FFFFFF">LOCALFIT</text>
+  <text id="footer-tagline-line-1" x="16" y="1808" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.7)">Nearby shops. Real stock. Fifteen</text>
+  <text id="footer-tagline-line-2" x="16" y="1829.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.7)">minutes to decide at your door.</text>
+  <text id="footer-legal-line-1" x="16" y="1852" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.6)">Prices include GST. LocalFit is a</text>
+  <text id="footer-legal-line-2" x="16" y="1873.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.6)">marketplace for verified local shops.</text>
+</svg>

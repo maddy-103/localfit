@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="1150" viewBox="0 0 360 1150" role="img" aria-label="buyer/trial timer ending">
+  <title>buyer/trial timer ending</title>
+  <rect id="frame-background" x="0" y="0" width="360" height="1150" fill="#FFFFFF"/>
+  <rect id="announcement-bar" x="0" y="0" width="360" height="64" fill="#000000"/>
+  <text id="announcement-copy-line-1" x="16" y="29" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF">Sign up and get 20% off your</text>
+  <text id="announcement-copy-line-2" x="16" y="50.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF">first order. Sign up now</text>
+  <rect id="announcement-close-hit-area" x="310" y="10" width="44" height="44" fill="none"/>
+  <g id="announcement-close" transform="translate(320 20) scale(1)"><g fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 6 12 12M18 6 6 18"></path></g></g>
+  <rect id="site-header" x="0" y="64" width="360" height="72" fill="#FFFFFF"/>
+  <text id="header-logo-line-1" x="16" y="110" font-family="Archivo" font-weight="900" font-size="24" fill="#000000" letter-spacing="-0.32px">LOCALFIT</text>
+  <rect id="header-menu-hit-area" x="174" y="78" width="44" height="44" fill="none"/>
+  <g id="header-menu" transform="translate(184 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7h17M3.5 12h17M3.5 17h17"></path></g></g>
+  <rect id="header-search-hit-area" x="218" y="78" width="44" height="44" fill="none"/>
+  <g id="header-search" transform="translate(228 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m16.4 16.4 4.1 4.1"></path></g></g>
+  <rect id="header-cart-hit-area" x="262" y="78" width="44" height="44" fill="none"/>
+  <g id="header-cart" transform="translate(272 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.2l2.3 10.8a1.8 1.8 0 0 0 1.8 1.4h7.9a1.8 1.8 0 0 0 1.8-1.4L21 8H6"></path><circle cx="10" cy="20" r="1.2"></circle><circle cx="18" cy="20" r="1.2"></circle></g></g>
+  <rect id="header-account-hit-area" x="306" y="78" width="44" height="44" fill="none"/>
+  <g id="header-account" transform="translate(316 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="9.5" r="3"></circle><path d="M6.4 18.4a6.2 6.2 0 0 1 11.2 0"></path></g></g>
+  <path id="header-divider" d="M0 136L360 136" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1" fill="none"/>
+  <text id="trial-title-line-1" x="16" y="200" font-family="Archivo" font-weight="900" font-size="36" fill="#000000">TRY WINDOW</text>
+  <text id="trial-intro-line-1" x="16" y="248" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Try everything on. Keep what works and</text>
+  <text id="trial-intro-line-2" x="16" y="269.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">send the rest back with the rider.</text>
+  <rect id="trial-timer-panel" x="16" y="296" width="328" height="116" fill="rgba(255, 51, 51, 0.1)" rx="20"/>
+  <rect id="trial-timer-icon-hit-area" x="30" y="316" width="52" height="52" fill="none"/>
+  <g id="trial-timer-icon" transform="translate(40 326) scale(1.3)"><g fill="none" stroke="#C62828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 21 20H3L12 3.5Z"></path><path d="M12 9v5M12 17h.01"></path></g></g>
+  <text id="trial-timer-label-line-1" x="88" y="340" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Time left</text>
+  <text id="timer-remaining-line-1" x="88" y="388" font-family="ui-monospace, monospace" font-weight="700" font-size="32" fill="#C62828" letter-spacing="1.92px">01:38</text>
+  <text id="trial-timer-notice-line-1" x="16" y="440" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828">Less than two minutes left. Mark items</text>
+  <text id="trial-timer-notice-line-2" x="16" y="461.6" font-family="Satoshi" font-weight="400" font-size="16" fill="#C62828">or confirm now.</text>
+  <rect id="trial-items-card" x="16" y="496" width="328" height="320" fill="#FFFFFF" rx="20" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <rect id="trial-item-0-photo" x="32" y="516" width="96" height="96" fill="#F3E1E0" rx="20"/>
+  <text id="trial-item-0-name-line-1" x="144" y="546" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Cotton kurta set · M</text>
+  <text id="trial-item-0-default-line-1" x="144" y="576" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Not marked yet — returns</text>
+  <text id="trial-item-0-default-line-2" x="144" y="597.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">by default</text>
+  <rect id="trial-item-0-keep" x="144" y="604" width="96" height="44" fill="#FFFFFF" rx="62" stroke="#000000" stroke-width="1.5"/>
+  <text id="trial-item-0-keep-label-line-1" x="152" y="632" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000" text-anchor="middle">Keep</text>
+  <rect id="trial-item-0-return" x="248" y="604" width="96" height="44" fill="#FFFFFF" rx="62" stroke="#000000" stroke-width="1.5"/>
+  <text id="trial-item-0-return-label-line-1" x="256" y="632" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000" text-anchor="middle">Return</text>
+  <rect id="trial-item-1-photo" x="32" y="664" width="96" height="96" fill="#E2E8DF" rx="20"/>
+  <text id="trial-item-1-name-line-1" x="144" y="694" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Linen shirt · L</text>
+  <text id="trial-item-1-default-line-1" x="144" y="724" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Not marked yet — returns</text>
+  <text id="trial-item-1-default-line-2" x="144" y="745.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">by default</text>
+  <rect id="trial-item-1-keep" x="144" y="752" width="96" height="44" fill="#FFFFFF" rx="62" stroke="#000000" stroke-width="1.5"/>
+  <text id="trial-item-1-keep-label-line-1" x="152" y="780" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000" text-anchor="middle">Keep</text>
+  <rect id="trial-item-1-return" x="248" y="752" width="96" height="44" fill="#FFFFFF" rx="62" stroke="#000000" stroke-width="1.5"/>
+  <text id="trial-item-1-return-label-line-1" x="256" y="780" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000" text-anchor="middle">Return</text>
+  <rect id="size-swap-button" x="16" y="852" width="328" height="48" fill="#FFFFFF" rx="62" stroke="#000000" stroke-width="1.5"/>
+  <text id="size-swap-button-label-line-1" x="60" y="882" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000" text-anchor="start">Request size swap</text>
+  <rect id="size-swap-button-icon-hit-area" x="18" y="854" width="44" height="44" fill="none"/>
+  <g id="size-swap-button-icon" transform="translate(28 864) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h5M15 7h5M4 17h9M19 17h1"></path><circle cx="12" cy="7" r="2.3"></circle><circle cx="15.5" cy="17" r="2.3"></circle></g></g>
+  <rect id="confirm-decisions-button" x="16" y="916" width="328" height="48" fill="#000000" rx="62"/>
+  <text id="confirm-decisions-button-label-line-1" x="24" y="946" font-family="Satoshi" font-weight="700" font-size="16" fill="#FFFFFF" text-anchor="middle">Confirm decisions</text>
+  <rect id="site-footer" x="0" y="970" width="360" height="176" fill="#000000"/>
+  <text id="footer-brand-line-1" x="16" y="1018" font-family="Archivo" font-weight="900" font-size="24" fill="#FFFFFF">LOCALFIT</text>
+  <text id="footer-tagline-line-1" x="16" y="1058" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.7)">Nearby shops. Real stock. Fifteen</text>
+  <text id="footer-tagline-line-2" x="16" y="1079.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.7)">minutes to decide at your door.</text>
+  <text id="footer-legal-line-1" x="16" y="1102" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.6)">Prices include GST. LocalFit is a</text>
+  <text id="footer-legal-line-2" x="16" y="1123.6" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.6)">marketplace for verified local shops.</text>
+</svg>

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run i18n && npm run css:tokens && tsc --noEmit && vite build",
+    "build": "npm run i18n && npm run css:tokens && npm run check:figma && tsc --noEmit && vite build",
     "i18n": "tsx scripts/check-i18n.ts",
     "css:tokens": "tsx scripts/check-css-tokens.ts",
     "lint": "eslint .",
@@ -17,6 +17,8 @@
     "axe": "node scripts/axe.mjs",
     "qa:ui": "node scripts/qa-ui.mjs",
     "tokens": "tsx scripts/generate-tokens.ts",
+    "figma:screens": "tsx scripts/generate-figma-screens.ts",
+    "check:figma": "tsx scripts/check-figma.ts",
     "measure:listing": "tsx scripts/measure-listing-steps.ts"
   },
   "dependencies": {

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1950" viewBox="0 0 1440 1950" role="img" aria-label="buyer/track">
+  <title>buyer/track</title>
+  <rect id="frame-background" x="0" y="0" width="1440" height="1950" fill="#FFFFFF"/>
+  <rect id="announcement-bar" x="0" y="0" width="1440" height="64" fill="#000000"/>
+  <text id="announcement-copy-line-1" x="100" y="29" font-family="Satoshi" font-weight="400" font-size="16" fill="#FFFFFF">Sign up and get 20% off your first order. Sign up now</text>
+  <rect id="announcement-close-hit-area" x="1390" y="10" width="44" height="44" fill="none"/>
+  <g id="announcement-close" transform="translate(1400 20) scale(1)"><g fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 6 12 12M18 6 6 18"></path></g></g>
+  <rect id="site-header" x="0" y="64" width="1440" height="72" fill="#FFFFFF"/>
+  <text id="header-logo-line-1" x="100" y="110" font-family="Archivo" font-weight="900" font-size="24" fill="#000000" letter-spacing="-0.32px">LOCALFIT</text>
+  <text id="header-nav-0-line-1" x="280" y="110" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Shop</text>
+  <rect id="header-nav-chevron-hit-area" x="350" y="88" width="44" height="44" fill="none"/>
+  <g id="header-nav-chevron" transform="translate(364 102) scale(0.7)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></g></g>
+  <text id="header-nav-1-line-1" x="400" y="110" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Occasions</text>
+  <text id="header-nav-2-line-1" x="520" y="110" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">Near you</text>
+  <rect id="header-search-field" x="700" y="76" width="420" height="48" fill="#F0F0F0" rx="62"/>
+  <rect id="header-search-icon-hit-area" x="706" y="78" width="44" height="44" fill="none"/>
+  <g id="header-search-icon" transform="translate(716 88) scale(1)"><g fill="none" stroke="rgba(0, 0, 0, 0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m16.4 16.4 4.1 4.1"></path></g></g>
+  <text id="header-search-placeholder-line-1" x="750" y="107" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Search for a size, colour or shop</text>
+  <rect id="header-cart-hit-area" x="1242" y="78" width="44" height="44" fill="none"/>
+  <g id="header-cart" transform="translate(1252 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.2l2.3 10.8a1.8 1.8 0 0 0 1.8 1.4h7.9a1.8 1.8 0 0 0 1.8-1.4L21 8H6"></path><circle cx="10" cy="20" r="1.2"></circle><circle cx="18" cy="20" r="1.2"></circle></g></g>
+  <rect id="header-account-hit-area" x="1286" y="78" width="44" height="44" fill="none"/>
+  <g id="header-account" transform="translate(1296 88) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="9.5" r="3"></circle><path d="M6.4 18.4a6.2 6.2 0 0 1 11.2 0"></path></g></g>
+  <path id="header-divider" d="M0 136L1440 136" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1" fill="none"/>
+  <text id="track-title-line-1" x="100" y="200" font-family="Archivo" font-weight="900" font-size="48" fill="#000000">TRACK ORDER</text>
+  <rect id="track-map" x="100" y="236" width="760" height="320" fill="#DFE8EE" rx="20"/>
+  <rect id="track-map-pin-hit-area" x="446" y="366" width="68" height="68" fill="none"/>
+  <g id="track-map-pin" transform="translate(456 376) scale(2)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s6.5-5.7 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.3 12 21 12 21Z"></path><circle cx="12" cy="10.3" r="2.4"></circle></g></g>
+  <text id="track-live-note-line-1" x="100" y="584" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Live location updates every few seconds.</text>
+  <rect id="track-eta-card" x="100" y="566" width="760" height="112" fill="#FFFFFF" rx="20" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <text id="track-eta-label-line-1" x="124" y="606" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Arriving in</text>
+  <text id="track-eta-value-line-1" x="124" y="652" font-family="Archivo" font-weight="900" font-size="40" fill="#000000">45–60 min</text>
+  <text id="track-promised-window-line-1" x="836" y="652" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)" text-anchor="end">Promised window 45–60 min</text>
+  <rect id="track-rider-card" x="100" y="702" width="760" height="96" fill="#FFFFFF" rx="20" stroke="rgba(0, 0, 0, 0.1)" stroke-width="1"/>
+  <text id="track-rider-label-line-1" x="124" y="740" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Your rider</text>
+  <text id="track-rider-name-line-1" x="124" y="774" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Karthik R.</text>
+  <rect id="track-call-rider" x="680" y="726" width="160" height="48" fill="#FFFFFF" rx="62" stroke="#000000" stroke-width="1.5"/>
+  <text id="track-call-rider-label-line-1" x="724" y="756" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000" text-anchor="start">Call rider</text>
+  <rect id="track-call-rider-icon-hit-area" x="682" y="728" width="44" height="44" fill="none"/>
+  <g id="track-call-rider-icon" transform="translate(692 738) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.2 3.5 9.6 8 7.5 9.8c1 2.2 2.5 3.7 4.7 4.7l1.8-2.1 4.5 2.4-.5 2.6c-.2 1-1 1.6-2 1.6C9.4 19 5 14.6 4.9 7.9c0-1 .6-1.8 1.6-2l.7-.4Z"></path></g></g>
+  <rect id="track-otp-card" x="100" y="822" width="760" height="132" fill="#F2F0F1" rx="20"/>
+  <text id="track-otp-title-line-1" x="124" y="862" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000">Handover code</text>
+  <text id="track-otp-body-line-1" x="124" y="894" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">Read this 4-digit code to the rider when they arrive.</text>
+  <text id="track-otp-code-line-1" x="680" y="906" font-family="ui-monospace, monospace" font-weight="700" font-size="32" fill="#000000" letter-spacing="4.8px">4832</text>
+  <text id="track-timeline-title-line-1" x="100" y="998" font-family="Archivo" font-weight="900" font-size="24" fill="#000000">Order timeline</text>
+  <path id="timeline-line-0" d="M120 1062L120 1130" stroke="rgba(0, 0, 0, 0.1)" stroke-width="2" fill="none"/>
+  <rect id="timeline-dot-0" x="108" y="1046" width="24" height="24" fill="#000000" rx="12"/>
+  <text id="timeline-label-0-line-1" x="148" y="1065" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">PLACED</text>
+  <path id="timeline-line-1" d="M120 1146L120 1214" stroke="rgba(0, 0, 0, 0.1)" stroke-width="2" fill="none"/>
+  <rect id="timeline-dot-1" x="108" y="1130" width="24" height="24" fill="#000000" rx="12"/>
+  <text id="timeline-label-1-line-1" x="148" y="1149" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">SHOP_ACCEPTED</text>
+  <path id="timeline-line-2" d="M120 1230L120 1298" stroke="rgba(0, 0, 0, 0.1)" stroke-width="2" fill="none"/>
+  <rect id="timeline-dot-2" x="108" y="1214" width="24" height="24" fill="#000000" rx="12"/>
+  <text id="timeline-label-2-line-1" x="148" y="1233" font-family="Satoshi" font-weight="400" font-size="16" fill="#000000">PACKED</text>
+  <rect id="timeline-dot-3" x="108" y="1298" width="24" height="24" fill="#F0F0F0" rx="12"/>
+  <text id="timeline-label-3-line-1" x="148" y="1317" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(0, 0, 0, 0.6)">OUT_FOR_DELIVERY</text>
+  <rect id="track-support" x="100" y="1476" width="220" height="48" fill="#FFFFFF" rx="62" stroke="#000000" stroke-width="1.5"/>
+  <text id="track-support-label-line-1" x="144" y="1506" font-family="Satoshi" font-weight="700" font-size="16" fill="#000000" text-anchor="start">Contact support</text>
+  <rect id="track-support-icon-hit-area" x="102" y="1478" width="44" height="44" fill="none"/>
+  <g id="track-support-icon" transform="translate(112 1488) scale(1)"><g fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v5.6c0 4.7-3.3 7.7-8 9.4-4.7-1.7-8-4.7-8-9.4V6l8-3Z"></path><path d="m8.7 12 2.2 2.2 4.4-4.5"></path></g></g>
+  <rect id="site-footer" x="0" y="1720" width="1440" height="176" fill="#000000"/>
+  <text id="footer-brand-line-1" x="16" y="1768" font-family="Archivo" font-weight="900" font-size="24" fill="#FFFFFF">LOCALFIT</text>
+  <text id="footer-tagline-line-1" x="16" y="1808" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.7)">Nearby shops. Real stock. Fifteen minutes to decide at your door.</text>
+  <text id="footer-legal-line-1" x="16" y="1852" font-family="Satoshi" font-weight="400" font-size="16" fill="rgba(255, 255, 255, 0.6)">Prices include GST. LocalFit is a marketplace for verified local shops.</text>
+</svg>

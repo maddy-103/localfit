@@ -466,3 +466,36 @@
   they were left alone because changing them would alter the agreed pixel layout, and the token
   guard already enforces colours, radii, fonts and font sizes.
 
+## Figma package (2026-11-20)
+
+### Done
+
+- `npm run tokens` now emits Tokens Studio `figma/design-tokens.json` and 34 `figma/icons/*.svg` from
+  `src/styles/tokens.ts` and `src/components/icons/iconPaths.tsx`. The CSS token output is unchanged.
+- Added `figma/frames.json` (55 M-priority screens, widths 360/768/1440), `figma/screens/` (32 SVG
+  reference frames at 360 and 1440 for the 10 requested screens plus six alternate states),
+  `figma/components.md` (38 primitives and their variants/states) and `figma/README.md`.
+- Added `scripts/figma-svg.ts` and generators under `scripts/figma-screens/` so frames are built from
+  tokens and app copy, with kebab-case layer ids, ≥16 px text and ≥44 px hit areas. No `.fig` file,
+  Figma API call, token, embedded image, gradient, filter or foreignObject was added.
+- Added `npm run figma:screens`, `npm run check:figma` (wired into `npm run build`) and
+  `src/test/figma.test.ts`. The guard fails on stale artefacts or SVG constraint violations.
+
+### Verification
+
+- `npm run i18n` (1,260 keys), `npm run css:tokens`, `npm run lint`, `npm run check:figma`,
+  `npx tsc --noEmit`, `npm run build` and `npm test` (45 files / 798 tests) pass.
+- All 32 generated SVGs are under 28 KB; every layer id is kebab-case and unique, every text layer
+  has font-family/weight/size at ≥16 px, and no forbidden SVG feature is present.
+- Initial JS is 147.6 KiB gzip (no Figma generator, dev tool or server-render code in `dist/`).
+
+### Decisions, assumptions and known gaps
+
+- Figma itself and html.to.design cannot run in this environment. The committed SVGs are token-accurate
+  spec frames; `figma/README.md` documents the `npm run dev` + html.to.design route for fully editable
+  layers and notes that plugin layer names need tidying afterwards.
+- Token groups follow Tokens Studio canonical names. `clamp()` sizes are exported as fixed desktop and
+  mobile px ends; `letter-spacing` is converted from em to px at 16 px; reduced motion and Archivo
+  width 125 are behaviours, not token values. Integral CF Bold (paid) is represented by Archivo 900.
+- `admin/disputes-detail` shares `/admin/disputes` because the evidence viewer is a sheet, not its own route.
+
