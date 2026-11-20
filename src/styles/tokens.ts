@@ -360,10 +360,18 @@ function durationGroup(source: Record<string, string>): FigmaGroup {
 
 /** Splits the single CSS shadow string into Tokens Studio's shadow object. */
 function boxShadowToken(css: string): FigmaToken {
-  const [offsetX = '0px', offsetY = '0px', blur = '0px', ...color] = css.split(' ');
+  const [rawX = '0', rawY = '0', rawBlur = '0', ...color] = css.split(' ');
+  // CSS accepts a unitless 0; DTCG dimensions do not, so normalise it to px.
+  const dimension = (value: string): string => (/^[\d.]+$/.test(value) ? `${value}px` : value);
   return {
     $type: 'shadow',
-    $value: { color: color.join(' '), offsetX, offsetY, blur, spread: '0px' },
+    $value: {
+      color: color.join(' '),
+      offsetX: dimension(rawX),
+      offsetY: dimension(rawY),
+      blur: dimension(rawBlur),
+      spread: '0px',
+    },
   };
 }
 

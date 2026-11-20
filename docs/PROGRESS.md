@@ -498,4 +498,6 @@
   mobile px ends; `letter-spacing` is converted from em to px at 16 px; reduced motion and Archivo
   width 125 are behaviours, not token values. Integral CF Bold (paid) is represented by Archivo 900.
 - `admin/disputes-detail` shares `/admin/disputes` because the evidence viewer is a sheet, not its own route.
+- Follow-up fix: the shadow token's unitless CSS `0` offset is now normalised to `0px` so every
+  exported dimension is valid DTCG/Tokens Studio input.
 
