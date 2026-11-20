@@ -9,6 +9,10 @@
  * then OTP_VERIFIED -> TRIAL_ACTIVE (try-at-door) or -> DELIVERED (standard).
  * verifyOtp() writes both events when the buyer's code is entered.
  *
+ * SHOP-07: the shop confirms RIDER_ASSIGNED -> PICKED_UP after checking the
+ * rider's code, a scan of the item and a pickup photo. SHOP-06 lets the system
+ * release an unaccepted PLACED order when the five-minute window expires.
+ *
  * AMBIGUITY 8: REASSIGNED -> RIDER_ASSIGNED, FAILED_DELIVERY -> RETURN_PICKED,
  * REFUNDED -> SETTLED and RESOLVED -> SETTLED are included. SHOP_DECLINED,
  * CANCELLED, CANCELLED_BY_SHOP and RETURN_REJECTED are terminal. The buyer may
@@ -100,6 +104,8 @@ export interface TransitionContext {
   eventId: string;
   gps?: GpsPoint;
   photoIds?: string[];
+  /** Fixed-list decline or dispute reason, written on the event. */
+  note?: string;
   /** Set only when the buyer's handover OTP was entered. */
   otpVerified?: boolean;
 }
@@ -152,12 +158,12 @@ type TransitionKey = `${OrderState}->${OrderState}`;
 const ACTOR_RULES: Partial<Record<TransitionKey, readonly ActorRole[]>> = {
   'PLACED->SHOP_ACCEPTED': ['shop'],
   'PLACED->SHOP_DECLINED': ['shop'],
-  'PLACED->CANCELLED': ['buyer', 'admin'],
+  'PLACED->CANCELLED': ['buyer', 'admin', 'system'],
   'SHOP_ACCEPTED->PACKED': ['shop'],
   'SHOP_ACCEPTED->CANCELLED_BY_SHOP': ['shop', 'admin'],
   'PACKED->RIDER_ASSIGNED': ['system', 'admin'],
   'PACKED->CANCELLED_BY_SHOP': ['shop', 'admin'],
-  'RIDER_ASSIGNED->PICKED_UP': ['rider'],
+  'RIDER_ASSIGNED->PICKED_UP': ['rider', 'shop'],
   'RIDER_ASSIGNED->REASSIGNED': ['system', 'admin'],
   'REASSIGNED->RIDER_ASSIGNED': ['system', 'admin'],
   'PICKED_UP->IN_TRANSIT': ['rider'],
@@ -274,6 +280,7 @@ export function transition(
     to,
     actor: { id: ctx.actor.id, role: ctx.actor.role },
     timestamp: ctx.at,
+    ...(ctx.note ? { note: ctx.note } : {}),
     ...(ctx.gps ? { gps: ctx.gps } : {}),
     ...(ctx.photoIds?.length ? { photoIds: [...ctx.photoIds] } : {}),
   };

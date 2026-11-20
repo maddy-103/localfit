@@ -9,10 +9,13 @@ import type {
 } from './types';
 import { now } from '@/lib/clock';
 import { deliveryFeePaise } from '@/domain/payments';
+import { mockShopApi } from './mockShopApi';
 import {
+  allProducts,
   availableStock,
   decorateOrder,
   getState,
+  productForBuyer,
   pruneExpiredBag,
   resetStore,
   respond,
@@ -56,7 +59,7 @@ function assertBagQuantity(productId: string, variantId: string, qty: number): v
 export const mockApi: Api = {
   async listProducts(params) {
     return respond(() => {
-      let result = products;
+      let result = allProducts().map(productForBuyer);
       if (params?.occasion && params.occasion !== 'all') {
         result = result.filter((product) => product.occasions.includes(params.occasion!));
       }
@@ -79,8 +82,8 @@ export const mockApi: Api = {
 
   async getProduct(id) {
     return respond(() => {
-      const found = products.find((product) => product.id === id);
-      return found ? { ...found } : null;
+      const found = allProducts().find((product) => product.id === id);
+      return found ? productForBuyer(found) : null;
     });
   },
 
@@ -159,7 +162,8 @@ export const mockApi: Api = {
       const byShop = new Map<string, CheckoutGroup>();
 
       for (const line of bag.lines) {
-        const product = products.find((entry) => entry.id === line.productId);
+        const source = allProducts().find((entry) => entry.id === line.productId);
+        const product = source ? productForBuyer(source) : undefined;
         const shop = shops.find((entry) => entry.id === product?.shopId);
         if (!product || !shop) continue;
         let group = byShop.get(shop.id);
@@ -209,7 +213,7 @@ export const mockApi: Api = {
     return respond(() => {
       const stock = availableStock(input.productId, input.variantId);
       if (stock <= 0) throw new Error('That size and colour just went out of stock.');
-      if (!products.some((product) => product.id === input.productId)) {
+      if (!allProducts().some((product) => product.id === input.productId)) {
         throw new Error('Unknown product.');
       }
 
@@ -296,6 +300,8 @@ export const mockApi: Api = {
   requestReturn(orderId, input, actor) {
     return respond(() => requestReturnFlow(orderId, input, actor));
   },
+
+  ...mockShopApi,
 
   subscribe(topic, callback) {
     return subscribeInternal(topic, callback);

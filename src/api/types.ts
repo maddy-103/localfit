@@ -1,5 +1,6 @@
 import type { OrderActor, OrderEvent, OrderKind, OrderState } from '@/domain/orderMachine';
 import type { PaymentAuthorization, PaymentMethod } from '@/domain/payments';
+import type { SettlementReport } from '@/domain/settlements';
 import type { TrialDecision } from '@/domain/trial';
 
 /** Every image in the API has this shape; url stays null until a shop uploads. */
@@ -52,6 +53,8 @@ export interface Variant {
   reservedQuantity: number;
   pricePaise: number;
   mrpPaise: number;
+  /** Shop-console visibility; absent on legacy/buyer payloads means visible. */
+  visible?: boolean;
 }
 
 export interface Product {
@@ -227,6 +230,10 @@ export interface Order {
   riderProgress?: number;
   /** Countdown target for live tracking; added by the API. */
   etaEndsAt?: string;
+  /** Shop acceptance deadline (resolved ambiguity 3). */
+  acceptsUntil?: string;
+  /** Code the rider shows at pickup (SHOP-07). Hidden from buyer orders. */
+  pickupOtp?: string;
   swapRequests: SwapRequest[];
   returnRequest?: ReturnRequest;
 }
@@ -284,6 +291,129 @@ export interface ReturnRequestInput {
   pickupSlot: string;
 }
 
+/* ------------------------------------------------------------------ */
+/* Shop console (AUTH-04, SHOP-01 to SHOP-10)                          */
+/* ------------------------------------------------------------------ */
+
+export type RegistrationStage =
+  | 'not_started'
+  | 'submitted'
+  | 'correction_needed'
+  | 'sample_visit_scheduled'
+  | 'approved'
+  | 'rejected';
+
+export interface ShopRegistration {
+  shopId: string;
+  shopName: string;
+  ownerName: string;
+  phone: string;
+  hasGst: boolean;
+  gstNumber: string | null;
+  ownerId: { name: string; type: string; size: number } | null;
+  bank: { accountMasked: string; ifsc: string; holder: string };
+  taxDetails: string;
+  categories: string[];
+  sampleVisitSlot: string;
+  stage: RegistrationStage;
+  note?: string;
+  submittedAt?: string;
+  updatedAt: string;
+}
+
+export type SaveShopRegistrationInput = Omit<
+  ShopRegistration,
+  'shopId' | 'stage' | 'submittedAt' | 'updatedAt'
+>;
+
+export interface ListingSuggestion {
+  category: string;
+  colour: string;
+  fabric: string;
+}
+
+export interface ListingDraft {
+  id: string;
+  shopId: string;
+  title: string;
+  photo: { dataUrl: string; name: string; mime: string } | null;
+  suggestions: ListingSuggestion | null;
+  category: string;
+  colour: string;
+  fabric: string;
+  sizes: { size: string; qty: number }[];
+  pricePaise: number;
+  /** draft = saved, queued = waiting for connection, published = live. */
+  status: 'draft' | 'queued' | 'published';
+  createdAt: string;
+  updatedAt: string;
+  publishedAt?: string;
+}
+
+export type SaveListingDraftInput = Omit<
+  ListingDraft,
+  'id' | 'shopId' | 'status' | 'createdAt' | 'updatedAt' | 'publishedAt'
+> &
+  Partial<Pick<ListingDraft, 'id'>>;
+
+export interface ConflictRecord {
+  id: string;
+  shopId: string;
+  productId: string;
+  variantId: string;
+  note: string;
+  orderId?: string;
+  createdAt: string;
+  resolved: boolean;
+}
+
+export interface ShopStaff {
+  id: string;
+  name: string;
+  phone: string;
+  role: 'manager' | 'packer' | 'accountant';
+}
+
+export interface ShopSettings {
+  shopId: string;
+  serviceRadiusKm: number;
+  hours: string;
+  bankAccountMasked: string;
+  ifsc: string;
+  taxId: string;
+  staff: ShopStaff[];
+}
+
+export type SaveShopSettingsInput = Omit<ShopSettings, 'shopId'>;
+
+export interface ShopSummary {
+  awaiting: number;
+  lowStock: number;
+  conflicts: number;
+  salesPaise: number;
+  earningsPaise: number;
+  returns: number;
+}
+
+export interface PickupInput {
+  /** Rider's pickup code, scan code (variant id or SKU) and photo id. */
+  pickupOtp: string;
+  scanCode: string;
+  photoId: string;
+}
+
+export interface ReturnInspectionInput {
+  decision: 'accept' | 'dispute';
+  reason?: string;
+  photoIds: string[];
+}
+
+export interface CounterSaleResultApi {
+  product: Product | null;
+  conflict: ConflictRecord | null;
+  releasedBagLines: string[];
+}
+
 export interface Api {
   listProducts(params?: { occasion?: string; q?: string; shopId?: string }): Promise<Product[]>;
   getProduct(id: string): Promise<Product | null>;
@@ -322,5 +452,91 @@ export interface Api {
     input: ReturnRequestInput,
     actor: OrderActor,
   ): Promise<Order>;
+
+  /* Shop registration and status (AUTH-04). */
+  getShopRegistration(): Promise<ShopRegistration | null>;
+  saveShopRegistration(input: SaveShopRegistrationInput): Promise<ShopRegistration>;
+  setShopRegistrationStage(
+    stage: RegistrationStage,
+    note?: string,
+  ): Promise<ShopRegistration>;
+
+  /* Snap & List drafts (SHOP-01, SHOP-02, NFR-04). */
+  analyzeListingPhoto(name: string): Promise<ListingSuggestion>;
+  listListingDrafts(): Promise<ListingDraft[]>;
+  saveListingDraft(input: SaveListingDraftInput): Promise<ListingDraft>;
+  publishListingDraft(id: string): Promise<ListingDraft>;
+  deleteListingDraft(id: string): Promise<void>;
+  syncQueuedListings(): Promise<ListingDraft[]>;
+
+  /* Inventory and counter sales (SHOP-03 to SHOP-05, NFR-03). */
+  listShopProducts(shopId?: string): Promise<Product[]>;
+  sellInShop(
+    productId: string,
+    variantId: string,
+    qty?: number,
+  ): Promise<CounterSaleResultApi>;
+  updateVariant(
+    productId: string,
+    variantId: string,
+    patch: { quantity?: number; pricePaise?: number; visible?: boolean },
+  ): Promise<Product>;
+  listConflicts(): Promise<ConflictRecord[]>;
+
+  /* Shop order lifecycle (SHOP-06, SHOP-07). */
+  listShopOrders(shopId?: string): Promise<Order[]>;
+  acceptOrder(orderId: string, actor: OrderActor): Promise<Order>;
+  declineOrder(orderId: string, reason: string, actor: OrderActor): Promise<Order>;
+  packOrder(orderId: string, actor: OrderActor): Promise<Order>;
+  /** PACKED -> RIDER_ASSIGNED so the shop can show the rider's pickup code. */
+  readyOrder(orderId: string, actor: OrderActor): Promise<Order>;
+  handoverOrder(orderId: string, input: PickupInput, actor: OrderActor): Promise<Order>;
+  markInTransit(orderId: string, actor: OrderActor): Promise<Order>;
+  releaseExpiredOrders(atMs?: number): Promise<Order[]>;
+  getShopSummary(shopId?: string): Promise<ShopSummary>;
+
+  /* Returns, payouts and settings (SHOP-08, SHOP-09, SHOP-05). */
+  listReturnOrders(shopId?: string): Promise<Order[]>;
+  inspectReturn(
+    orderId: string,
+    input: ReturnInspectionInput,
+    actor: OrderActor,
+  ): Promise<Order>;
+  getSettlementReport(shopId?: string): Promise<SettlementReport>;
+  getShopSettings(shopId?: string): Promise<ShopSettings>;
+  saveShopSettings(input: SaveShopSettingsInput): Promise<ShopSettings>;
+
   subscribe(topic: string, callback: (data: unknown) => void): () => void;
 }
+
+/** The shop half of Api, shared by the mock and HTTP adapters. */
+export type ShopApi = Pick<
+  Api,
+  | 'getShopRegistration'
+  | 'saveShopRegistration'
+  | 'setShopRegistrationStage'
+  | 'analyzeListingPhoto'
+  | 'listListingDrafts'
+  | 'saveListingDraft'
+  | 'publishListingDraft'
+  | 'deleteListingDraft'
+  | 'syncQueuedListings'
+  | 'listShopProducts'
+  | 'sellInShop'
+  | 'updateVariant'
+  | 'listConflicts'
+  | 'listShopOrders'
+  | 'acceptOrder'
+  | 'declineOrder'
+  | 'packOrder'
+  | 'readyOrder'
+  | 'handoverOrder'
+  | 'markInTransit'
+  | 'releaseExpiredOrders'
+  | 'getShopSummary'
+  | 'listReturnOrders'
+  | 'inspectReturn'
+  | 'getSettlementReport'
+  | 'getShopSettings'
+  | 'saveShopSettings'
+>;

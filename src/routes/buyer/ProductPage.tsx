@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { api } from '@/api/client';
 import { ProductGallery } from '@/components/buyer/ProductGallery';
@@ -38,6 +38,9 @@ export default function ProductPage() {
   const setBagCount = useAppStore((state) => state.setBagCount);
   const productState = useAsync(() => api.getProduct(id), id);
   const shopState = useAsync(() => api.listShops(), 'shops');
+
+  // SHOP-03/NFR-03: counter sales and holds reach this page in real time.
+  useEffect(() => api.subscribe('inventory', productState.reload), [productState.reload]);
 
   const [colour, setColour] = useState('');
   const [size, setSize] = useState('');

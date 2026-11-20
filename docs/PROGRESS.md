@@ -134,3 +134,69 @@
   (`src/routes/buyer/__tests__/BUY-17.test.tsx`, `src/routes/buyer/__tests__/NFR-11.test.tsx`).
 - Voice search depends on the browser Web Speech API; the button is hidden when it is absent.
 
+## Done (Phase 3 — shop onboarding and console, complete 2026-11-20)
+
+- **Registration** (AUTH-04): `/register/shop` collects shop details, optional GST, owner ID photo
+  (JPG/PNG/PDF ≤ 5 MB) and a scheduled sample visit; `/register/shop/status` shows approval progress.
+  An approval gate on every `/shop/*` route sends unapproved shops back to the status page. The demo
+  shop is seeded `approved` so the console stays reachable.
+- **Shop console**: `DashboardPage` (accept/decline with a fixed reason, countdown, 5-minute release),
+  `ListingNewPage` + `ListingForm` (Snap & List, offline IndexedDB drafts, reconnect publish),
+  `InventoryPage` + `InventoryVariantRow` (stock by SKU/size/colour, hide, price, "Sold in shop"),
+  `OrdersPage` + `OrderDetailPage` (accept, pack, ready, rider OTP + item scan + pickup photo),
+  `ReturnsPage` (photo inspection, accept/dispute), `PayoutsPage` (settlement report + CSV),
+  `SettingsPage` (radius, hours, staff, masked bank details), `SupportPage`.
+- **Domain**: `sla.ts` (5-minute accept, 10-minute waiting compensation, 24-hour dispute),
+  `settlements.ts` (integer-paise ledger), `stock.ts` (holds vs committed units), `shop.ts`
+  (fixed choices, step constants), `orderMachine.ts` (shop actor for `RIDER_ASSIGNED -> PICKED_UP`,
+  system actor for `PLACED -> CANCELLED`).
+- **API**: `ShopApi` added to `src/api/types.ts`, implemented in `mockShopSetup.ts`, `mockShopOps.ts`,
+  `mockShopReports.ts`, `mockShopApi.ts` and `httpShopApi.ts`, wired into `mock.ts`/`http.ts`.
+  Mock state stays backward-compatible with old `{ bag, orders }` snapshots. Buyer Home/Search/Product
+  pages subscribe to the `inventory` topic for sub-3-second stock propagation.
+- **Placeholders**: `Phase2Card` labels SHOP-11 (insights/alerts) and SHOP-12 (bookkeeping export)
+  as "Coming in phase 2" through `phase2.label`; no fake behaviour.
+- **Step measurement**: `scripts/measure-listing-steps.ts` + `npm run measure:listing` report the
+  Snap & List happy path at **6 steps / limit 8**.
+- **Tests**: 30 files, **739 tests passing**. New requirement-named files: `SHOP-01.test.tsx`
+  (offline draft publish on reconnect), `SHOP-01-steps.test.tsx`, `SHOP-03.test.tsx` (buyer sees
+  stock-out within 3 s), `SHOP-04-07.test.ts` (committed-unit conflict, timeout with fake clock,
+  OTP + scan + photo guard).
+- **Verification**: `npm run build`, `npm run lint`, `npm test`, `npm run measure:listing` all pass.
+
+## Decisions (Phase 3)
+
+1. Commission rate defaults to zero until an admin config supplies it; deductions come from returns
+   and held disputes.
+2. A counter sale against a committed unit records a `ConflictRecord` and never decrements stock.
+   Holds, by contrast, are released on a counter sale.
+3. Pickup uses a new `Order.pickupOtp` (`MOCK_PICKUP_OTP = '1357'` in the mock). The scan value is a
+   variant id/SKU and `photoId` is mandatory; `handoverOrder()` checks all three before writing
+   `PICKED_UP` and `IN_TRANSIT`.
+4. `readyOrder()` was added for `PACKED -> RIDER_ASSIGNED` rather than overloading `packOrder()`.
+5. Returns inspection walks the required intermediate machine states with the correct actor instead
+   of adding new transitions.
+6. `Variant.visible?: boolean` was added to the API contract; hidden variants expose buyer quantity 0.
+7. Listing steps are recorded through a `ListingForm` `onStep` callback so the browser-level happy
+   path and the step-limit script share one source of truth.
+8. `useAsync`'s `reload` is destructured directly (it is already a stable `useCallback`), which keeps
+   `react-hooks/exhaustive-deps` clean; the reconnect sync is inlined with the same promise pattern
+   as `DashboardPage` so no state is set synchronously inside an effect.
+
+## Known Bugs / Gaps (Phase 3)
+
+- `public/fonts/` still has no real woff2 files (Archivo, Satoshi, Noto Sans Devanagari).
+- SHOP-11/12/13 remain priority-S/L placeholders by design; no behaviour was faked.
+- AUTH-04 has route coverage only (`router.test.tsx`), not a dedicated registration-form test.
+- SHOP-05/08/09/10 are covered by route tests and shared component tests rather than one dedicated
+  behaviour test per ID; the four required Phase 3 tests are in place.
+- Rider and admin flows are still marked `(pending)` in `TRACEABILITY.md`.
+
+## Next Steps (Phase 4)
+
+- Rider console (accept task, navigation, OTP, photo proof, earnings, safety) and admin console
+  (shop verification, disputes, refunds, config, staff roles).
+- Add the remaining focused tests that are still `(pending)` in `TRACEABILITY.md`.
+- Drop real woff2 font files into `public/fonts/` and switch `VITE_API_MODE=http` against a backend;
+  the HTTP shop adapter is already in place, so screens do not change.
+

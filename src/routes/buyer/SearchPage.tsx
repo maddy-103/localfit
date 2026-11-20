@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { api } from '@/api/client';
 import { useI18n } from '@/i18n';
@@ -60,6 +60,8 @@ export default function SearchPage() {
   const products = useMemo(() => productsState.data ?? [], [productsState.data]);
   const shops = useMemo(() => shopsState.data ?? [], [shopsState.data]);
   const canListen = Boolean(speechCtor());
+
+  useEffect(() => api.subscribe('inventory', productsState.reload), [productsState.reload]);
 
   // Keep the input in step when the URL changes (for example after voice search).
   if (query !== syncedQuery) {

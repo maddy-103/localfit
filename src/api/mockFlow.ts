@@ -2,6 +2,7 @@ import { nowIso } from '@/lib/clock';
 import { transition, type OrderActor, type OrderEvent } from '@/domain/orderMachine';
 import { canUseCod, deliveryFeePaise, mockPaymentAdapter } from '@/domain/payments';
 import { trialEndsAt } from '@/domain/trial';
+import { acceptDeadline } from '@/domain/sla';
 import { insideServiceArea } from '@/domain/locationPolicy';
 import { addresses, buyers, products, shops } from './seed';
 import {
@@ -26,8 +27,9 @@ import type {
   PlaceCheckoutResult,
 } from './types';
 
-/** Fixed mock code so the demo panel and tests always know it. */
+/** Fixed mock codes so the demo panel and tests always know them. */
 export const MOCK_OTP = '4821';
+export const MOCK_PICKUP_OTP = '1357';
 
 export function makeEvent(patch: {
   order: Order;
@@ -149,6 +151,8 @@ export async function checkoutFromBag(input: PlaceCheckoutInput): Promise<PlaceC
       events: [],
       otp: MOCK_OTP,
       otpAttempts: 0,
+      acceptsUntil: acceptDeadline(createdAt, Date.parse(createdAt)).endsAt,
+      pickupOtp: MOCK_PICKUP_OTP,
       swapRequests: [],
     };
 
@@ -166,7 +170,7 @@ export async function checkoutFromBag(input: PlaceCheckoutInput): Promise<PlaceC
     created.push(order);
   }
 
-  setState({ bag: emptyBag(), orders: [...created, ...state.orders] });
+  setState({ ...state, bag: emptyBag(), orders: [...created, ...state.orders] });
   notify('bag', getState().bag);
   notify('orders', getState().orders.map((order) => decorateOrder(order)));
 

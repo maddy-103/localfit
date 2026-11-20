@@ -1,3 +1,4 @@
+import { httpShopApi } from './httpShopApi';
 import type {
   Address,
   Api,
@@ -128,6 +129,8 @@ export const httpApi: Api = {
       body: JSON.stringify({ ...input, actor }),
     });
   },
+  ...httpShopApi,
+
   subscribe(topic, callback) {
     if (typeof EventSource === 'undefined') return () => {};
     const source = new EventSource(`${baseUrl}/events?topic=${encodeURIComponent(topic)}`);

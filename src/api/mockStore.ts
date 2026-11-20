@@ -1,21 +1,87 @@
 import { del, get, set } from 'idb-keyval';
 import { now, nowIso } from '@/lib/clock';
-import type { Bag, BagLine, Order, OrderLine, OrderRider, Product, Variant } from './types';
-import { addresses, products, riders } from './seed';
+import { availableToBuy } from '@/domain/stock';
+import type {
+  Bag,
+  BagLine,
+  ConflictRecord,
+  ListingDraft,
+  Order,
+  OrderLine,
+  OrderRider,
+  Product,
+  ShopRegistration,
+  ShopSettings,
+  Variant,
+} from './types';
+import { addresses, products, riders, shops } from './seed';
 
 export const HOLD_MS = 10 * 60 * 1000;
 const STORAGE_KEY = 'lf:mock-state-v1';
 const FAILURE_KEY = 'lf:mock-fail';
 const CHANNEL = 'localfit-mock';
 
+export interface VariantOverride {
+  quantity?: number;
+  pricePaise?: number;
+  visible?: boolean;
+}
+
 export interface MockState {
   bag: Bag;
   orders: Order[];
+  registration: ShopRegistration | null;
+  drafts: ListingDraft[];
+  conflicts: ConflictRecord[];
+  settings: ShopSettings;
+  /** Per-variant stock, price and visibility changes made in the shop console. */
+  overrides: Record<string, VariantOverride>;
+  publishedProducts: Product[];
+}
+
+export const defaultShopSettings = (): ShopSettings => ({
+  shopId: shops[0]?.id ?? 'shop-kiran',
+  serviceRadiusKm: shops[0]?.serviceRadiusKm ?? 6,
+  hours: shops[0]?.hours ?? '10:00–21:00',
+  bankAccountMasked: '•••• 4421',
+  ifsc: 'HDFC0001234',
+  taxId: 'GST29AABCK1234F1Z5',
+  staff: [],
+});
+
+/** Approved demo registration so the console is reachable without setup. */
+export const defaultRegistration = (): ShopRegistration => ({
+  shopId: shops[0]?.id ?? 'shop-kiran',
+  shopName: shops[0]?.name ?? 'Kiran Silks',
+  ownerName: 'Kiran Rao',
+  phone: shops[0]?.phone ?? '+91 98450 11221',
+  hasGst: true,
+  gstNumber: '29AABCK1234F1Z5',
+  ownerId: { name: 'aadhaar.jpg', type: 'image/jpeg', size: 240_000 },
+  bank: { accountMasked: '•••• 4421', ifsc: 'HDFC0001234', holder: 'Kiran Rao' },
+  taxDetails: 'GST29AABCK1234F1Z5',
+  categories: [...(shops[0]?.categories ?? [])],
+  sampleVisitSlot: 'tomorrow-10',
+  stage: 'approved',
+  updatedAt: '2026-11-16T09:00:00.000Z',
+});
+
+export function emptyState(): MockState {
+  return {
+    bag: emptyBag(),
+    orders: [],
+    registration: defaultRegistration(),
+    drafts: [],
+    conflicts: [],
+    settings: defaultShopSettings(),
+    overrides: {},
+    publishedProducts: [],
+  };
 }
 
 export const emptyBag = (): Bag => ({ lines: [], reservedUntil: null });
 
-let state: MockState = { bag: emptyBag(), orders: [] };
+let state: MockState = emptyState();
 let loaded = false;
 let loading: Promise<void> | null = null;
 let latencyMs = 180;
@@ -66,9 +132,19 @@ async function ensureLoaded(): Promise<void> {
   if (!loading) {
     loading = (async () => {
       try {
-        const saved = await get<MockState>(STORAGE_KEY);
+        const saved = await get<Partial<MockState>>(STORAGE_KEY);
         if (saved?.bag && Array.isArray(saved.orders)) {
-          state = { bag: saved.bag, orders: saved.orders };
+          // Older snapshots only held bag and orders; fill in shop defaults.
+          state = {
+            ...emptyState(),
+            ...saved,
+            registration: saved.registration ?? defaultRegistration(),
+            drafts: saved.drafts ?? [],
+            conflicts: saved.conflicts ?? [],
+            settings: saved.settings ?? defaultShopSettings(),
+            overrides: saved.overrides ?? {},
+            publishedProducts: saved.publishedProducts ?? [],
+          };
         }
       } catch {
         // Fall back to the seeded state.
@@ -128,7 +204,7 @@ export function uid(prefix: string): string {
 }
 
 export function resetStore(): void {
-  state = { bag: emptyBag(), orders: [] };
+  state = emptyState();
   loaded = true;
   try {
     void del(STORAGE_KEY).catch(() => {
@@ -139,6 +215,9 @@ export function resetStore(): void {
   }
   notify('bag', state.bag);
   notify('orders', state.orders);
+  notify('inventory', allProducts());
+  notify('drafts', state.drafts);
+  notify('conflicts', state.conflicts);
 }
 
 export function setMockFailures(enabled: boolean): void {
@@ -167,19 +246,88 @@ export function configureMock(options: { latencyMs?: number }): void {
 /* Bag and stock helpers shared by the API and the flow module         */
 /* ------------------------------------------------------------------ */
 
+/** Seed catalogue plus listings published from Snap & List drafts. */
+export function allProducts(): Product[] {
+  return [...products, ...state.publishedProducts];
+}
+
+const ACTIVE_STATES: Order['state'][] = [
+  'PLACED',
+  'SHOP_ACCEPTED',
+  'PACKED',
+  'RIDER_ASSIGNED',
+  'REASSIGNED',
+  'PICKED_UP',
+  'IN_TRANSIT',
+  'ARRIVED',
+  'OTP_VERIFIED',
+  'TRIAL_ACTIVE',
+  'DECISIONS_LOCKED',
+  'DELIVERED',
+  'RETURN_REQUESTED',
+  'RETURN_PICKED',
+  'RETURN_RECEIVED',
+  'DISPUTED',
+];
+
+/** Units already committed to an online order (ambiguity 11). */
+export function committedQty(productId: string, variantId: string): number {
+  return state.orders
+    .filter((order) => ACTIVE_STATES.includes(order.state))
+    .reduce(
+      (sum, order) =>
+        sum +
+        order.lines
+          .filter((line) => line.productId === productId && line.variantId === variantId)
+          .reduce((count, line) => count + line.qty, 0),
+      0,
+    );
+}
+
+/** Units held by an unexpired bag hold. */
+export function heldQty(productId: string, variantId: string): number {
+  return pruneExpiredBag(state.bag).lines
+    .filter((line) => line.productId === productId && line.variantId === variantId)
+    .reduce((sum, line) => sum + line.qty, 0);
+}
+
+export function onHandQty(variant: Variant): number {
+  return state.overrides[variant.id]?.quantity ?? variant.quantity;
+}
+
+/** Public product overlay: buyer-facing quantity is net of holds and orders. */
+export function productForBuyer(product: Product): Product {
+  const variants = product.variants.map((variant) => {
+    const override = state.overrides[variant.id] ?? {};
+    const hidden = override.visible === false;
+    return {
+      ...variant,
+      pricePaise: override.pricePaise ?? variant.pricePaise,
+      quantity: hidden
+        ? 0
+        : availableToBuy(onHandQty(variant), committedQty(product.id, variant.id), heldQty(product.id, variant.id)),
+      reservedQuantity: 0,
+    };
+  });
+  return {
+    ...product,
+    variants,
+    stockLeft: variants.reduce((sum, variant) => sum + variant.quantity, 0),
+  };
+}
+
 export function variantFor(
   productId: string,
   variantId: string,
 ): { product: Product | undefined; variant: Variant | undefined } {
-  const product = products.find((entry) => entry.id === productId);
-  const variant = product?.variants.find((entry) => entry.id === variantId);
-  return { product, variant };
+  const product = allProducts().find((entry) => entry.id === productId);
+  const publicProduct = product ? productForBuyer(product) : undefined;
+  return { product: publicProduct, variant: publicProduct?.variants.find((entry) => entry.id === variantId) };
 }
 
 export function availableStock(productId: string, variantId: string): number {
   const { variant } = variantFor(productId, variantId);
-  if (!variant) return 0;
-  return Math.max(0, variant.quantity - variant.reservedQuantity);
+  return variant?.quantity ?? 0;
 }
 
 export function pruneExpiredBag(bag: Bag): Bag {
@@ -274,11 +422,15 @@ export function etaEndsAtFor(order: Order, atMs: number): string {
   return new Date(Date.parse(order.createdAt) + order.etaMin[1] * 60_000).toISOString();
 }
 
-/** Public order shape: hides the OTP until the rider has arrived. */
-export function decorateOrder(order: Order): Order {
+/**
+ * Public order shape: hides both codes from buyers. The rider's pickup code is
+ * only added by decorateShopOrder() for the shop console (SHOP-07).
+ */
+export function decorateOrder(order: Order, includeShopFields = false): Order {
   const at = now();
   const rest: Order = { ...order };
   delete rest.otp;
+  if (!includeShopFields) delete rest.pickupOtp;
   const progress = riderProgressFor(order, at);
   const rider = riderFor(order);
 
@@ -308,4 +460,9 @@ export function decorateOrder(order: Order): Order {
     etaEndsAt: etaEndsAtFor(order, at),
     ...(order.state === 'ARRIVED' && order.otp ? { handoverOtp: order.otp } : {}),
   };
+}
+
+/** Shop-facing order shape includes the code the rider shows at pickup. */
+export function decorateShopOrder(order: Order): Order {
+  return decorateOrder(order, true);
 }

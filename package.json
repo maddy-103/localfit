@@ -13,7 +13,8 @@
     "test:e2e": "playwright test",
     "smoke": "node scripts/smoke.mjs",
     "axe": "node scripts/axe.mjs",
-    "tokens": "tsx scripts/generate-tokens.ts"
+    "tokens": "tsx scripts/generate-tokens.ts",
+    "measure:listing": "tsx scripts/measure-listing-steps.ts"
   },
   "dependencies": {
     "idb-keyval": "^6.2.2",

@@ -27,6 +27,9 @@ export default function HomePage() {
   const shopsState = useAsync(() => api.listShops(), 'home-shops');
   const [cached, setCached] = useState<HomeCache | null>(null);
 
+  // Shop edits are broadcast immediately, so buyers see stock changes without a reload.
+  useEffect(() => api.subscribe('inventory', productsState.reload), [productsState.reload]);
+
   useEffect(() => {
     if (productsState.error || shopsState.error) {
       void loadHomeCache().then(setCached);

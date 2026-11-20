@@ -3,7 +3,7 @@ ID | Where | Test file
 AUTH-01 | src/routes/auth/LoginPage.tsx, src/routes/auth/OtpPage.tsx | src/routes/auth/__tests__/AUTH-01.test.tsx
 AUTH-02 | src/routes/auth/WelcomePage.tsx, src/routes/buyer/HomePage.tsx | src/routes/router.test.tsx
 AUTH-03 | src/routes/auth/ConsentPage.tsx | src/routes/auth/__tests__/AUTH-03.test.tsx
-AUTH-04 | src/routes/auth/RegisterShopPage.tsx | (pending)
+AUTH-04 | src/routes/auth/RegisterShopPage.tsx, src/routes/auth/RegisterShopStatusPage.tsx, src/components/shop/ShopRegistrationForm.tsx | src/routes/router.test.tsx (route coverage)
 AUTH-05 | src/routes/auth/RegisterRiderPage.tsx | (pending)
 AUTH-06 | src/routes/admin/AdminLoginPage.tsx | (pending)
 AUTH-07 | src/routes/buyer/ProfileRolesPage.tsx | src/routes/buyer/__tests__/AUTH-07.test.tsx
@@ -24,18 +24,18 @@ BUY-14 | src/routes/buyer/SupportPage.tsx, src/routes/buyer/OrderDetailPage.tsx 
 BUY-15 | src/lib/homeCache.ts, src/routes/buyer/HomePage.tsx | src/routes/buyer/__tests__/BUY-15.test.tsx
 BUY-16 | src/components/RoleGuard.tsx, src/routes/buyer/ProductPage.tsx, src/routes/buyer/CheckoutPage.tsx | src/routes/buyer/__tests__/BUY-16.test.tsx
 BUY-17 | src/routes/buyer/PrivacyPage.tsx | src/routes/buyer/__tests__/BUY-17.test.tsx
-SHOP-01 | src/routes/shop/ShopListingNewPage.tsx | (pending)
-SHOP-02 | src/api/mock.ts (IndexedDB offline draft) | (pending)
-SHOP-03 | src/routes/shop/ShopInventoryPage.tsx | (pending)
-SHOP-04 | src/routes/shop/ShopInventoryPage.tsx | (pending)
-SHOP-05 | src/routes/shop/ShopInventoryPage.tsx, src/routes/shop/ShopSettingsPage.tsx | (pending)
-SHOP-06 | src/routes/shop/ShopOrdersPage.tsx | (pending)
-SHOP-07 | src/routes/shop/ShopOrderDetailPage.tsx | (pending)
-SHOP-08 | src/routes/shop/ShopPayoutsPage.tsx | (pending)
-SHOP-09 | src/routes/shop/ShopReturnsPage.tsx | (pending)
-SHOP-10 | src/routes/shop/* | (pending)
-SHOP-11 | src/routes/shop/ShopDashboard.tsx (phase 2 placeholder) | —
-SHOP-12 | src/routes/shop/ShopPayoutsPage.tsx (phase 2 placeholder) | —
+SHOP-01 | src/routes/shop/ListingNewPage.tsx, src/components/shop/ListingForm.tsx, src/domain/shop.ts, scripts/measure-listing-steps.ts | src/routes/shop/__tests__/SHOP-01.test.tsx, src/routes/shop/__tests__/SHOP-01-steps.test.tsx
+SHOP-02 | src/routes/shop/ListingNewPage.tsx, src/api/mockShopSetup.ts (IndexedDB drafts and reconnect sync) | src/routes/shop/__tests__/SHOP-01.test.tsx
+SHOP-03 | src/routes/shop/InventoryPage.tsx, src/components/shop/InventoryVariantRow.tsx, src/routes/buyer/ProductPage.tsx | src/routes/shop/__tests__/SHOP-03.test.tsx
+SHOP-04 | src/routes/shop/InventoryPage.tsx, src/domain/stock.ts, src/api/mockShopOps.ts | src/api/__tests__/SHOP-04-07.test.ts
+SHOP-05 | src/routes/shop/InventoryPage.tsx, src/routes/shop/SettingsPage.tsx, src/api/mockShopOps.ts | src/routes/router.test.tsx
+SHOP-06 | src/routes/shop/DashboardPage.tsx, src/routes/shop/OrdersPage.tsx, src/domain/sla.ts, src/api/mockShopReports.ts | src/api/__tests__/SHOP-04-07.test.ts
+SHOP-07 | src/routes/shop/OrderDetailPage.tsx, src/api/mockShopOps.ts | src/api/__tests__/SHOP-04-07.test.ts
+SHOP-08 | src/routes/shop/PayoutsPage.tsx, src/domain/settlements.ts, src/api/mockShopReports.ts | src/routes/router.test.tsx
+SHOP-09 | src/routes/shop/ReturnsPage.tsx, src/api/mockShopReports.ts | src/routes/router.test.tsx
+SHOP-10 | src/routes/shop/*, src/components/shop/*, src/styles/tokens.css | src/routes/shop/__tests__/SHOP-01.test.tsx, src/i18n/NFR-07.test.ts
+SHOP-11 | src/routes/shop/DashboardPage.tsx (Phase2Card, "Coming in phase 2") | —
+SHOP-12 | src/routes/shop/PayoutsPage.tsx (Phase2Card, "Coming in phase 2") | —
 SHOP-13 | (phase 2 placeholder) | —
 RIDE-01 | src/routes/rider/RiderDashboard.tsx | (pending)
 RIDE-02 | src/routes/rider/RiderTaskPage.tsx | (pending)
@@ -62,6 +62,10 @@ TRIAL-03 | src/api/mockTrial.ts, src/routes/buyer/OrderTrialPage.tsx | src/api/_
 SPEC-13 | src/api/mockFlow.ts, src/api/mockTrial.ts, src/domain/orderMachine.ts | src/api/__tests__/SPEC-13.test.ts
 AMBIGUITY-9 | src/api/mockFlow.ts, src/api/types.ts | src/api/__tests__/checkoutSplit.test.ts
 AMBIGUITY-10 | src/domain/payments.ts, src/routes/buyer/CheckoutPage.tsx | (pending)
+AMBIGUITY-11 | src/domain/stock.ts, src/api/mockShopOps.ts | src/api/__tests__/SHOP-04-07.test.ts
+NFR-03 | src/api/mockStore.ts (BroadcastChannel inventory), src/routes/buyer/HomePage.tsx, src/routes/buyer/ProductPage.tsx, src/routes/buyer/SearchPage.tsx | src/routes/shop/__tests__/SHOP-03.test.tsx
+NFR-04 | src/api/mockShopSetup.ts (IndexedDB drafts), src/routes/shop/ListingNewPage.tsx | src/routes/shop/__tests__/SHOP-01.test.tsx
+NFR-05 | src/styles/tokens.css, src/routes/shop/shop.module.css | src/routes/shop/__tests__/SHOP-01.test.tsx
 NFR-06 | src/components/ui/StatusChip.tsx | (pending)
 NFR-07 | src/i18n/en.ts, src/i18n/hi.ts | src/i18n/NFR-07.test.ts
 NFR-08 | src/routes/auth/ConsentPage.tsx, src/routes/buyer/PrivacyPage.tsx | src/routes/buyer/__tests__/NFR-08.test.tsx
