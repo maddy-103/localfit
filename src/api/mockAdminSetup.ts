@@ -1,6 +1,5 @@
 /** Admin sign-in, staff, configuration and audit (mock). */
 import { ADMIN_2FA_CODE } from '@/domain/admin';
-import { can } from '@/domain/permissions';
 import { nowIso } from '@/lib/clock';
 import { getState, setState, uid } from './mockStore';
 import { runAdminAction } from './mockAdminCore';
@@ -59,58 +58,24 @@ export function adminCreateStaff(input: CreateStaffInput): StaffMember {
     () => ({ staffCount: getState().staff.length }),
     () => {
       const state = getState();
-      const pending = input.adminRole === 'super_admin';
+      // The seeded primary admin is the only super admin; this is enforced here
+      // as well as in the staff screen so no API caller can create another.
+      if (input.adminRole === 'super_admin') {
+        throw new Error('Super admin accounts cannot be created. The primary admin is the only super admin.');
+      }
       const at = nowIso();
       const member: StaffMember = {
         id: uid('staff'),
         name: input.name.trim(),
         phone: input.phone.trim(),
         adminRole: input.adminRole,
-        status: pending ? 'pending_approval' : 'active',
+        status: 'active',
         createdBy: input.actor.id,
         createdAt: at,
         updatedAt: at,
       };
       setState({ ...state, staff: [...state.staff, member] });
       return { result: { ...member }, after: { staffId: member.id, status: member.status } };
-    },
-  );
-}
-
-/**
- * Resolved ambiguity 13: a second, different super admin must approve a new
- * super admin before the account becomes active.
- */
-export function adminApproveStaff(id: string, actor: AdminActor): StaffMember {
-  return runAdminAction(
-    'staff.approve',
-    { actor, reason: 'Approved by a second super admin' },
-    () => {
-      const member = getState().staff.find((entry) => entry.id === id);
-      return { staffId: id, status: member?.status ?? 'missing', createdBy: member?.createdBy ?? '' };
-    },
-    () => {
-      const state = getState();
-      const member = state.staff.find((entry) => entry.id === id);
-      if (!member) throw new Error('Staff account not found.');
-      if (member.adminRole !== 'super_admin') throw new Error('Only super admin accounts need approval.');
-      if (!can(actor.adminRole, 'staff:manage') || actor.adminRole !== 'super_admin') {
-        throw new Error('Only a super admin can approve a super admin.');
-      }
-      if (actor.id === member.createdBy) {
-        throw new Error('A different super admin must approve this account.');
-      }
-      const approved: StaffMember = {
-        ...member,
-        status: 'active',
-        approvedBy: actor.id,
-        updatedAt: nowIso(),
-      };
-      setState({
-        ...state,
-        staff: state.staff.map((entry) => (entry.id === id ? approved : entry)),
-      });
-      return { result: { ...approved }, after: { staffId: id, status: 'active' } };
     },
   );
 }
@@ -124,6 +89,9 @@ export function adminRevokeStaff(id: string, input: { actor: AdminActor; reason:
       const state = getState();
       const member = state.staff.find((entry) => entry.id === id);
       if (!member) throw new Error('Staff account not found.');
+      if (member.adminRole === 'super_admin') {
+        throw new Error('The primary admin cannot be revoked.');
+      }
       const revoked: StaffMember = { ...member, status: 'revoked', updatedAt: nowIso() };
       setState({ ...state, staff: state.staff.map((entry) => (entry.id === id ? revoked : entry)) });
       return { result: { ...revoked }, after: { staffId: id, status: 'revoked' } };

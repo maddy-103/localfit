@@ -63,7 +63,7 @@ SPEC-13 | src/api/mockFlow.ts, src/api/mockTrial.ts, src/domain/orderMachine.ts 
 AMBIGUITY-9 | src/api/mockFlow.ts, src/api/types.ts | src/api/__tests__/checkoutSplit.test.ts
 AMBIGUITY-10 | src/domain/payments.ts, src/routes/buyer/CheckoutPage.tsx | (pending)
 AMBIGUITY-11 | src/domain/stock.ts, src/api/mockShopOps.ts | src/api/__tests__/SHOP-04-07.test.ts
-AMBIGUITY-13 | src/api/adminSeed.ts, src/api/mockAdminSetup.ts | src/api/__tests__/ADM-admin-actions.test.ts, src/api/seed.test.ts
+AMBIGUITY-13 (deliberately overridden: single admin; no super-admin creation/approval) | src/api/seed.ts, src/api/mockAdminSetup.ts, src/routes/admin/StaffPage.tsx | src/api/__tests__/ADM-admin-actions.test.ts, src/api/seed.test.ts
 NFR-03 | src/api/mockStore.ts (BroadcastChannel inventory), src/routes/buyer/HomePage.tsx, src/routes/buyer/ProductPage.tsx, src/routes/buyer/SearchPage.tsx | src/routes/shop/__tests__/SHOP-03.test.tsx
 NFR-04 | src/api/mockShopSetup.ts (IndexedDB drafts), src/routes/shop/ListingNewPage.tsx, src/components/rider/useRiderOfflineQueue.ts, src/api/mockRiderSetup.ts | src/routes/shop/__tests__/SHOP-01.test.tsx, src/api/__tests__/RIDE-01-demo-drop.test.ts
 NFR-05 | src/styles/tokens.css, src/routes/shop/shop.module.css | src/routes/shop/__tests__/SHOP-01.test.tsx

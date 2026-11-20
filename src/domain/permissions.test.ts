@@ -75,7 +75,6 @@ const ACTION_ROLES: Record<AdminAction, readonly AdminRole[]> = {
   'risk.block': ['super_admin'],
   'config.update': ['super_admin'],
   'staff.create': ['super_admin'],
-  'staff.approve': ['super_admin'],
   'staff.revoke': ['super_admin'],
 };
 

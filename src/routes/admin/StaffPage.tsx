@@ -14,15 +14,10 @@ import { formatDateTime } from '@/lib/format';
 import { useAsync, useOnline } from '@/lib/useAsync';
 import styles from './admin.module.css';
 
-type Action = 'create' | 'approve' | 'revoke';
+type Action = 'create' | 'revoke';
 
-const ROLES: AdminRole[] = [
-  'support_agent',
-  'verifier',
-  'finance',
-  'dispute_lead',
-  'super_admin',
-];
+// The seeded primary admin is the only super admin; no others can be created.
+const ROLES: AdminRole[] = ['support_agent', 'verifier', 'finance', 'dispute_lead'];
 
 const STATUS_TONES: Record<StaffStatus, StatusTone> = {
   active: 'success',
@@ -30,7 +25,7 @@ const STATUS_TONES: Record<StaffStatus, StatusTone> = {
   revoked: 'error',
 };
 
-/** AUTH-06 and ADM-10: staff creation, roles, approval and revocation. */
+/** AUTH-06 and ADM-10: staff creation, roles and revocation. */
 export default function StaffPage() {
   const { t } = useI18n();
   const online = useOnline();
@@ -77,9 +72,6 @@ export default function StaffPage() {
       if (action === 'create') {
         await api.adminCreateStaff({ actor, reason, name, phone, adminRole: role });
       }
-      if (action === 'approve' && target) {
-        await api.adminApproveStaff(target.id, actor);
-      }
       if (action === 'revoke' && target) {
         await api.adminRevokeStaff(target.id, { actor, reason });
       }
@@ -111,38 +103,21 @@ export default function StaffPage() {
     {
       key: 'createdBy',
       header: t('admin.staff.createdBy'),
-      render: (row) => row.createdBy || t('admin.none'),
+      render: (row) =>
+        row.createdBy && row.createdBy !== 'bootstrap' ? row.createdBy : t('admin.none'),
     },
     { key: 'created', header: t('admin.disputes.opened'), render: (row) => formatDateTime(row.createdAt) },
     {
       key: 'status',
       header: t('admin.filter.status'),
-      render: (row) => (
-        <span className={styles.main}>
-          <StatusChip tone={STATUS_TONES[row.status]} label={row.status} />
-          {row.status === 'pending_approval' ? (
-            <span className={styles.muted}>{t('admin.staff.pendingNote')}</span>
-          ) : null}
-        </span>
-      ),
+      render: (row) => <StatusChip tone={STATUS_TONES[row.status]} label={row.status} />,
     },
     {
       key: 'actions',
       header: t('admin.order.actions'),
       render: (row) => (
         <div className={styles.actions}>
-          {canAct('staff.approve') && row.status === 'pending_approval' ? (
-            <Button
-              size="sm"
-              onClick={(event) => {
-                event.stopPropagation();
-                open('approve', row);
-              }}
-            >
-              {t('admin.staff.approve')}
-            </Button>
-          ) : null}
-          {canAct('staff.revoke') && row.status !== 'revoked' ? (
+          {canAct('staff.revoke') && row.status !== 'revoked' && row.id !== 'admin-owner' ? (
             <Button
               size="sm"
               variant="outline"
@@ -197,18 +172,10 @@ export default function StaffPage() {
       <ReasonDialog
         open={action !== null}
         title={
-          action === 'create'
-            ? t('admin.staff.createTitle')
-            : action === 'approve'
-              ? t('admin.staff.approveTitle')
-              : t('admin.staff.revokeTitle')
+          action === 'create' ? t('admin.staff.createTitle') : t('admin.staff.revokeTitle')
         }
         confirmLabel={
-          action === 'create'
-            ? t('admin.staff.create')
-            : action === 'approve'
-              ? t('admin.staff.approve')
-              : t('admin.staff.revoke')
+          action === 'create' ? t('admin.staff.create') : t('admin.staff.revoke')
         }
         busy={busy}
         onClose={() => setAction(null)}

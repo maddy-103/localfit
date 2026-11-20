@@ -882,7 +882,6 @@ export interface Api {
 
   adminListStaff(): Promise<StaffMember[]>;
   adminCreateStaff(input: CreateStaffInput): Promise<StaffMember>;
-  adminApproveStaff(id: string, actor: AdminActor): Promise<StaffMember>;
   adminRevokeStaff(id: string, input: AdminActionInput): Promise<StaffMember>;
 
   adminListAudit(): Promise<AuditEntry[]>;
@@ -921,7 +920,6 @@ export type AdminApi = Pick<
   | 'adminUpdateConfig'
   | 'adminListStaff'
   | 'adminCreateStaff'
-  | 'adminApproveStaff'
   | 'adminRevokeStaff'
   | 'adminListAudit'
 >;

@@ -395,53 +395,15 @@ export const riders: Rider[] = [
 
 export const admins: AdminUser[] = [
   {
-    id: 'admin-neha',
-    name: 'Neha Kulkarni',
-    phone: '+91 98800 11001',
-    role: 'support_agent',
-    permissions: ['read:orders', 'read:buyers', 'support:sessions'],
-    createdBy: 'admin-meera',
-  },
-  {
-    id: 'admin-vikram',
-    name: 'Vikram Rao',
-    phone: '+91 98800 11002',
-    role: 'verifier',
-    permissions: ['read:shops', 'approve:shops', 'read:riders'],
-    createdBy: 'admin-meera',
-  },
-  {
-    id: 'admin-suresh',
-    name: 'Suresh Pillai',
-    phone: '+91 98800 11003',
-    role: 'finance',
-    permissions: ['read:payouts', 'run:payouts', 'read:refunds', 'issue:refunds'],
-    createdBy: 'admin-meera',
-  },
-  {
-    id: 'admin-farah',
-    name: 'Farah Khan',
-    phone: '+91 98800 11004',
-    role: 'dispute_lead',
-    permissions: ['read:disputes', 'resolve:disputes', 'issue:refunds', 'read:orders'],
-    createdBy: 'admin-meera',
-  },
-  {
-    id: 'admin-meera',
-    name: 'Meera Krishnan',
-    phone: '+91 98800 11005',
+    // The one bootstrap admin. Replace the placeholder name/phone before launch.
+    // `createdBy: 'bootstrap'` marks the seed account as eligible under AUTH-06;
+    // it is not another admin account.
+    id: 'admin-owner',
+    name: 'Owner',
+    phone: '+91 90000 00000',
     role: 'super_admin',
     permissions: ['*'],
-    createdBy: 'admin-founder',
-  },
-  {
-    // A second super admin is needed to approve new super admins (ambiguity 13).
-    id: 'admin-arvind',
-    name: 'Arvind Menon',
-    phone: '+91 98800 11006',
-    role: 'super_admin',
-    permissions: ['*'],
-    createdBy: 'admin-meera',
+    createdBy: 'bootstrap',
   },
 ];
 

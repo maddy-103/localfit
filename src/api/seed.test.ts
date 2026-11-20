@@ -7,26 +7,26 @@ describe('seed data', () => {
     expect(products).toHaveLength(8);
     expect(riders).toHaveLength(3);
     expect(buyers).toHaveLength(2);
-    expect(admins).toHaveLength(6);
+    expect(admins).toHaveLength(1);
   });
 
   it('has exactly three try-at-door products', () => {
     expect(products.filter((product) => product.tryAtDoorEligible)).toHaveLength(3);
   });
 
-  it('covers every admin role and seeds two super admins for approval', () => {
-    expect(admins.map((admin) => admin.role).sort()).toEqual([
-      'dispute_lead',
-      'finance',
-      'super_admin',
-      'super_admin',
-      'support_agent',
-      'verifier',
+  it('seeds exactly one placeholder super admin and no dummy staff', () => {
+    expect(admins).toEqual([
+      {
+        id: 'admin-owner',
+        name: 'Owner',
+        phone: '+91 90000 00000',
+        role: 'super_admin',
+        permissions: ['*'],
+        createdBy: 'bootstrap',
+      },
     ]);
-    // Resolved ambiguity 13: a second super admin approves new super admins.
-    const superAdmins = admins.filter((admin) => admin.role === 'super_admin');
-    expect(new Set(superAdmins.map((admin) => admin.id)).size).toBe(2);
-    expect(superAdmins.every((admin) => admin.createdBy)).toBe(true);
+    // 'bootstrap' is only an eligibility marker, not another admin account.
+    expect(admins[0]!.createdBy).toBeTruthy();
   });
 
   it('uses realistic Indian names and Bengaluru shops', () => {

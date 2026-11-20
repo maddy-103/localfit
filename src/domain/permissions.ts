@@ -98,7 +98,6 @@ export const ADMIN_ACTION_PERMISSIONS = {
   'risk.block': 'manage:risk',
   'config.update': 'config:manage',
   'staff.create': 'staff:manage',
-  'staff.approve': 'staff:manage',
   'staff.revoke': 'staff:manage',
 } as const satisfies Record<string, AdminPermission>;
 

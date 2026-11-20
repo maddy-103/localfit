@@ -4,12 +4,11 @@ import { configureMock, resetMockData } from '@/api/mock';
 import { devAdvanceOrder, devCreateTryAtDoorOrder } from '@/api/dev';
 import { ADMIN_2FA_CODE } from '@/domain/admin';
 import { ADMIN_ACTION_PERMISSIONS } from '@/domain/permissions';
-import type { AdminActionInput, AdminActor, StaffMember } from '@/api/types';
+import type { AdminActionInput, AdminActor } from '@/api/types';
 import { createFakeClock, resetClock, setClock } from '@/lib/clock';
 
-const SUPER: AdminActor = { id: 'admin-meera', name: 'Meera Krishnan', adminRole: 'super_admin' };
-const OTHER_SUPER: AdminActor = { id: 'admin-arvind', name: 'Arvind Menon', adminRole: 'super_admin' };
-const LEAD: AdminActor = { id: 'admin-farah', name: 'Farah Khan', adminRole: 'dispute_lead' };
+const SUPER: AdminActor = { id: 'admin-owner', name: 'Owner', adminRole: 'super_admin' };
+const LEAD: AdminActor = { id: 'test-lead', name: 'Test Lead', adminRole: 'dispute_lead' };
 const INPUT: AdminActionInput = { actor: SUPER, reason: 'Admin console coverage' };
 
 beforeEach(() => {
@@ -21,35 +20,37 @@ beforeEach(() => {
 afterEach(() => resetClock());
 
 describe('AUTH-06 admin SSO and two-factor sign-in', () => {
-  it('offers only active accounts created by a super admin and checks the code', async () => {
+  it('offers only the one active bootstrap account and checks the code', async () => {
     const accounts = await api.adminSsoAccounts();
-    expect(accounts.length).toBeGreaterThan(0);
-    expect(accounts.every((account) => account.status === 'active' && account.createdBy)).toBe(true);
+    expect(accounts).toEqual([
+      expect.objectContaining({
+        id: 'admin-owner',
+        name: 'Owner',
+        status: 'active',
+        adminRole: 'super_admin',
+      }),
+    ]);
 
-    await expect(api.adminSignIn({ accountId: 'admin-meera', code: '000000' })).rejects.toThrow();
+    await expect(api.adminSignIn({ accountId: 'admin-owner', code: '000000' })).rejects.toThrow();
     const signed = await api.adminSignIn({
-      accountId: 'admin-meera',
+      accountId: 'admin-owner',
       code: ADMIN_2FA_CODE,
     });
     expect(signed.adminRole).toBe('super_admin');
   });
 
-  it('holds a new super admin pending until a different super admin approves', async () => {
-    const created = await api.adminCreateStaff({
-      ...INPUT,
-      name: 'New Super',
-      phone: '+91 90000 00001',
-      adminRole: 'super_admin',
-    });
-    expect(created.status).toBe('pending_approval');
-    expect((await api.adminSsoAccounts()).some((account) => account.id === created.id)).toBe(false);
-    await expect(api.adminSignIn({ accountId: created.id, code: ADMIN_2FA_CODE })).rejects.toThrow();
+  it('never creates another super admin and never revokes the primary admin', async () => {
+    await expect(
+      api.adminCreateStaff({
+        ...INPUT,
+        name: 'Another Super',
+        phone: '+91 90000 00001',
+        adminRole: 'super_admin',
+      }),
+    ).rejects.toThrow(/cannot be created/i);
 
-    await expect(api.adminApproveStaff(created.id, SUPER)).rejects.toThrow();
-    const approved: StaffMember = await api.adminApproveStaff(created.id, OTHER_SUPER);
-    expect(approved.status).toBe('active');
-    expect(approved.approvedBy).toBe(OTHER_SUPER.id);
-    expect((await api.adminSsoAccounts()).some((account) => account.id === created.id)).toBe(true);
+    await expect(api.adminRevokeStaff('admin-owner', INPUT)).rejects.toThrow(/cannot be revoked/i);
+    expect((await api.adminSsoAccounts()).map((account) => account.id)).toEqual(['admin-owner']);
   });
 });
 
@@ -130,13 +131,6 @@ describe('ADM-09 audit coverage', () => {
       phone: '+91 90000 00002',
       adminRole: 'finance',
     });
-    const pending = await api.adminCreateStaff({
-      ...INPUT,
-      name: 'Audit Super',
-      phone: '+91 90000 00003',
-      adminRole: 'super_admin',
-    });
-    await api.adminApproveStaff(pending.id, OTHER_SUPER);
     await api.adminRevokeStaff(created.id, INPUT);
 
     const audit = await api.adminListAudit();

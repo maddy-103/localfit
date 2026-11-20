@@ -4,8 +4,8 @@ import { configureMock, resetMockData } from '@/api/mock';
 import type { AdminActor } from '@/api/types';
 import { createFakeClock, resetClock, setClock, type FakeClock } from '@/lib/clock';
 
-const FINANCE: AdminActor = { id: 'admin-suresh', name: 'Suresh Pillai', adminRole: 'finance' };
-const LEAD: AdminActor = { id: 'admin-farah', name: 'Farah Khan', adminRole: 'dispute_lead' };
+const FINANCE: AdminActor = { id: 'test-finance', name: 'Test Finance', adminRole: 'finance' };
+const LEAD: AdminActor = { id: 'test-lead', name: 'Test Lead', adminRole: 'dispute_lead' };
 
 let clock: FakeClock;
 

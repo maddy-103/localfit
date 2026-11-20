@@ -74,7 +74,6 @@ export const httpAdminApi: AdminApi = {
 
   adminListStaff: () => request('/admin/staff'),
   adminCreateStaff: (input) => post('/admin/staff', input),
-  adminApproveStaff: (id, actor) => post(`/admin/staff/${enc(id)}/approve`, { actor }),
   adminRevokeStaff: (id, input) => post(`/admin/staff/${enc(id)}/revoke`, input),
 
   adminListAudit: () => request('/admin/audit'),

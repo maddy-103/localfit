@@ -6,7 +6,6 @@ import {
   adminListAudit,
   adminListConfigHistory,
   adminListStaff,
-  adminApproveStaff,
   adminCreateStaff,
   adminRevokeStaff,
   adminSignIn,
@@ -81,7 +80,6 @@ export const mockAdminApi: AdminApi = {
 
   adminListStaff: () => respond(() => adminListStaff()),
   adminCreateStaff: (input) => respond(() => adminCreateStaff(input)),
-  adminApproveStaff: (id, actor) => respond(() => adminApproveStaff(id, actor)),
   adminRevokeStaff: (id, input) => respond(() => adminRevokeStaff(id, input)),
 
   adminListAudit: () => respond(() => adminListAudit()),

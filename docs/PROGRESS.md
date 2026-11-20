@@ -292,13 +292,14 @@
 ## Done (Phase 5 — admin console, complete 2026-11-20)
 
 - **Sign-in** (AUTH-06): `/admin/login` lists only active SSO accounts created by a super admin and
-  requires a six-digit 2FA code (mock code `246810`). A new `super_admin` stays `pending_approval`
-  until a *different* super admin approves it (resolved ambiguity 13); a second super admin is seeded.
+  requires a six-digit 2FA code (mock code `246810`). Exactly one placeholder bootstrap super admin
+  (`Owner`, `+91 90000 00000`) is seeded; no other admin accounts exist. Super-admin creation and
+  approval were removed in the single-admin follow-up below (deliberate deviation from ambiguity 13).
 - **Screens**: `DashboardPage` (live orders, availability, late orders), `ShopsPage` (identity, GST,
   sample visit, authenticity flags), `OrdersPage` + `OrderDetailPage` (reassign, cancel, override),
   `DisputesPage` (SLA, evidence sheet, decisions), `RefundsPage`, `PayoutsPage` (run, hold,
   reconcile, CSV), `RidersPage` (verify, penalize, zones), `RiskPage` (scores, COD limits, blocks),
-  `ConfigPage` (radius, fees, trial/COD terms with change history), `StaffPage` (roles, approval,
+  `ConfigPage` (radius, fees, trial/COD terms with change history), `StaffPage` (other roles,
   revocation), `AuditPage` (reason/diff export). `CampaignsPage` is a "Coming in phase 2" placeholder.
 - **Shared UI**: `AdminTable` (sticky header, filters, keyboard row activation), `AdminStates`
   (loading/empty/error/offline with last-updated), `ReasonDialog`, `useAdminActor`, CSV helpers.
@@ -314,8 +315,8 @@
 - **i18n**: every new `admin.*` and `role.*` string exists in both `en.ts` and `hi.ts`.
 - **Tests**: 40 files, **784 tests passing** in the final run. New/updated: `permissions.test.ts`
   (every matrix cell), `ADM-03-escalation.test.ts` (fake clock + evidence redaction),
-  `ADM-admin-actions.test.ts` (SSO/2FA, approval, required reasons, audit for every action),
-  `router.test.tsx` (support agent denied config/staff/payouts), `seed.test.ts` (two super admins).
+  `ADM-admin-actions.test.ts` (SSO/2FA, no extra super admins, required reasons, audit for every action),
+  `router.test.tsx` (support agent denied config/staff/payouts), `seed.test.ts` (one placeholder super admin).
 - **Verification**: `npm run build`, `npm run lint`, `npm test` and `npx tsc --noEmit` all pass.
 
 ## Decisions (Phase 5)
@@ -350,4 +351,39 @@
   delivery server-side.
 - Drop real woff2 fonts into `public/fonts/`.
 - Add dedicated interaction tests for the remaining `(pending)` rows in `TRACEABILITY.md`.
+
+## Single-admin follow-up (2026-11-20)
+
+### Done
+
+- Reduced `src/api/seed.ts` to one placeholder `super_admin`: `admin-owner` / `Owner` /
+  `+91 90000 00000`. There are no seeded support, verifier, finance or dispute-lead accounts,
+  and no second super admin.
+- Removed super-admin creation end to end: no `super_admin` option on `StaffPage`, an API guard in
+  `adminCreateStaff()`, and no `/admin/staff/:id/approve` endpoint or `staff.approve` action.
+  `adminRevokeStaff()` also refuses to revoke the primary admin so the console cannot be locked out.
+- Kept the five-role matrix (`ADMIN_PERMISSIONS`, route guards) and updated the affected tests in
+  `permissions.test.ts`, `seed.test.ts`, `ADM-admin-actions.test.ts` and `ADM-03-escalation.test.ts`.
+
+### Decisions
+
+- Deliberately overrides AGENTS.md resolved ambiguity 13 (second-super-admin approval). With one
+  account there is no second approver; super admins can no longer be created at all.
+- `createdBy: 'bootstrap'` on the seed account is only an AUTH-06 eligibility marker, not a real
+  account; the staff table shows "None recorded" for it.
+- The name and phone are placeholders chosen by the user. Replace them in `src/api/seed.ts` before
+  launch; no personal details are stored in source.
+
+### Known Bugs / Gaps
+
+- The four non-super-admin roles exist only in the permission matrix and tests; no accounts are
+  seeded for them.
+- `adminListDisputes()` still has no actor parameter and can include evidence fields in its list
+  payload (unchanged from Phase 5).
+
+### Next Steps
+
+- Replace the placeholder admin name/phone with the real owner credentials before deployment.
+- Keep the HTTP backend aligned: no super-admin creation or approval endpoint, and one bootstrap
+  admin seeded by the server.
 
