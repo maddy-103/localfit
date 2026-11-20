@@ -185,6 +185,19 @@ describe('router', () => {
     expect(await screen.findByText(en['common.forbidden'], {}, { timeout: 5000 })).toBeVisible();
   });
 
+  it.each(['/admin/config', '/admin/staff'])(
+    'sends a support admin away from %s',
+    async (path) => {
+      renderPath(path, supportAdmin);
+      expect(await screen.findByText(en['common.forbidden'], {}, { timeout: 5000 })).toBeVisible();
+    },
+  );
+
+  it('lets a support admin read orders but not change them', async () => {
+    renderPath('/admin/orders', supportAdmin);
+    expect(await screen.findByRole('heading', { level: 1 }, { timeout: 5000 })).toBeVisible();
+  });
+
   it('renders a not-found screen for an unknown route', async () => {
     renderPath('/this-route-does-not-exist', guest);
     expect(await screen.findByText(en['common.notFound'], {}, { timeout: 5000 })).toBeVisible();

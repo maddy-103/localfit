@@ -11,6 +11,7 @@ import { now } from '@/lib/clock';
 import { deliveryFeePaise } from '@/domain/payments';
 import { mockShopApi } from './mockShopApi';
 import { mockRiderApi } from './mockRiderApi';
+import { mockAdminApi } from './mockAdminApi';
 import {
   allProducts,
   availableStock,
@@ -304,6 +305,7 @@ export const mockApi: Api = {
 
   ...mockShopApi,
   ...mockRiderApi,
+  ...mockAdminApi,
 
   subscribe(topic, callback) {
     return subscribeInternal(topic, callback);

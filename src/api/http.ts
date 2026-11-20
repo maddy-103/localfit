@@ -1,5 +1,6 @@
 import { httpShopApi } from './httpShopApi';
 import { httpRiderApi } from './httpRiderApi';
+import { httpAdminApi } from './httpAdminApi';
 import type {
   Address,
   Api,
@@ -132,6 +133,7 @@ export const httpApi: Api = {
   },
   ...httpShopApi,
   ...httpRiderApi,
+  ...httpAdminApi,
 
   subscribe(topic, callback) {
     if (typeof EventSource === 'undefined') return () => {};

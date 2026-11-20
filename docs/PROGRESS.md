@@ -273,3 +273,81 @@
 - Add focused interaction tests for earnings, safety and the remaining `(pending)` traceability rows.
 - Drop real woff2 fonts into `public/fonts/` and exercise `VITE_API_MODE=http` against a backend.
 
+## Plan (Phase 5 — admin console)
+
+- **Requirement IDs**: AUTH-06, ADM-01–ADM-09 (ADM-10 stays a phase-2 placeholder), NFR-10, NFR-12;
+  SPEC sections 4, 6.4, 7.4, 8.5–8.7 and 13. Desktop-first with a usable tablet layout; the existing
+  `ConsoleLayout` sidebar is the desktop navigation.
+- **Files**: rewrite `src/domain/permissions.ts`, add `src/domain/admin.ts`; extend `src/api/types.ts`
+  and `mockStore.ts`; add `mockAdminSetup.ts`, `mockAdminOps.ts`, `mockAdminApi.ts`, `httpAdminApi.ts`
+  and wire both adapters; add `src/components/admin/*` (table, states, reason dialog, actor, CSV),
+  `src/routes/admin/admin.module.css` and rewrite the admin screens; add `admin.*` keys to both i18n files.
+- **Tests**: every cell of the 5-role permission matrix; 24 h dispute escalation with a fake clock;
+  reason required for reassign/cancel/refund; every action present in the audit log; finance cannot see
+  dispute evidence; support agent denied config/staff routes and payout action; SSO + 2FA sign-in gating.
+- **Design**: one sticky-header table component with keyboard row navigation, filters and loading/empty
+  states reused by every queue. Every action goes through one guarded API helper that checks the matrix,
+  requires a reason and writes an audit entry with before/after values.
+
+## Done (Phase 5 — admin console, complete 2026-11-20)
+
+- **Sign-in** (AUTH-06): `/admin/login` lists only active SSO accounts created by a super admin and
+  requires a six-digit 2FA code (mock code `246810`). A new `super_admin` stays `pending_approval`
+  until a *different* super admin approves it (resolved ambiguity 13); a second super admin is seeded.
+- **Screens**: `DashboardPage` (live orders, availability, late orders), `ShopsPage` (identity, GST,
+  sample visit, authenticity flags), `OrdersPage` + `OrderDetailPage` (reassign, cancel, override),
+  `DisputesPage` (SLA, evidence sheet, decisions), `RefundsPage`, `PayoutsPage` (run, hold,
+  reconcile, CSV), `RidersPage` (verify, penalize, zones), `RiskPage` (scores, COD limits, blocks),
+  `ConfigPage` (radius, fees, trial/COD terms with change history), `StaffPage` (roles, approval,
+  revocation), `AuditPage` (reason/diff export). `CampaignsPage` is a "Coming in phase 2" placeholder.
+- **Shared UI**: `AdminTable` (sticky header, filters, keyboard row activation), `AdminStates`
+  (loading/empty/error/offline with last-updated), `ReasonDialog`, `useAdminActor`, CSV helpers.
+- **Domain**: `permissions.ts` now holds the complete 5-role matrix, action map and route map;
+  `admin.ts` holds SLA maths, reason validation, evidence redaction, risk bands and CSV export.
+- **API**: an `AdminApi` contract in `types.ts` implemented by `mockAdmin{Core,Setup,Ops,Review,Api}.ts`
+  plus `adminSeed.ts`, and by `httpAdminApi.ts`; both wired into `mock.ts`/`http.ts`. Every mutation
+  goes through `runAdminAction()`: role assertion, non-blank reason, and an audit entry with actor,
+  timestamp, reason and before/after values.
+- **Disputes** (ADM-03): 24 h SLA escalation to "Senior admin" uses the injected clock, commits the
+  escalated cases and writes a system audit entry. Finance may read case metadata but `adminGetDispute`
+  strips photos, GPS, OTP log and history without `evidence:view` (NFR-10).
+- **i18n**: every new `admin.*` and `role.*` string exists in both `en.ts` and `hi.ts`.
+- **Tests**: 40 files, **784 tests passing** in the final run. New/updated: `permissions.test.ts`
+  (every matrix cell), `ADM-03-escalation.test.ts` (fake clock + evidence redaction),
+  `ADM-admin-actions.test.ts` (SSO/2FA, approval, required reasons, audit for every action),
+  `router.test.tsx` (support agent denied config/staff/payouts), `seed.test.ts` (two super admins).
+- **Verification**: `npm run build`, `npm run lint`, `npm test` and `npx tsc --noEmit` all pass.
+
+## Decisions (Phase 5)
+
+1. The Phase 3/4 adapter pattern was extended with `AdminApi`; screens import only `api` from
+   `src/api/client`, so the HTTP backend needs no screen changes.
+2. Finance holds `read:disputes` but not `evidence:view`. The disputes screen renders evidence only
+   from the role-redacted `adminGetDispute`, showing a "restricted" note for finance.
+3. `runAdminAction` writes only the audit log, so each caller persists its own state slice inside
+   `change()`. `adminListDisputes` now commits its escalated list too; otherwise every later list
+   call re-escalates the same open cases.
+4. Shop and rider review APIs are keyed by `shopId`/`riderId` (what the UI passes), not the review
+   record's own `id`.
+5. SLA escalation is a system-actor mutation and is audited like a human action.
+6. `ReasonDialog` mounts its form only while open, avoiding stale reasons and a setState-in-effect.
+7. Config edits use minutes/rupees on screen and convert to ms/paise for the API; draft state is a
+   patch derived from loaded config rather than copied into an effect.
+
+## Known Bugs / Gaps (Phase 5)
+
+- `public/fonts/` still has no real woff2 files (Archivo, Satoshi, Noto Sans Devanagari).
+- ADM-10 and the other priority-S/L items remain labelled placeholders by design; no behaviour was
+  faked.
+- `adminListDisputes()` does not take an actor, so its payload still contains evidence fields for
+  any role with `read:disputes`. The UI never renders them; a real backend should redact the list
+  response at the boundary as well.
+- The permission matrix is static until a backend supplies permissions on the session user.
+
+## Next Steps (Phase 6)
+
+- Exercise `VITE_API_MODE=http` against a real backend; move dispute-list redaction and permission
+  delivery server-side.
+- Drop real woff2 fonts into `public/fonts/`.
+- Add dedicated interaction tests for the remaining `(pending)` rows in `TRACEABILITY.md`.
+

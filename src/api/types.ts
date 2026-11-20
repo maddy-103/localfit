@@ -113,6 +113,169 @@ export interface AdminUser {
   phone: string;
   role: AdminRole;
   permissions: string[];
+  /** AUTH-06: only accounts created by a super admin may sign in. */
+  createdBy: string;
+}
+
+/** The signed-in admin passed with every action; the mock checks its role. */
+export interface AdminActor {
+  id: string;
+  name: string;
+  adminRole: AdminRole;
+}
+
+export interface AdminActionInput {
+  actor: AdminActor;
+  reason: string;
+}
+
+export interface AuditEntry {
+  id: string;
+  action: string;
+  actor: AdminActor;
+  timestamp: string;
+  reason: string;
+  before: Record<string, unknown> | null;
+  after: Record<string, unknown> | null;
+}
+
+export interface AdminConfig {
+  serviceRadiusKm: number;
+  commissionBps: number;
+  trialWindowMs: number;
+  reservationHoldMs: number;
+  acceptTimeoutMs: number;
+  compensationThresholdMs: number;
+  codMinPrepaidOrders: number;
+  codCapPaise: number;
+  codCapUntilOrders: number;
+  codTryAtDoorAllowed: boolean;
+}
+
+export interface ConfigChange extends AdminActionInput {
+  id: string;
+  timestamp: string;
+  before: AdminConfig;
+  after: AdminConfig;
+}
+
+export type StaffStatus = 'active' | 'pending_approval' | 'revoked';
+
+export interface StaffMember {
+  id: string;
+  name: string;
+  phone: string;
+  adminRole: AdminRole;
+  status: StaffStatus;
+  createdBy: string;
+  approvedBy?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface CreateStaffInput extends AdminActionInput {
+  name: string;
+  phone: string;
+  adminRole: AdminRole;
+}
+
+export interface AdminAccount {
+  id: string;
+  name: string;
+  phone: string;
+  adminRole: AdminRole;
+  status: StaffStatus;
+  createdBy: string;
+}
+
+export type DisputeDecision = 'buyer_favoured' | 'shop_favoured' | 'split';
+
+/** NFR-10: this whole block is withheld from roles without evidence:view. */
+export interface DisputeEvidence {
+  photos: Image[];
+  gps?: GpsPoint;
+  otpAttempts: number;
+  checkedAt: string;
+  events: OrderEvent[];
+}
+
+export interface DisputeCase {
+  id: string;
+  orderId: string;
+  shopId: string;
+  buyerId: string;
+  openedAt: string;
+  valuePaise: number;
+  reason: string;
+  status: 'open' | 'escalated' | 'decided';
+  escalatedAt?: string;
+  escalatedTo?: string;
+  decision?: DisputeDecision;
+  decisionReason?: string;
+  decidedAt?: string;
+  evidence?: DisputeEvidence;
+}
+
+export interface RefundCase {
+  id: string;
+  orderId: string;
+  buyerName: string;
+  amountPaise: number;
+  reason: string;
+  status: 'pending' | 'approved' | 'rejected';
+  createdAt: string;
+  decidedAt?: string;
+  decisionReason?: string;
+}
+
+export interface PayoutCase {
+  id: string;
+  shopId: string;
+  shopName: string;
+  amountPaise: number;
+  period: string;
+  status: 'ready' | 'held' | 'paid';
+  createdAt: string;
+  note?: string;
+}
+
+export interface ShopReview {
+  id: string;
+  shopId: string;
+  shopName: string;
+  ownerName: string;
+  hasGst: boolean;
+  gstNumber?: string;
+  ownerIdVerified: boolean;
+  sampleVisitNotes: string;
+  productChecks: string[];
+  authenticityFlags: string[];
+  status: 'pending' | 'approved' | 'rejected' | 'suspended';
+  updatedAt: string;
+}
+
+export interface RiderReview {
+  id: string;
+  riderId: string;
+  name: string;
+  zone: string;
+  available: boolean;
+  verified: boolean;
+  rating: number;
+  incidents: number;
+  penalties: number;
+  status: 'pending' | 'approved' | 'suspended';
+}
+
+export interface RiskEntry {
+  id: string;
+  kind: 'account' | 'address';
+  label: string;
+  score: number;
+  orderValuePaise: number;
+  completedOrders: number;
+  codLimitPaise: number;
+  blocked: boolean;
 }
 
 export interface Address {
@@ -655,8 +818,113 @@ export interface Api {
   listQueuedRiderActions(): Promise<QueuedRiderAction[]>;
   markRiderActionSynced(id: string): Promise<QueuedRiderAction[]>;
 
+  /* Admin console (AUTH-06, ADM-01 to ADM-09, NFR-10, NFR-12). */
+  adminSsoAccounts(): Promise<AdminAccount[]>;
+  adminSignIn(input: { accountId: string; code: string }): Promise<AdminAccount>;
+
+  adminReassignRider(orderId: string, riderId: string, input: AdminActionInput): Promise<Order>;
+  adminCancelOrder(orderId: string, input: AdminActionInput): Promise<Order>;
+  adminOverrideOrder(orderId: string, to: OrderState, input: AdminActionInput): Promise<Order>;
+
+  adminListShopReviews(): Promise<ShopReview[]>;
+  adminReviewShop(
+    shopId: string,
+    outcome: 'approve' | 'reject' | 'suspend',
+    input: AdminActionInput,
+  ): Promise<ShopReview>;
+  adminFlagProduct(
+    shopId: string,
+    productId: string,
+    flag: string,
+    input: AdminActionInput,
+  ): Promise<ShopReview>;
+
+  adminListDisputes(): Promise<DisputeCase[]>;
+  adminGetDispute(id: string, actor: AdminActor): Promise<DisputeCase | null>;
+  adminDecideDispute(
+    id: string,
+    decision: DisputeDecision,
+    input: AdminActionInput,
+  ): Promise<DisputeCase>;
+
+  adminListRefunds(): Promise<RefundCase[]>;
+  adminResolveRefund(
+    id: string,
+    outcome: 'approve' | 'reject',
+    input: AdminActionInput,
+  ): Promise<RefundCase>;
+
+  adminListPayouts(): Promise<PayoutCase[]>;
+  adminRunSettlement(input: AdminActionInput): Promise<PayoutCase[]>;
+  adminHoldPayout(id: string, input: AdminActionInput): Promise<PayoutCase>;
+  adminReconcilePayout(id: string, input: AdminActionInput): Promise<PayoutCase>;
+
+  adminListRiderReviews(): Promise<RiderReview[]>;
+  adminReviewRider(
+    riderId: string,
+    outcome: 'verify' | 'penalize' | 'suspend',
+    input: AdminActionInput,
+  ): Promise<RiderReview>;
+  adminSetRiderZone(
+    riderId: string,
+    zone: string,
+    available: boolean,
+    input: AdminActionInput,
+  ): Promise<RiderReview>;
+
+  adminListRisk(): Promise<RiskEntry[]>;
+  adminSetRiskLimit(id: string, codLimitPaise: number, input: AdminActionInput): Promise<RiskEntry>;
+  adminBlockRisk(id: string, blocked: boolean, input: AdminActionInput): Promise<RiskEntry>;
+
+  adminGetConfig(): Promise<AdminConfig>;
+  adminListConfigHistory(): Promise<ConfigChange[]>;
+  adminUpdateConfig(patch: Partial<AdminConfig>, input: AdminActionInput): Promise<AdminConfig>;
+
+  adminListStaff(): Promise<StaffMember[]>;
+  adminCreateStaff(input: CreateStaffInput): Promise<StaffMember>;
+  adminApproveStaff(id: string, actor: AdminActor): Promise<StaffMember>;
+  adminRevokeStaff(id: string, input: AdminActionInput): Promise<StaffMember>;
+
+  adminListAudit(): Promise<AuditEntry[]>;
+
   subscribe(topic: string, callback: (data: unknown) => void): () => void;
 }
+
+/** The admin half of Api, shared by the mock and HTTP adapters. */
+export type AdminApi = Pick<
+  Api,
+  | 'adminSsoAccounts'
+  | 'adminSignIn'
+  | 'adminReassignRider'
+  | 'adminCancelOrder'
+  | 'adminOverrideOrder'
+  | 'adminListShopReviews'
+  | 'adminReviewShop'
+  | 'adminFlagProduct'
+  | 'adminListDisputes'
+  | 'adminGetDispute'
+  | 'adminDecideDispute'
+  | 'adminListRefunds'
+  | 'adminResolveRefund'
+  | 'adminListPayouts'
+  | 'adminRunSettlement'
+  | 'adminHoldPayout'
+  | 'adminReconcilePayout'
+  | 'adminListRiderReviews'
+  | 'adminReviewRider'
+  | 'adminSetRiderZone'
+  | 'adminListRisk'
+  | 'adminSetRiskLimit'
+  | 'adminBlockRisk'
+  | 'adminGetConfig'
+  | 'adminListConfigHistory'
+  | 'adminUpdateConfig'
+  | 'adminListStaff'
+  | 'adminCreateStaff'
+  | 'adminApproveStaff'
+  | 'adminRevokeStaff'
+  | 'adminListAudit'
+>;
 
 /** The shop half of Api, shared by the mock and HTTP adapters. */
 export type ShopApi = Pick<

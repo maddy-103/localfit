@@ -3,25 +3,46 @@ import { now, nowIso } from '@/lib/clock';
 import { WAITING_COMPENSATION_MS, LATE_NIGHT_HOUR } from '@/domain/sla';
 import { availableToBuy } from '@/domain/stock';
 import type {
+  AdminConfig,
+  AuditEntry,
   Bag,
   BagLine,
   CompensationClaim,
+  ConfigChange,
   ConflictRecord,
+  DisputeCase,
   ListingDraft,
   Order,
   OrderLine,
   OrderRider,
+  PayoutCase,
   Product,
   QueuedRiderAction,
+  RefundCase,
   RiderConfig,
   RiderPresence,
   RiderRegistration,
+  RiderReview,
+  RiskEntry,
   ShopRegistration,
+  ShopReview,
   ShopSettings,
   SosAlert,
+  StaffMember,
   Variant,
   WaitingSession,
 } from './types';
+import {
+  seedAdminConfig,
+  seedConfigHistory,
+  seedDisputes,
+  seedPayouts,
+  seedRefunds,
+  seedRiskEntries,
+  seedRiderReviews,
+  seedShopReviews,
+  seedStaff,
+} from './adminSeed';
 import { addresses, products, riders, shops } from './seed';
 
 export const HOLD_MS = 10 * 60 * 1000;
@@ -53,6 +74,17 @@ export interface MockState {
   compensationClaims: CompensationClaim[];
   sosAlerts: SosAlert[];
   riderQueue: QueuedRiderAction[];
+  /** Admin console state. Persisted with the rest of the mock. */
+  adminConfig: AdminConfig;
+  configHistory: ConfigChange[];
+  staff: StaffMember[];
+  auditLog: AuditEntry[];
+  shopReviews: ShopReview[];
+  riderReviews: RiderReview[];
+  riskEntries: RiskEntry[];
+  disputes: DisputeCase[];
+  refunds: RefundCase[];
+  payouts: PayoutCase[];
 }
 
 export const defaultShopSettings = (): ShopSettings => ({
@@ -126,6 +158,16 @@ export function emptyState(): MockState {
     compensationClaims: [],
     sosAlerts: [],
     riderQueue: [],
+    adminConfig: seedAdminConfig(),
+    configHistory: seedConfigHistory(),
+    staff: seedStaff(),
+    auditLog: [],
+    shopReviews: seedShopReviews(),
+    riderReviews: seedRiderReviews(),
+    riskEntries: seedRiskEntries(),
+    disputes: seedDisputes(),
+    refunds: seedRefunds(),
+    payouts: seedPayouts(),
   };
 }
 
@@ -201,6 +243,16 @@ async function ensureLoaded(): Promise<void> {
             compensationClaims: saved.compensationClaims ?? [],
             sosAlerts: saved.sosAlerts ?? [],
             riderQueue: saved.riderQueue ?? [],
+            adminConfig: saved.adminConfig ?? seedAdminConfig(),
+            configHistory: saved.configHistory ?? seedConfigHistory(),
+            staff: saved.staff ?? seedStaff(),
+            auditLog: saved.auditLog ?? [],
+            shopReviews: saved.shopReviews ?? seedShopReviews(),
+            riderReviews: saved.riderReviews ?? seedRiderReviews(),
+            riskEntries: saved.riskEntries ?? seedRiskEntries(),
+            disputes: saved.disputes ?? seedDisputes(),
+            refunds: saved.refunds ?? seedRefunds(),
+            payouts: saved.payouts ?? seedPayouts(),
           };
         }
       } catch {
@@ -279,6 +331,17 @@ export function resetStore(): void {
   notify('conflicts', state.conflicts);
   notify('rider-tasks', []);
   notify('rider-queue', state.riderQueue);
+  notifyAdminTopics();
+}
+
+/** Admin screens subscribe to these topics for cross-tab updates. */
+export function notifyAdminTopics(): void {
+  notify('admin-disputes', state.disputes);
+  notify('admin-audit', state.auditLog);
+  notify('admin-refunds', state.refunds);
+  notify('admin-payouts', state.payouts);
+  notify('admin-staff', state.staff);
+  notify('admin-config', state.adminConfig);
 }
 
 export function setMockFailures(enabled: boolean): void {

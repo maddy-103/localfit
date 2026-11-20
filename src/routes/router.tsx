@@ -8,6 +8,7 @@ import { RoleGuard } from '@/components/RoleGuard';
 import { ShopApprovalGate } from '@/components/shop/ShopApprovalGate';
 import { RiderApprovalGate } from '@/components/rider/RiderApprovalGate';
 import { Skeleton } from '@/components/ui/Skeleton';
+import { ADMIN_ROUTE_PERMISSIONS } from '@/domain/permissions';
 import styles from './router.module.css';
 
 const WelcomePage = lazy(() => import('./auth/WelcomePage'));
@@ -197,19 +198,58 @@ export const routes: RouteObject[] = [
           </RoleGuard>
         ),
         children: [
-          { index: true, element: adminPage('read:orders', <AdminDashboardPage />) },
-          { path: 'shops', element: adminPage('read:shops', <AdminShopsPage />) },
-          { path: 'orders', element: adminPage('read:orders', <AdminOrdersPage />) },
-          { path: 'orders/:id', element: adminPage('read:orders', <AdminOrderDetailPage />) },
-          { path: 'disputes', element: adminPage('read:disputes', <AdminDisputesPage />) },
-          { path: 'refunds', element: adminPage('read:refunds', <AdminRefundsPage />) },
-          { path: 'payouts', element: adminPage('read:payouts', <AdminPayoutsPage />) },
-          { path: 'riders', element: adminPage('read:riders', <AdminRidersPage />) },
-          { path: 'risk', element: adminPage('read:buyers', <AdminRiskPage />) },
-          { path: 'campaigns', element: adminPage('read:orders', <AdminCampaignsPage />) },
-          { path: 'config', element: adminPage('*', <AdminConfigPage />) },
-          { path: 'staff', element: adminPage('*', <AdminStaffPage />) },
-          { path: 'audit', element: adminPage('read:orders', <AdminAuditPage />) },
+          {
+            index: true,
+            element: adminPage(ADMIN_ROUTE_PERMISSIONS['/admin']!, <AdminDashboardPage />),
+          },
+          {
+            path: 'shops',
+            element: adminPage(ADMIN_ROUTE_PERMISSIONS['/admin/shops']!, <AdminShopsPage />),
+          },
+          {
+            path: 'orders',
+            element: adminPage(ADMIN_ROUTE_PERMISSIONS['/admin/orders']!, <AdminOrdersPage />),
+          },
+          {
+            path: 'orders/:id',
+            element: adminPage(ADMIN_ROUTE_PERMISSIONS['/admin/orders/:id']!, <AdminOrderDetailPage />),
+          },
+          {
+            path: 'disputes',
+            element: adminPage(ADMIN_ROUTE_PERMISSIONS['/admin/disputes']!, <AdminDisputesPage />),
+          },
+          {
+            path: 'refunds',
+            element: adminPage(ADMIN_ROUTE_PERMISSIONS['/admin/refunds']!, <AdminRefundsPage />),
+          },
+          {
+            path: 'payouts',
+            element: adminPage(ADMIN_ROUTE_PERMISSIONS['/admin/payouts']!, <AdminPayoutsPage />),
+          },
+          {
+            path: 'riders',
+            element: adminPage(ADMIN_ROUTE_PERMISSIONS['/admin/riders']!, <AdminRidersPage />),
+          },
+          {
+            path: 'risk',
+            element: adminPage(ADMIN_ROUTE_PERMISSIONS['/admin/risk']!, <AdminRiskPage />),
+          },
+          {
+            path: 'campaigns',
+            element: adminPage(ADMIN_ROUTE_PERMISSIONS['/admin/campaigns']!, <AdminCampaignsPage />),
+          },
+          {
+            path: 'config',
+            element: adminPage(ADMIN_ROUTE_PERMISSIONS['/admin/config']!, <AdminConfigPage />),
+          },
+          {
+            path: 'staff',
+            element: adminPage(ADMIN_ROUTE_PERMISSIONS['/admin/staff']!, <AdminStaffPage />),
+          },
+          {
+            path: 'audit',
+            element: adminPage(ADMIN_ROUTE_PERMISSIONS['/admin/audit']!, <AdminAuditPage />),
+          },
         ],
       },
       ...(import.meta.env.DEV && StylePage
